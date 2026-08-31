@@ -16,8 +16,8 @@ const leaders = [
 
 export default function Team() {
   return (
-    <section id="team" className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
-      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 text-center">
+    <section id="team" className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 text-center">
         <SectionHeading
           badge="Our People"
           title="The Human Workforce Behind the"
@@ -41,15 +41,15 @@ export default function Team() {
         </FadeIn>
 
         {/* Leader Grid */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
           {leaders.map((leader) => (
             <StaggerItem key={leader.title}>
-              <div className="p-8 lg:p-9 rounded-2xl glass border border-[var(--border-subtle)] text-center hover-lift h-full flex flex-col justify-between gap-5 items-center">
+              <div className="p-6 lg:p-8 rounded-2xl glass border border-[var(--border-subtle)] text-center hover-lift h-full flex flex-col justify-between gap-5 items-center">
                 <div className="w-full flex flex-col items-center gap-4">
                   <div className="w-20 h-20 rounded-full bg-[var(--accent)]/15 border border-[var(--accent)]/30 mx-auto flex items-center justify-center">
                     <span className="text-2xl font-bold text-[var(--accent-light)]">{leader.title}</span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold leading-snug text-[var(--text-primary)]">{leader.role}</h3>
+                  <h3 className="text-xl font-bold leading-[1.3] min-h-[2.6em] text-[var(--text-primary)]">{leader.role}</h3>
                   <p className="text-sm font-semibold tracking-wider uppercase mb-1 text-[var(--accent-light)]">Revenue Orbit Marketing</p>
                   <p className="card-body text-center">{leader.desc}</p>
                 </div>

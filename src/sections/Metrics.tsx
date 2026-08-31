@@ -49,14 +49,14 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
 
 export default function Metrics() {
   return (
-    <section className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
-      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 text-center">
+    <section className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 text-center">
         {/* Section Header */}
         <div className="text-center mx-auto mb-14">
           <span className="mx-auto inline-block text-sm font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             PROVEN TRACK RECORD
           </span>
-          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.12] text-[var(--text-primary)] mb-5">
+          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl font-extrabold tracking-tight leading-[1.12] text-[var(--text-primary)] mb-5">
             We Measure What Truly Matters
           </h2>
           <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl text-[var(--text-secondary)] mb-4 leading-relaxed">
@@ -65,10 +65,10 @@ export default function Metrics() {
         </div>
 
         {/* Key Performance Stat Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full max-w-6xl mx-auto justify-center items-stretch mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full max-w-7xl mx-auto justify-center items-stretch mb-4">
           {primaryMetrics.map((m) => (
             <FadeIn key={m.label}>
-              <div className="p-8 lg:p-10 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-3 hover-lift h-full">
+              <div className="p-6 lg:p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-3 hover-lift h-full">
                 <p className="font-black text-[var(--accent)] mb-2 leading-[1.1]" style={{ fontSize: "clamp(2rem, 4.5vw, 3.25rem)" }}>
                   <Counter target={m.target} suffix={m.suffix} />
                 </p>
@@ -81,7 +81,7 @@ export default function Metrics() {
         </div>
 
         {/* Secondary Metrics Grid — same card framing as primary for a clean 3x2 matrix */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto w-full justify-center items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto w-full justify-center items-stretch">
           {secondaryMetrics.map((sm) => (
             <FadeIn key={sm}>
               <div className="p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-3 hover-lift h-full">

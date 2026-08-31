@@ -22,8 +22,8 @@ const nodes = [
 
 export default function TechEcosystem() {
   return (
-    <section className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
-      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 text-center">
+    <section className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 text-center">
         <SectionHeading
           badge="Tech &amp; AI Infrastructure"
           title="Technology Infrastructure Behind"
@@ -32,7 +32,7 @@ export default function TechEcosystem() {
         />
 
         <FadeIn>
-          <div className="relative p-8 lg:p-10 rounded-2xl glass border border-[var(--border-subtle)]">
+          <div className="relative p-6 lg:p-8 rounded-2xl glass border border-[var(--border-subtle)]">
             {/* Flow Grid — single horizontal pipeline with arrow connectors, scrollable when tight */}
             <div className="flex items-stretch justify-start lg:justify-between gap-2 overflow-x-auto pb-4 w-full">
               {nodes.map((node, i) => (

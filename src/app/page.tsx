@@ -1,4 +1,5 @@
 import Hero from "@/sections/Hero";
+import LifecycleBar from "@/sections/LifecycleBar";
 import ValueStatement from "@/sections/ValueStatement";
 import WhoWeAre from "@/sections/WhoWeAre";
 import WhatWeDo from "@/sections/WhatWeDo";
@@ -20,6 +21,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <LifecycleBar />
       <ValueStatement />
       <WhoWeAre />
       <WhatWeDo />

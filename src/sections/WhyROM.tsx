@@ -14,8 +14,8 @@ const reasons = [
 
 export default function WhyROM() {
   return (
-    <section id="why-rom" className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto">
-      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 text-center">
+    <section id="why-rom" className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto">
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 text-center">
         <SectionHeading
           badge="Why ROM"
           title="Why Businesses Choose"
@@ -23,10 +23,10 @@ export default function WhyROM() {
           subtitle="Six core reasons industry leaders trust ROM as their primary growth engine."
         />
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
           {reasons.map((r) => (
             <StaggerItem key={r.title}>
-              <div className="group p-8 lg:p-10 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full relative overflow-hidden flex flex-col gap-4 text-center items-center justify-between">
+              <div className="group p-6 lg:p-8 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full relative overflow-hidden flex flex-col gap-4 text-center items-center justify-between">
                 <div className="absolute top-4 right-4 text-5xl font-extrabold opacity-10 group-hover:opacity-20 transition-opacity z-0 pointer-events-none select-none" style={{ color: "var(--accent)" }}>
                   {r.num}
                 </div>
@@ -34,7 +34,7 @@ export default function WhyROM() {
                   <div className="w-14 h-14 rounded-lg bg-[var(--accent)]/15 border border-[var(--accent)]/20 flex items-center justify-center mb-1 group-hover:bg-[var(--accent)]/25 transition-colors">
                     <r.icon className="w-7 h-7 text-[var(--accent-light)]" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold leading-snug mb-1 text-[var(--text-primary)]">{r.title}</h3>
+                  <h3 className="text-xl font-bold leading-[1.3] min-h-[2.6em] mb-1 text-[var(--text-primary)]">{r.title}</h3>
                   <p className="card-body">{r.desc}</p>
                 </div>
               </div>

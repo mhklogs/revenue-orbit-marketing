@@ -22,13 +22,13 @@ export default function Industries() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="industries" className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
-      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-20 text-center">
+    <section id="industries" className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 text-center">
         <FadeIn>
           <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             Industries
           </span>
-          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
+          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
             Built for High-Growth{" "}
             <span className="gradient-text">U.S. Verticals</span>
           </h2>
@@ -58,7 +58,7 @@ export default function Industries() {
 
         {/* Display Panel */}
         <FadeIn delay={0.2}>
-          <div className="max-w-3xl mx-auto w-full p-8 sm:p-10 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-6">
+          <div className="max-w-3xl mx-auto w-full p-6 md:p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-6">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}

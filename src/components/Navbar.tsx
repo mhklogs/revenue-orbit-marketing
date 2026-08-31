@@ -24,10 +24,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header className="fixed top-0 left-0 right-0 z-[100]">
       {/* Announcement Bar */}
       <div className="announcement-bar bg-[var(--dark)]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between gap-4">
           <p className="text-[13px] sm:text-sm text-white/70 truncate">
             One Growth Partner. Marketing, Sales, Outsourcing &amp; AI.
           </p>
@@ -45,7 +45,7 @@ export default function Navbar() {
             : "bg-white/80 backdrop-blur-md border-b border-[var(--border-subtle)]"
         }`}
       >
-        <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <a href="#" className="flex items-center gap-3 group">

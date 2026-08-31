@@ -24,7 +24,7 @@ export default function Hero() {
       </div>
 
       {/* Centered hero content */}
-      <div className="relative w-full max-w-6xl mx-auto px-6 lg:px-8 pt-40 lg:pt-44 pb-20 text-center">
+      <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-8 pt-40 lg:pt-44 pb-20 text-center">
         <FadeIn>
           <span className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-8">
             Growth &amp; Technology Partner

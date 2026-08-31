@@ -29,13 +29,13 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section id="case-studies" className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto">
-      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-20 text-center">
+    <section id="case-studies" className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto">
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 text-center">
         <FadeIn>
           <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             Case Studies
           </span>
-          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
+          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
             Growth Partner Results You Can{" "}
             <span className="gradient-text">Measure</span>
           </h2>
@@ -44,13 +44,13 @@ export default function CaseStudies() {
           </p>
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
           {caseStudies.map((c) => (
             <StaggerItem key={c.client}>
-              <div className="p-8 lg:p-10 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-between gap-6 h-full hover-lift">
+              <div className="p-6 lg:p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-between gap-6 h-full hover-lift">
                 <div className="w-full flex flex-col items-center gap-5">
                   {/* Client Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold leading-snug text-[var(--text-primary)]">{c.client}</h3>
+                  <h3 className="text-xl font-bold leading-[1.3] min-h-[2.6em] text-[var(--text-primary)]">{c.client}</h3>
                   <span className="text-sm sm:text-base font-semibold tracking-wider px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] inline-block">
                     {c.industry}
                   </span>

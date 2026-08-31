@@ -57,12 +57,12 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative py-20 md:py-32" style={{ backgroundColor: "var(--bg-secondary)" }}>
+    <footer className="relative py-16 md:py-24" style={{ backgroundColor: "var(--bg-secondary)" }}>
       {/* Top Border */}
       <div className="h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent mb-12" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 lg:gap-12 mb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 md:gap-6 lg:gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">

@@ -20,14 +20,14 @@ export default function WhatWeDo() {
   return (
     <section id="services" className="relative w-full flex flex-col items-center justify-center mx-auto">
       {/* Header Container */}
-      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-20 text-center">
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 text-center">
         <FadeIn>
           <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             What We Do
           </span>
 
           {/* Main Title */}
-          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
+          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
             Multiple Solutions. One Growth <span className="gradient-text">Ecosystem.</span>
           </h2>
 
@@ -38,11 +38,11 @@ export default function WhatWeDo() {
         </FadeIn>
 
         {/* Grid Layout */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
           {services.map((s) => (
             <StaggerItem key={s.title}>
               {/* Card Container */}
-              <div className="p-8 lg:p-10 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-between h-full hover:border-[var(--accent)]/50 transition-all hover-lift">
+              <div className="p-6 lg:p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-between h-full hover:border-[var(--accent)]/50 transition-all hover-lift">
                 <div className="flex flex-col items-center w-full gap-5">
                   {/* Badge / Number */}
                   <span className="mx-auto text-sm sm:text-base font-semibold tracking-wider font-mono text-[var(--accent)] px-3 py-1 bg-[var(--accent)]/10 rounded-lg inline-block">
@@ -54,7 +54,7 @@ export default function WhatWeDo() {
                   </div>
 
                   {/* Card Heading */}
-                  <h3 className="text-xl sm:text-2xl font-bold leading-snug text-[var(--text-primary)]">{s.title}</h3>
+                  <h3 className="text-xl font-bold leading-[1.3] min-h-[2.6em] text-[var(--text-primary)]">{s.title}</h3>
 
                   {/* Card Body Text */}
                   <p className="card-body text-center flex-grow">

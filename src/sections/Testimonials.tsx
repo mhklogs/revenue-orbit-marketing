@@ -33,8 +33,8 @@ export default function Testimonials() {
   const [current, setCurrent] = useState(0);
 
   return (
-    <section className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto">
-      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 text-center">
+    <section className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto">
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 text-center">
         <SectionHeading
           badge="Client Endorsements"
           title="What Our Business Partners"
@@ -44,7 +44,7 @@ export default function Testimonials() {
 
         <FadeIn>
           <div className="relative max-w-4xl mx-auto">
-            <div className="p-8 lg:p-12 rounded-2xl glass text-center border border-[var(--border-subtle)]">
+            <div className="p-6 lg:p-8 rounded-2xl glass text-center border border-[var(--border-subtle)]">
               <div className="flex justify-center gap-1 mb-6 text-amber-400">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 fill-amber-400" />
@@ -64,7 +64,7 @@ export default function Testimonials() {
                   <p className="text-lg lg:text-xl leading-relaxed italic mb-8 text-[var(--text-secondary)]">
                     &ldquo;{testimonials[current].text}&rdquo;
                   </p>
-                  <h3 className="text-xl sm:text-2xl font-bold leading-snug text-[var(--text-primary)]">{testimonials[current].name}</h3>
+                  <h3 className="text-xl font-bold leading-[1.3] min-h-[2.6em] text-[var(--text-primary)]">{testimonials[current].name}</h3>
                   <p className="text-base sm:text-lg font-medium text-[var(--accent)] mt-1">{testimonials[current].position}, {testimonials[current].company}</p>
                   <span className="inline-block mt-4 px-4 py-1.5 rounded-full text-sm sm:text-base font-semibold tracking-wider uppercase bg-[var(--bg-elevated)] border border-[var(--border-subtle)] text-[var(--text-secondary)]">
                     {testimonials[current].industry}

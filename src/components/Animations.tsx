@@ -42,18 +42,18 @@ export function SectionHeading({ badge, title, highlight, subtitle }: {
   subtitle?: string;
 }) {
   return (
-    <div className="text-center mx-auto w-full max-w-6xl mb-14">
+    <div className="text-center mx-auto w-full max-w-7xl mb-14">
       {badge && (
         <span className="mx-auto inline-block text-sm font-semibold uppercase tracking-[0.12em] text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
           {badge}
         </span>
       )}
-      <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.12] mb-5 text-[var(--text-primary)]">
+      <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl font-extrabold tracking-tight leading-[1.25] mb-5 text-[var(--text-primary)]">
         {title}{" "}
         {highlight && <span className="gradient-text">{highlight}</span>}
       </h2>
       {subtitle && (
-        <p className="text-center mx-auto max-w-3xl text-lg lg:text-xl leading-relaxed text-[var(--text-secondary)] mb-4">
+        <p className="text-center mx-auto max-w-3xl text-lg leading-relaxed text-[var(--text-secondary)] mb-4">
           {subtitle}
         </p>
       )}
