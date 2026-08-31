@@ -23,7 +23,10 @@ export const metadata: Metadata = {
   description:
     "Revenue Orbit Marketing helps businesses generate customers, accelerate revenue, streamline operations and scale through marketing, sales, outsourcing, AI and automation.",
   icons: {
-    icon: "/rom-logo.png",
+    icon: [
+      { url: "/rom-icon.svg", type: "image/svg+xml" },
+      { url: "/rom-logo.png", type: "image/png" },
+    ],
     apple: "/rom-logo.png",
   },
   keywords: [

@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import { useRef, useState } from "react";
 import { ArrowRight, Calendar } from "lucide-react";
 import { FadeIn } from "@/components/Animations";
 import Aurora from "@/components/reactbits/Aurora";
@@ -13,20 +11,6 @@ const ticker = [
 ];
 
 export default function Hero() {
-  const orbitRef = useRef<HTMLDivElement>(null);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    const el = orbitRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const px = (e.clientX - rect.left) / rect.width - 0.5;
-    const py = (e.clientY - rect.top) / rect.height - 0.5;
-    setTilt({ x: py * -14, y: px * 14 });
-  };
-
-  const handleMouseLeave = () => setTilt({ x: 0, y: 0 });
-
   return (
     <section className="relative w-full flex flex-col items-center overflow-hidden bg-[var(--bg-primary)]">
       {/* ReactBits Aurora cinematic background */}
@@ -38,6 +22,22 @@ export default function Hero() {
       />
       {/* Soft glow overlay for depth */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--bg-primary)_78%)] z-[1]" />
+
+      {/* Giant faded ROM watermark in the background */}
+      <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none select-none overflow-hidden">
+        <span
+          aria-hidden="true"
+          className="font-[family-name:var(--font-display)] font-black tracking-[0.08em] leading-none whitespace-nowrap"
+          style={{
+            fontSize: "clamp(16rem, 40vw, 38rem)",
+            color: "var(--accent)",
+            opacity: 0.06,
+            lineHeight: 1,
+          }}
+        >
+          ROM
+        </span>
+      </div>
 
       {/* Centered hero content */}
       <div className="relative z-[2] w-full max-w-7xl mx-auto px-6 lg:px-8 pt-40 lg:pt-44 pb-20 text-center">
@@ -71,73 +71,6 @@ export default function Hero() {
             <a href="#contact-form" className="btn-outline">
               <Calendar className="w-5 h-5 text-[var(--accent)]" /> SCHEDULE A CONSULTATION
             </a>
-          </div>
-        </FadeIn>
-
-        {/* Round orbit with circulating terms — interactive 3D tilt */}
-        <FadeIn delay={0.4}>
-          <div
-            style={{ perspective: "1200px" }}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            className="relative aspect-square w-full max-w-[500px] mx-auto my-14 select-none"
-          >
-            <div
-              ref={orbitRef}
-              style={{
-                transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-                transformStyle: "preserve-3d",
-                transition: "transform 0.18s ease-out",
-                position: "absolute",
-                inset: 0,
-              }}
-            >
-              {/* Center logo — no dark/black circle */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[38%] aspect-square z-10">
-                <Image
-                  src="/rom-logo.png"
-                  alt="Revenue Orbit Marketing logo"
-                  fill
-                  sizes="190px"
-                  className="object-contain drop-shadow-[0_10px_30px_rgba(46,196,176,0.35)]"
-                  priority
-                />
-              </div>
-
-              {/* Rotating orbit rings with circulating terms */}
-              {[
-                { items: ["Marketing", "Leads", "Sales", "AI", "Automation", "BPO"], radius: 46, dur: 28, rev: false },
-                { items: ["Real Estate", "Insurance", "Legal", "Finance", "SaaS", "Health"], radius: 38, dur: 22, rev: true },
-              ].map((ring) => (
-                <div
-                  key={ring.radius}
-                  className="absolute left-1/2 top-1/2"
-                  style={{
-                    width: `${ring.radius}%`,
-                    height: `${ring.radius}%`,
-                    animation: `${ring.rev ? "orbitSpinReverse" : "orbitSpin"} ${ring.dur}s linear infinite`,
-                  }}
-                >
-                  {ring.items.map((term, i) => {
-                    const angle = (i / ring.items.length) * 360;
-                    return (
-                      <div
-                        key={term}
-                        className="absolute left-1/2 top-1/2"
-                        style={{ transform: `translate(-50%, -50%) rotate(${angle}deg) translateY(${ring.radius / 2}% )` }}
-                      >
-                        <span
-                          className="inline-block px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap shadow-sm"
-                          style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--accent)", color: "var(--accent)" }}
-                        >
-                          {term}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-              ))}
-            </div>
           </div>
         </FadeIn>
       </div>
