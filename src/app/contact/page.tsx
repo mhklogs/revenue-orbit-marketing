@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import { FadeIn, StaggerContainer, StaggerItem, SectionHeading } from "@/components/Animations";
-import { Phone, Mail, MapPin, Clock, ShieldCheck } from "lucide-react";
+import { Phone, Mail, MapPin, ShieldCheck } from "lucide-react";
 import ContactForm from "@/sections/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact | Revenue Orbit Marketing",
-  description: "Schedule an executive growth consultation with Revenue Orbit Marketing. Call +1 (323) 306-8266 or request a scoped blueprint.",
+  description: "Schedule an executive growth consultation with Revenue Orbit Marketing. Call +1 (713) 919-7830 or request a scoped blueprint.",
 };
 
 const contactChannels = [
-  { icon: Phone, title: "US Client Desk", value: "+1 (323) 306-8266", href: "tel:+13233068266" },
-  { icon: Mail, title: "Email", value: "contact@revenueorbitmarketing.com", href: "mailto:contact@revenueorbitmarketing.com" },
-  { icon: Clock, title: "Response SLA", value: "Within 24 hours", href: undefined },
+  { icon: Phone, title: "US Client Desk", value: "+1 (713) 919-7830", href: "tel:+17139197830" },
+  { icon: Mail, title: "Email", value: "Info@revenueorbitmarketing.com", href: "mailto:Info@revenueorbitmarketing.com" },
+  { icon: MapPin, title: "Office", value: "17350 State Hwy 249, Ste 220 #37550, Houston, TX 77064", href: undefined },
 ];
 
 export default function ContactPage() {

@@ -138,7 +138,7 @@ export default function ContactForm() {
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
                     className={inputClass}
-                    placeholder="+1 (323) 000-0000"
+                    placeholder="+1 (713) 000-0000"
                   />
                 </div>
 

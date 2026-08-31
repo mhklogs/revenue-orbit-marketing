@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { MessageCircle, Phone, Mail, ArrowRight, Calendar } from "lucide-react";
+import { MessageCircle, Phone, Mail, MapPin, ArrowRight, Calendar } from "lucide-react";
 import { services, industries } from "@/lib/data";
 
 const company = [
@@ -132,13 +132,17 @@ export default function Footer() {
       {/* Contact Details Bar */}
       <div className="border-t border-[var(--border-subtle)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-          <a href="tel:+13233068266" className="inline-flex items-center gap-2 text-sm font-semibold hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-secondary)" }}>
-            <Phone className="w-4 h-4 text-[var(--accent)]" /> US Client Desk: +1 (323) 306-8266
+          <a href="tel:+17139197830" className="inline-flex items-center gap-2 text-sm font-semibold hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-secondary)" }}>
+            <Phone className="w-4 h-4 text-[var(--accent)]" /> US Client Desk: +1 (713) 919-7830
           </a>
           <span className="hidden sm:block w-px h-5 bg-[var(--border-subtle)]" />
-          <a href="mailto:contact@revenueorbitmarketing.com" className="inline-flex items-center gap-2 text-sm font-semibold hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-secondary)" }}>
-            <Mail className="w-4 h-4 text-[var(--accent)]" /> contact@revenueorbitmarketing.com
+          <a href="mailto:Info@revenueorbitmarketing.com" className="inline-flex items-center gap-2 text-sm font-semibold hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-secondary)" }}>
+            <Mail className="w-4 h-4 text-[var(--accent)]" /> Info@revenueorbitmarketing.com
           </a>
+          <span className="hidden sm:block w-px h-5 bg-[var(--border-subtle)]" />
+          <span className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "var(--text-secondary)" }}>
+            <MapPin className="w-4 h-4 text-[var(--accent)]" /> 17350 State Hwy 249, Ste 220 #37550, Houston, TX 77064
+          </span>
         </div>
       </div>
 
@@ -146,7 +150,7 @@ export default function Footer() {
       <div className="border-t border-[var(--border-subtle)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm leading-normal" style={{ color: "var(--text-muted)" }}>
-            © 2026 Revenue Orbit Marketing. All rights reserved.
+            © 2026 Revenue Orbit Marketing LLC. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <Link href="#" className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-muted)" }}>Terms &amp; Conditions</Link>
