@@ -42,7 +42,7 @@ export default function Team() {
         </FadeIn>
 
         {/* Leader Grid */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
           {leaders.map((leader) => (
             <StaggerItem key={leader.title}>
 <TiltCard className="h-full rounded-2xl">

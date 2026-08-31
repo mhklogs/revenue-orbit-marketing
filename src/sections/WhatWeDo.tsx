@@ -39,7 +39,7 @@ export default function WhatWeDo() {
         </FadeIn>
 
         {/* Grid Layout */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
           {services.map((s) => (
             <StaggerItem key={s.title}>
               {/* Card Container */}

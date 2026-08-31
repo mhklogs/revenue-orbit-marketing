@@ -153,13 +153,14 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Floating Action Button */}
+      {/* Floating WhatsApp Button (stacked above chat launcher) */}
       <a
         href="#"
-        className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all hover:scale-105"
+        className="fixed bottom-24 right-6 z-[150] w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-105"
+        style={{ backgroundColor: "var(--accent)", boxShadow: "0 8px 24px rgba(0,0,0,0.28)" }}
         aria-label="Chat on WhatsApp"
       >
-        <MessageCircle className="w-6 h-6 text-[var(--text-primary)]" />
+        <MessageCircle className="w-6 h-6 text-white" />
       </a>
     </footer>
   );

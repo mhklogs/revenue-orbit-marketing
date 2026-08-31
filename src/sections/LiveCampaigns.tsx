@@ -26,7 +26,7 @@ export default function LiveCampaigns() {
           subtitle="Battle-tested operational programs actively delivering results across target U.S. verticals today."
         />
 
-        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-4 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
           {campaigns.map((c) => (
             <StaggerItem key={c.title}>
 <TiltCard className="h-full rounded-2xl">

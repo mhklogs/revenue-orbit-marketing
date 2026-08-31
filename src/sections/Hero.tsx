@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, Calendar } from "lucide-react";
 import { FadeIn } from "@/components/Animations";
@@ -54,17 +53,47 @@ export default function Hero() {
           </div>
         </FadeIn>
 
-        {/* Approved logo showcase */}
+        {/* Round orbit with circulating terms around the logo */}
         <FadeIn delay={0.4}>
-          <div className="relative aspect-square w-full max-w-[460px] mx-auto my-14">
-            <div className="absolute inset-0 rounded-full bg-[var(--accent)]/5 blur-2xl" />
-            <motion.div
-              className="relative w-full h-full rounded-full overflow-hidden border border-[var(--border-subtle)] shadow-[0_30px_80px_rgba(26,26,26,0.18)]"
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <Image src="/rom-logo.png" alt="Revenue Orbit Marketing logo" fill sizes="460px" className="object-cover" priority />
-            </motion.div>
+          <div className="relative aspect-square w-full max-w-[480px] mx-auto my-14 select-none">
+            {/* Center logo */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[38%] aspect-square rounded-full overflow-hidden border border-[var(--border-subtle)] shadow-[0_20px_60px_rgba(0,0,0,0.22)] z-10">
+              <Image src="/rom-logo.png" alt="Revenue Orbit Marketing logo" fill sizes="180px" className="object-cover" priority />
+            </div>
+
+            {/* Rotating orbit rings with circulating terms */}
+            {[
+              { items: ["Marketing", "Leads", "Sales", "AI", "Automation", "BPO"], radius: 46, dur: 28, rev: false },
+              { items: ["Real Estate", "Insurance", "Legal", "Finance", "SaaS", "Health"], radius: 38, dur: 22, rev: true },
+            ].map((ring) => (
+              <div
+                key={ring.radius}
+                className="absolute left-1/2 top-1/2"
+                style={{
+                  width: `${ring.radius}%`,
+                  height: `${ring.radius}%`,
+                  animation: `${ring.rev ? "orbitSpinReverse" : "orbitSpin"} ${ring.dur}s linear infinite`,
+                }}
+              >
+                {ring.items.map((term, i) => {
+                  const angle = (i / ring.items.length) * 360;
+                  return (
+                    <div
+                      key={term}
+                      className="absolute left-1/2 top-1/2"
+                      style={{ transform: `translate(-50%, -50%) rotate(${angle}deg) translateY(${ring.radius / 2}% )` }}
+                    >
+                      <span
+                        className="inline-block px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap shadow-sm"
+                        style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--accent)", color: "var(--accent)" }}
+                      >
+                        {term}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
           </div>
         </FadeIn>
       </div>

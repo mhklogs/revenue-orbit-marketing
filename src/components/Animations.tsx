@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { Children, cloneElement, useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 export function FadeIn({ children, className = "", delay = 0, direction = "up" }: {
   children: React.ReactNode;
@@ -24,15 +25,68 @@ export function FadeIn({ children, className = "", delay = 0, direction = "up" }
 }
 
 export function CountUp({ target, suffix = "" }: { target: number; suffix?: string }) {
-  return <span>{target === 0 ? "—" : `${target.toLocaleString()}${suffix}`}</span>;
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+
+  useEffect(() => {
+    if (!inView || target === 0) return;
+    const duration = 1800;
+    const steps = 50;
+    const increment = target / steps;
+    let current = 0;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, duration / steps);
+    return () => clearInterval(timer);
+  }, [inView, target]);
+
+  return <span ref={ref}>{target === 0 || count === 0 ? "0" : `${count.toLocaleString()}${suffix}`}</span>;
 }
 
 export function StaggerContainer({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`w-full mx-auto justify-center items-stretch ${className}`}>{children}</div>;
+  return (
+    <motion.div
+      className={`w-full mx-auto justify-center items-stretch ${className}`}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-70px" }}
+      variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } } }}
+    >
+      {Children.map(children, (child, i) =>
+        cloneElement(child as React.ReactElement<{ index?: number }>, { index: i })
+      )}
+    </motion.div>
+  );
 }
 
-export function StaggerItem({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`w-full h-full ${className}`}>{children}</div>;
+export function StaggerItem({ children, className = "", index = 0 }: {
+  children: React.ReactNode;
+  className?: string;
+  index?: number;
+}) {
+  const fromLeft = index % 2 === 0;
+  return (
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, x: fromLeft ? -80 : 80 },
+        visible: {
+          opacity: 1,
+          x: 0,
+          transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+        },
+      }}
+      className={`w-full h-full ${className}`}
+    >
+      {children}
+    </motion.div>
+  );
 }
 
 export function SectionHeading({ badge, title, highlight, subtitle }: {

@@ -7,9 +7,9 @@
   --color-marine: #1A1A1A;
   --color-marine-light: #2A2A2A;
   --color-marine-dark: #111111;
-  --color-blue: #D4AF37;
-  --color-blue-light: #E3C668;
-  --color-blue-dark: #B8962E;
+  --color-blue: #1F9E8F;
+  --color-blue-light: #54C8B6;
+  --color-blue-dark: #137B6D;
   --color-white: #ffffff;
   --color-cream: #F9F8F6;
   --color-ink: #1A1A1A;
@@ -26,10 +26,10 @@
   --text-primary: #1A1A1A;
   --text-secondary: #57534E;
   --text-muted: #8A8578;
-  --accent: #D4AF37;
-  --accent-light: #E3C668;
-  --accent-dark: #B8962E;
-  --accent-soft: rgba(212, 175, 55, 0.12);
+  --accent: #1F9E8F;
+  --accent-light: #54C8B6;
+  --accent-dark: #137B6D;
+  --accent-soft: rgba(31, 158, 143, 0.12);
   --dark: #1A1A1A;
   --border-subtle: #E5E0D6;
 }
@@ -43,12 +43,29 @@
   --text-primary: #1A1A1A;
   --text-secondary: #57534E;
   --text-muted: #8A8578;
-  --accent: #D4AF37;
-  --accent-light: #E3C668;
-  --accent-dark: #B8962E;
-  --accent-soft: rgba(212, 175, 55, 0.12);
+  --accent: #1F9E8F;
+  --accent-light: #54C8B6;
+  --accent-dark: #137B6D;
+  --accent-soft: rgba(31, 158, 143, 0.12);
   --dark: #1A1A1A;
   --border-subtle: #E5E0D6;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0B1210;
+  --bg-secondary: #0F1715;
+  --bg-card: #15201D;
+  --bg-elevated: #1A2623;
+  --bg-header: #0B1210;
+  --text-primary: #F3F6F5;
+  --text-secondary: #C3CFCB;
+  --text-muted: #8A9893;
+  --accent: #2EC4B0;
+  --accent-light: #5BD9C8;
+  --accent-dark: #1FA08F;
+  --accent-soft: rgba(46, 196, 176, 0.14);
+  --dark: #0B1210;
+  --border-subtle: #26332F;
 }
 
 /* Box-sizing (Tailwind v4 preflight already resets margins/padding inside its
@@ -176,6 +193,16 @@ ul li::marker, ol li::marker {
   to { transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg); }
 }
 
+/* Rotating ring for the hero orbit */
+@keyframes orbitSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes orbitSpinReverse {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
 /* Card Containers */
 .glass {
   background: var(--bg-card);
@@ -262,7 +289,7 @@ ul li::marker, ol li::marker {
   gap: 0.5rem;
   border-radius: 9999px;
   border: 1px solid var(--border-subtle);
-  background: #ffffff;
+  background: var(--bg-card);
   color: var(--text-primary);
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
@@ -280,7 +307,7 @@ ul li::marker, ol li::marker {
 }
 .announce-link {
   font-weight: 600;
-  color: #D4AF37;
+  color: var(--accent);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -288,7 +315,7 @@ ul li::marker, ol li::marker {
   transition: color 0.2s ease;
 }
 .announce-link:hover {
-  color: #B8962E;
+  color: var(--accent-dark);
 }
 
 /* Form Input Control Standards */
@@ -307,7 +334,7 @@ ul li::marker, ol li::marker {
   padding-right: 1rem;
   font-size: 0.875rem;
   border-radius: 0.75rem;
-  background: #ffffff;
+  background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   color: var(--text-primary);
   transition: border-color 0.2s ease;
@@ -323,7 +350,7 @@ ul li::marker, ol li::marker {
   padding: 0.875rem;
   font-size: 0.875rem;
   border-radius: 0.75rem;
-  background: #ffffff;
+  background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   color: var(--text-primary);
   transition: border-color 0.2s ease;

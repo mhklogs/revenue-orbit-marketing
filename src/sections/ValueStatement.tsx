@@ -32,7 +32,7 @@ export default function ValueStatement() {
           </p>
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-4 gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
           {engines.map((e) => (
             <StaggerItem key={e.title}>
 <TiltCard className="h-full rounded-2xl">
