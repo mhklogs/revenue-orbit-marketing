@@ -1,42 +1,25 @@
 "use client";
 
-import { MessageCircle } from "lucide-react";
+import Link from "next/link";
+import { MessageCircle, Phone, Mail, ArrowRight, Calendar } from "lucide-react";
+import { services, industries } from "@/lib/data";
 
-const footerLinks = {
-  company: [
-    { label: "Home", href: "#" },
-    { label: "About", href: "#about" },
-    { label: "Why ROM", href: "#why-rom" },
-    { label: "Our Team", href: "#team" },
-    { label: "Careers", href: "/careers" },
-    { label: "Contact", href: "#contact-form" },
-  ],
-  services: [
-    { label: "Customer Acquisition", href: "#services" },
-    { label: "BPO Solutions", href: "#services" },
-    { label: "Contact Center", href: "#services" },
-    { label: "Digital Marketing", href: "#services" },
-    { label: "Real Estate Marketing", href: "#services" },
-    { label: "AI & Automation", href: "#services" },
-    { label: "Remote Workforce", href: "#services" },
-    { label: "CRM & Automation", href: "#services" },
-  ],
-  industries: [
-    { label: "Legal", href: "#industries" },
-    { label: "Insurance", href: "#industries" },
-    { label: "Real Estate", href: "#industries" },
-    { label: "Home Services", href: "#industries" },
-    { label: "Automotive", href: "#industries" },
-    { label: "Financial Services", href: "#industries" },
-    { label: "Tax Services", href: "#industries" },
-    { label: "Healthcare", href: "#industries" },
-  ],
-  resources: [
-    { label: "Blog", href: "/blog" },
-    { label: "Case Studies", href: "#case-studies" },
-    { label: "FAQ", href: "#faq" },
-  ],
-};
+const company = [
+  { label: "About Us", href: "/about" },
+  { label: "Leadership", href: "/about#leadership" },
+  { label: "Why Choose Us", href: "/about#why" },
+  { label: "Our Process", href: "/about#process" },
+  { label: "Our Team", href: "/about#team" },
+  { label: "Careers", href: "/careers" },
+];
+
+const resources = [
+  { label: "Blog", href: "/blog" },
+  { label: "Case Studies", href: "/campaigns" },
+  { label: "Campaigns", href: "/campaigns" },
+  { label: "FAQ", href: "/contact" },
+  { label: "Contact", href: "/contact" },
+];
 
 const SocialIcon = ({ type }: { type: string }) => {
   const icons: Record<string, React.ReactElement> = {
@@ -57,15 +40,30 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative py-16 md:py-24" style={{ backgroundColor: "var(--bg-secondary)" }}>
-      {/* Top Border */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent mb-12" />
+    <footer className="relative" style={{ backgroundColor: "var(--bg-secondary)" }}>
+      {/* Top CTA Banner */}
+      <div className="relative overflow-hidden border-t border-[var(--border-subtle)]">
+        <div className="h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" />
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 md:py-16 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[var(--text-primary)] mb-3">
+            Rather talk than <span className="gradient-text">read?</span>
+          </h2>
+          <p className="card-body max-w-xl mx-auto mb-8 text-[var(--text-secondary)]">
+            Our US client desk is standing by. Speak with a growth partner directly about your goals.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/contact" className="btn-primary">Schedule a consultation <Calendar className="w-4 h-4" /></Link>
+            <Link href="/services" className="btn-outline">Explore services <ArrowRight className="w-4 h-4 text-[var(--accent)]" /></Link>
+          </div>
+        </div>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 md:gap-6 lg:gap-10 mb-12">
+      {/* Footer Grid */}
+      <div className="py-12 md:py-16 border-t border-[var(--border-subtle)]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-10">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
               <div className="relative w-10 h-10">
                 <div className="absolute inset-0 rounded-full border-2 border-[var(--accent)] opacity-40" />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -73,31 +71,19 @@ export default function Footer() {
                 </div>
               </div>
               <div>
-                <p className="text-sm font-bold tracking-wider" style={{ color: "var(--text-primary)" }}>
-                  REVENUE ORBIT
-                </p>
-                <p className="text-xs font-semibold tracking-widest text-[var(--accent-light)]">
-                  MARKETING
-                </p>
+                <p className="text-sm font-bold tracking-wider" style={{ color: "var(--text-primary)" }}>REVENUE ORBIT</p>
+                <p className="text-xs font-semibold tracking-widest text-[var(--accent-light)]">MARKETING</p>
               </div>
-            </div>
+            </Link>
             <p className="text-sm leading-normal" style={{ color: "var(--text-secondary)" }}>
-              Revenue Orbit Marketing is a growth and technology partner helping businesses
-              generate customers, accelerate revenue, streamline operations and scale through
-              marketing, sales, outsourcing, AI and automation.
+              Revenue Orbit Marketing is a growth and technology partner helping businesses generate customers, accelerate revenue, streamline operations and scale through marketing, sales, outsourcing, AI and automation.
             </p>
             <p className="text-sm font-semibold italic text-[var(--accent-light)]">
               &ldquo;You Bring the Vision. We Make It Happen.&rdquo;
             </p>
             <div className="flex gap-3 pt-2">
               {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  aria-label={s.label}
-                  className="w-9 h-9 rounded-lg flex items-center justify-center border border-[var(--accent)]/20 hover:bg-[var(--accent)] hover:text-white transition-all"
-                  style={{ color: "var(--text-secondary)" }}
-                >
+                <a key={s.label} href={s.href} aria-label={s.label} className="w-9 h-9 rounded-lg flex items-center justify-center border border-[var(--accent)]/20 hover:bg-[var(--accent)] hover:text-white transition-all" style={{ color: "var(--text-secondary)" }}>
                   <SocialIcon type={s.type} />
                 </a>
               ))}
@@ -105,61 +91,73 @@ export default function Footer() {
           </div>
 
           {/* Link Columns */}
-          {[
-            { title: "Company", links: footerLinks.company },
-            { title: "Services", links: footerLinks.services },
-            { title: "Industries", links: footerLinks.industries },
-            { title: "Resources", links: footerLinks.resources },
-          ].map((col) => (
-            <div key={col.title}>
-              <h3 className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "var(--text-primary)" }}>
-                {col.title}
-              </h3>
-              <ul className="space-y-3">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors"
-                      style={{ color: "var(--text-secondary)" }}
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+          <div>
+            <h3 className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "var(--text-primary)" }}>Company</h3>
+            <ul className="space-y-3">
+              {company.map((l) => (
+                <li key={l.label}><Link href={l.href} className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-secondary)" }}>{l.label}</Link></li>
+              ))}
+            </ul>
+          </div>
 
-        {/* Contact Bar */}
-        <div className="flex flex-wrap gap-6 py-6 border-y border-[var(--border-subtle)] mb-8">
-          <a href="tel:+13233068266" className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-secondary)" }}>
-            +1 (323) 306-8266
-          </a>
-          <a href="mailto:contact@revenueorbitmarketing.com" className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-secondary)" }}>
-            contact@revenueorbitmarketing.com
-          </a>
-        </div>
+          <div>
+            <h3 className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "var(--text-primary)" }}>What We Do</h3>
+            <ul className="space-y-3">
+              {services.map((s) => (
+                <li key={s.slug}><Link href={`/services/${s.slug}`} className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-secondary)" }}>{s.title}</Link></li>
+              ))}
+            </ul>
+          </div>
 
-        {/* Bottom */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm leading-normal" style={{ color: "var(--text-muted)" }}>
-            &copy; {new Date().getFullYear()} Revenue Orbit Marketing. All rights reserved.
-          </p>
-          <p className="text-sm leading-normal" style={{ color: "var(--text-muted)" }}>
-            You Bring the Vision. We Make It Happen.
-          </p>
+          <div>
+            <h3 className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "var(--text-primary)" }}>Industries</h3>
+            <ul className="space-y-3">
+              {industries.map((ind) => (
+                <li key={ind.slug}><Link href={`/industries#${ind.slug}`} className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-secondary)" }}>{ind.title}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "var(--text-primary)" }}>Resources</h3>
+            <ul className="space-y-3">
+              {resources.map((l) => (
+                <li key={l.label}><Link href={l.href} className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-secondary)" }}>{l.label}</Link></li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
-      {/* Floating WhatsApp Button (stacked above chat launcher) */}
-      <a
-        href="#"
-        className="fixed bottom-24 right-6 z-[150] w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-105"
-        style={{ backgroundColor: "var(--accent)", boxShadow: "0 8px 24px rgba(0,0,0,0.28)" }}
-        aria-label="Chat on WhatsApp"
-      >
+      {/* Contact Details Bar */}
+      <div className="border-t border-[var(--border-subtle)]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          <a href="tel:+13233068266" className="inline-flex items-center gap-2 text-sm font-semibold hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-secondary)" }}>
+            <Phone className="w-4 h-4 text-[var(--accent)]" /> US Client Desk: +1 (323) 306-8266
+          </a>
+          <span className="hidden sm:block w-px h-5 bg-[var(--border-subtle)]" />
+          <a href="mailto:contact@revenueorbitmarketing.com" className="inline-flex items-center gap-2 text-sm font-semibold hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-secondary)" }}>
+            <Mail className="w-4 h-4 text-[var(--accent)]" /> contact@revenueorbitmarketing.com
+          </a>
+        </div>
+      </div>
+
+      {/* Legal Bar */}
+      <div className="border-t border-[var(--border-subtle)]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm leading-normal" style={{ color: "var(--text-muted)" }}>
+            © 2026 Revenue Orbit Marketing. All rights reserved.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            <Link href="#" className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-muted)" }}>Terms &amp; Conditions</Link>
+            <Link href="#" className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-muted)" }}>Privacy Policy</Link>
+            <Link href="#" className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-muted)" }}>Cookie Policy</Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Floating WhatsApp Button */}
+      <a href="#" className="fixed bottom-24 right-6 z-[150] w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-105" style={{ backgroundColor: "var(--accent)", boxShadow: "0 8px 24px rgba(0,0,0,0.28)" }} aria-label="Chat on WhatsApp">
         <MessageCircle className="w-6 h-6 text-white" />
       </a>
     </footer>

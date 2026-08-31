@@ -7,23 +7,28 @@ operations, and scale through marketing, sales, outsourcing, AI, and automation.
 Built with **Next.js 16** (App Router), **React 19**, **Tailwind CSS v4** and
 **Framer Motion**.
 
-## Sections
+## Multi-Page Structure
 
-- Hero — Growth & Technology Partner
-- Value Statement / Growth Lifecycle
-- Who We Are — Mission, Vision & Operational Variables
-- What We Do — 8 core solutions
-- Industries — 10 core verticals with deep-dive panels
-- Why ROM — value proposition grid
-- How We Work — 6-stage execution timeline
-- Growth Model — ATTRACT / ENGAGE / CONVERT / SCALE
-- Tech Ecosystem — infrastructure & data flow
-- Live Campaigns & Metrics — proven track record
-- Case Studies
-- Leadership / Team
-- Testimonials
-- FAQ
-- Consultation lead form (POST `/api/contact`) & final CTA
+| Route | Page |
+| --- | --- |
+| `/` | Home — Growth Ecosystem overview (Hero, Solution Grid, ROI Metrics, Testimonials, Blueprint Form) |
+| `/about` | About Us — narrative, operational variables, mission/vision, process, values, compliance/SLA, leadership, team |
+| `/services` | All Services Overview |
+| `/services/[slug]` | Individual Service Pages (6 core service lines) |
+| `/industries` | Industries Directory (7 verticals with compliance breakdowns) |
+| `/campaigns` | Active Campaigns & Results (metrics, live programs, case studies) |
+| `/blog` | Resources & Insights |
+| `/contact` | Executive Consultation (form, contact info, SLA intake guarantee) |
+| `/careers` | Careers |
+
+## Features
+
+- **Mega-menu navigation** — hover dropdowns for About, Services and Industries,
+  plus a top banner notice bar
+- **Dark / light theme** toggle
+- **Gemini chatbot** assistant (powered by the `/api/chat` route)
+- **Multi-tier footer** with CTA banner, link columns, contact details and legal bar
+- **Consultation lead form** (POST `/api/contact`)
 
 ## Getting Started
 
@@ -33,6 +38,11 @@ npm run dev       # http://localhost:3000
 npm run build     # production build
 npm run start     # serve production build
 ```
+
+## Content Data
+
+Services and industries are defined once in `src/lib/data.ts` and reused across
+the navbar mega menus, services pages, industries page and footer to avoid drift.
 
 ## Contact form
 

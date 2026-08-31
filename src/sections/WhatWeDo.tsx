@@ -2,20 +2,8 @@
 
 import { StaggerContainer, StaggerItem, FadeIn } from "@/components/Animations";
 import TiltCard from "@/components/TiltCard";
-import {
-  Users, Settings, Phone, Megaphone, Building2, Bot, Headphones, BarChart3, ArrowRight,
-} from "lucide-react";
-
-const services = [
-  { num: "01", icon: Users, title: "Customer Acquisition", desc: "Generate, qualify, and convert high-intent customers through data-driven acquisition campaigns." },
-  { num: "02", icon: Settings, title: "Business Process Outsourcing", desc: "Trained offshore & nearshore teams to manage operations while your core team focuses on strategy." },
-  { num: "03", icon: Phone, title: "Contact Center Solutions", desc: "Inbound customer care and outbound sales prospecting tailored to your exact compliance SLAs." },
-  { num: "04", icon: Megaphone, title: "Digital Marketing", desc: "Performance acquisition channels optimized strictly for pipeline velocity and bottom-line profit." },
-  { num: "05", icon: Building2, title: "Real Estate Marketing", desc: "Custom lead acquisition, motivated seller qualification, and investor CRM workflows." },
-  { num: "06", icon: Bot, title: "AI & Automation", desc: "Automate repetitive workflows, speed up lead response times, and deploy conversational voice agents." },
-  { num: "07", icon: Headphones, title: "Remote Workforce Solutions", desc: "Vetted professionals who integrate seamlessly as a natural extension of your internal workforce." },
-  { num: "08", icon: BarChart3, title: "CRM & Business Automation", desc: "End-to-end CRM implementation and business automations that synchronize your revenue engine." },
-];
+import { ArrowRight } from "lucide-react";
+import { services } from "@/lib/data";
 
 export default function WhatWeDo() {
   return (
@@ -51,10 +39,6 @@ export default function WhatWeDo() {
                     SOLUTION {s.num}
                   </span>
 
-                  <div className="w-14 h-14 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center">
-                    <s.icon className="w-7 h-7 text-[var(--accent)]" />
-                  </div>
-
                   {/* Card Heading */}
                   <h3 className="text-xl font-bold leading-[1.3] min-h-[2.6em] text-[var(--text-primary)]">{s.title}</h3>
 
@@ -65,7 +49,7 @@ export default function WhatWeDo() {
                 </div>
 
                 {/* Action Link */}
-                <a href="#contact-form" className="mt-auto pt-6 text-base font-bold text-[var(--accent)] flex items-center justify-center gap-2 hover:underline">
+                <a href={`/services/${s.slug}`} className="mt-auto pt-6 text-base font-bold text-[var(--accent)] flex items-center justify-center gap-2 hover:underline">
                   Explore Solution <ArrowRight className="w-5 h-5" />
                 </a>
               </div>
