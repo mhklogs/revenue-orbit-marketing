@@ -50,16 +50,16 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
 export default function Metrics() {
   return (
     <section className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
-      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-20 text-center">
+      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 text-center">
         {/* Section Header */}
-        <div className="text-center mx-auto mb-12">
-          <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
+        <div className="text-center mx-auto mb-14">
+          <span className="mx-auto inline-block text-sm font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             PROVEN TRACK RECORD
           </span>
-          <h2 className="text-center mx-auto max-w-4xl text-4xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
+          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.12] text-[var(--text-primary)] mb-5">
             We Measure What Truly Matters
           </h2>
-          <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl text-[var(--text-secondary)] mb-16 font-normal leading-relaxed">
+          <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl text-[var(--text-secondary)] mb-4 leading-relaxed">
             Empirical performance indicators driving sustainable revenue growth across our partner network.
           </p>
         </div>

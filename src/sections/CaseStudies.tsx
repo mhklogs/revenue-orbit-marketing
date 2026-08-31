@@ -35,7 +35,7 @@ export default function CaseStudies() {
           <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             Case Studies
           </span>
-          <h2 className="text-center mx-auto max-w-4xl text-4xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
+          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
             Growth Partner Results You Can{" "}
             <span className="gradient-text">Measure</span>
           </h2>
@@ -58,15 +58,15 @@ export default function CaseStudies() {
                   {/* Data Metrics List */}
                   <div className="w-full space-y-5 my-4 text-center">
                     <div>
-                      <span className="text-sm sm:text-base font-semibold tracking-wider text-[var(--text-secondary)] block mb-2">Challenge</span>
-                      <span className="text-lg lg:text-xl text-[var(--text-secondary)] leading-relaxed font-normal block">{c.challenge}</span>
+                      <span className="text-sm font-semibold tracking-wider text-[var(--text-secondary)] block mb-2">Challenge</span>
+                      <span className="card-body block">{c.challenge}</span>
                     </div>
                     <div>
-                      <span className="text-sm sm:text-base font-semibold tracking-wider text-[var(--text-secondary)] block mb-2">Strategy</span>
-                      <span className="text-lg lg:text-xl text-[var(--text-secondary)] leading-relaxed font-normal block">{c.strategy}</span>
+                      <span className="text-sm font-semibold tracking-wider text-[var(--text-secondary)] block mb-2">Strategy</span>
+                      <span className="card-body block">{c.strategy}</span>
                     </div>
                     <div className="border-t border-[var(--border-subtle)] pt-5">
-                      <span className="text-sm sm:text-base font-semibold tracking-wider text-[var(--text-secondary)] block mb-2">Verified Result</span>
+                      <span className="text-sm font-semibold tracking-wider text-[var(--text-secondary)] block mb-2">Verified Result</span>
                       <span className="font-black text-[var(--accent)] block leading-snug" style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)" }}>{c.result}</span>
                     </div>
                   </div>

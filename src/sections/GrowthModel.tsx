@@ -22,11 +22,11 @@ export default function GrowthModel() {
           <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             Growth Framework
           </span>
-          <h2 className="text-center mx-auto max-w-4xl text-4xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
+          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.1] text-[var(--text-primary)] mb-5">
             ATTRACT. ENGAGE. CONVERT.{" "}
             <span className="gradient-text">SCALE.</span>
           </h2>
-          <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl text-[var(--text-secondary)] mb-16 leading-relaxed">
+          <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl text-[var(--text-secondary)] mb-14 leading-relaxed">
             Our battle-tested four-stage engine for turning market attention into predictable enterprise revenue.
           </p>
         </FadeIn>
@@ -41,7 +41,7 @@ export default function GrowthModel() {
                     <s.icon className="w-7 h-7 text-[var(--accent)]" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold tracking-wider leading-snug text-[var(--accent)]">{s.title}</h3>
-                  <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">{s.desc}</p>
+                  <p className="card-body">{s.desc}</p>
                 </div>
                 {i < 3 && (
                   <ArrowRight className="hidden lg:block absolute top-1/2 -right-4 w-5 h-5 text-[var(--accent)]/40 -translate-y-1/2" />

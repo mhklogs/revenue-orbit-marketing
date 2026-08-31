@@ -44,14 +44,14 @@ export default function Team() {
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl mx-auto justify-center items-stretch">
           {leaders.map((leader) => (
             <StaggerItem key={leader.title}>
-              <div className="p-8 lg:p-10 rounded-2xl glass border border-[var(--border-subtle)] text-center hover-lift h-full flex flex-col justify-between gap-5 items-center">
+              <div className="p-8 lg:p-9 rounded-2xl glass border border-[var(--border-subtle)] text-center hover-lift h-full flex flex-col justify-between gap-5 items-center">
                 <div className="w-full flex flex-col items-center gap-4">
                   <div className="w-20 h-20 rounded-full bg-[var(--accent)]/15 border border-[var(--accent)]/30 mx-auto flex items-center justify-center">
                     <span className="text-2xl font-bold text-[var(--accent-light)]">{leader.title}</span>
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold leading-snug text-[var(--text-primary)]">{leader.role}</h3>
-                  <p className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-1 text-[var(--accent-light)]">Revenue Orbit Marketing</p>
-                  <p className="text-base sm:text-lg leading-relaxed text-[var(--text-secondary)]">{leader.desc}</p>
+                  <p className="text-sm font-semibold tracking-wider uppercase mb-1 text-[var(--accent-light)]">Revenue Orbit Marketing</p>
+                  <p className="card-body text-center">{leader.desc}</p>
                 </div>
               </div>
             </StaggerItem>

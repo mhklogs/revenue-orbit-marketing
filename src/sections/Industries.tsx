@@ -28,7 +28,7 @@ export default function Industries() {
           <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             Industries
           </span>
-          <h2 className="text-center mx-auto max-w-4xl text-4xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
+          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
             Built for High-Growth{" "}
             <span className="gradient-text">U.S. Verticals</span>
           </h2>
@@ -39,12 +39,12 @@ export default function Industries() {
 
         {/* Tab Strip */}
         <FadeIn delay={0.1}>
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-10 max-w-4xl mx-auto w-full">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-10 max-w-4xl mx-auto w-full">
             {industries.map((ind, i) => (
               <button
                 key={ind.title}
                 onClick={() => setActive(i)}
-                className={`px-5 py-3 rounded-xl text-base sm:text-lg font-semibold transition-all border ${
+                className={`px-4 py-2.5 rounded-full text-sm font-semibold transition-all border ${
                   active === i
                     ? "bg-[var(--accent)] text-white border-[var(--accent)] font-bold"
                     : "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-elevated)]"
@@ -82,7 +82,7 @@ export default function Industries() {
                 {/* Workflows Container */}
                 <div className="flex flex-wrap justify-center gap-3 my-4">
                   {industries[active].items.map((item) => (
-                    <div key={item} className="px-4 py-2 rounded-lg bg-[var(--bg-card)] border border-[var(--border-subtle)] text-base font-medium text-[var(--text-secondary)]">
+                    <div key={item} className="px-4 py-2 rounded-full bg-[var(--bg-card)] border border-[var(--border-subtle)] text-sm font-medium text-[var(--text-secondary)]">
                       {item}
                     </div>
                   ))}
@@ -91,7 +91,7 @@ export default function Industries() {
                 {/* Action CTA */}
                 <a
                   href="#contact-form"
-                  className="inline-flex items-center gap-2 h-13 px-6 rounded-xl text-base font-bold bg-[var(--accent)] text-white mt-2 hover:bg-[var(--accent-light)] transition-colors"
+                  className="inline-flex items-center gap-2 h-11 px-6 rounded-full text-base font-bold bg-[var(--accent)] text-white mt-2 hover:bg-[var(--accent-light)] transition-colors"
                 >
                   Explore {industries[active].title} Solutions <ChevronRight className="w-4 h-4" />
                 </a>

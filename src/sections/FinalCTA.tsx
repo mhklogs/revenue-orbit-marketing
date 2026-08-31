@@ -16,7 +16,7 @@ export default function FinalCTA() {
           <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             Revenue Orbit Marketing
           </span>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.2] max-w-4xl mx-auto mb-8 text-center text-[var(--text-primary)]">
+          <h1 className="font-black tracking-tight leading-[1.06] max-w-4xl mx-auto mb-6 text-center text-[var(--text-primary)]">
             YOU BRING THE <span className="gradient-text">VISION.</span> WE MAKE IT <span className="gradient-text">HAPPEN.</span>
           </h1>
         </FadeIn>

@@ -21,10 +21,10 @@ export default function ValueStatement() {
     <section className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
       <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 text-center">
         <FadeIn className="text-center mx-auto w-full max-w-4xl mb-14">
-          <h2 className="text-center mx-auto max-w-4xl text-4xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-snug mb-6 text-[var(--text-primary)]">
+          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.12] mb-5 text-[var(--text-primary)]">
             One Partner. <span className="gradient-text">Multiple Growth Engines.</span>
           </h2>
-          <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl leading-relaxed text-[var(--text-secondary)] mb-0">
+          <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl leading-relaxed text-[var(--text-secondary)]">
             Your business shouldn&apos;t need ten different partners to generate customers, manage
             conversations, automate operations and scale. Revenue Orbit Marketing brings all critical
             revenue functions together under one seamless growth ecosystem.
@@ -42,7 +42,7 @@ export default function ValueStatement() {
                   <h3 className="text-xl sm:text-2xl font-bold leading-snug text-[var(--text-primary)]">
                     {e.title}
                   </h3>
-                  <p className="text-base sm:text-lg leading-relaxed text-[var(--text-secondary)]">
+                  <p className="card-body text-center">
                     {e.desc}
                   </p>
                 </div>

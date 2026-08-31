@@ -66,18 +66,18 @@ export default function ContactForm() {
           <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             Start The Conversation
           </span>
-          <h2 className="text-center mx-auto max-w-4xl text-4xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-6">
+          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.12] text-[var(--text-primary)] mb-5">
             Schedule Your Executive Growth{" "}
             <span className="gradient-text">Consultation</span>
           </h2>
-          <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl text-[var(--text-secondary)] mb-10 leading-relaxed font-normal">
+          <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl text-[var(--text-secondary)] mb-8 leading-relaxed">
             Tell us about your business model, target acquisition goals, or operational requirements.
           </p>
         </FadeIn>
 
         <FadeIn>
-          <div className="max-w-3xl mx-auto w-full p-8 md:p-12 rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center shadow-2xl mt-12">
-            <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-3">
+          <div className="max-w-3xl mx-auto w-full p-8 md:p-12 rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center shadow-2xl mt-10">
+            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-3">
               Request a Scoped Blueprint
             </h3>
             <p className="text-lg text-[var(--text-secondary)] mb-10 leading-relaxed max-w-xl mx-auto">

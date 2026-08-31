@@ -32,7 +32,7 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <h1 className="mx-auto max-w-4xl text-4xl sm:text-6xl lg:text-[72px] font-black tracking-tight leading-[1.05] text-[var(--dark)] mb-7">
+          <h1 className="mx-auto max-w-4xl font-black tracking-tight leading-[1.06] text-[var(--dark)] mb-6">
             YOU BRING THE <span className="gradient-text">VISION.</span>
             <br />
             WE MAKE IT <span className="gradient-text">HAPPEN.</span>
@@ -40,7 +40,7 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <p className="mx-auto max-w-2xl text-xl lg:text-2xl text-[var(--text-secondary)] leading-relaxed mb-10">
+          <p className="card-body mx-auto max-w-2xl text-lg lg:text-xl text-[var(--text-secondary)] mb-10">
             Revenue Orbit Marketing is a growth and technology partner helping businesses
             generate customers, accelerate revenue, streamline operations, and scale
             through marketing, sales, outsourcing, AI, and automation.

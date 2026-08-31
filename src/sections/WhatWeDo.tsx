@@ -27,7 +27,7 @@ export default function WhatWeDo() {
           </span>
 
           {/* Main Title */}
-          <h2 className="text-center mx-auto max-w-4xl text-4xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
+          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
             Multiple Solutions. One Growth <span className="gradient-text">Ecosystem.</span>
           </h2>
 
@@ -57,7 +57,9 @@ export default function WhatWeDo() {
                   <h3 className="text-xl sm:text-2xl font-bold leading-snug text-[var(--text-primary)]">{s.title}</h3>
 
                   {/* Card Body Text */}
-                  <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed flex-grow font-normal">{s.desc}</p>
+                  <p className="card-body text-center flex-grow">
+                    {s.desc}
+                  </p>
                 </div>
 
                 {/* Action Link */}
