@@ -1,13 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight, Calendar } from "lucide-react";
 import { FadeIn } from "@/components/Animations";
-
-const orbitItems = [
-  "Marketing", "Leads", "Sales", "AI", "Automation",
-  "Real Estate", "Insurance", "Legal", "Home Services", "Finance",
-];
 
 const ticker = [
   "Performance Marketing", "Lead Generation", "Contact Center Solutions",
@@ -17,7 +13,7 @@ const ticker = [
 
 export default function Hero() {
   return (
-    <section className="relative w-full flex flex-col overflow-hidden bg-[var(--bg-primary)]">
+    <section className="relative w-full flex flex-col items-center overflow-hidden bg-[var(--bg-primary)]">
       {/* Centered background glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[var(--accent)]/10 rounded-full blur-[130px]" />
@@ -58,44 +54,17 @@ export default function Hero() {
           </div>
         </FadeIn>
 
-        {/* Contained orbit visual */}
+        {/* Approved logo showcase */}
         <FadeIn delay={0.4}>
-          <div className="relative aspect-square w-full max-w-[480px] mx-auto my-14">
-            <div className="absolute inset-0 rounded-full bg-[var(--accent)]/5" />
-            <div className="absolute inset-2 rounded-full border border-[var(--accent)]/15" />
-            <div className="absolute inset-14 rounded-full border border-[var(--accent)]/20" />
-            <div className="absolute inset-28 rounded-full border border-[var(--accent)]/25" />
-
+          <div className="relative aspect-square w-full max-w-[460px] mx-auto my-14">
+            <div className="absolute inset-0 rounded-full bg-[var(--accent)]/5 blur-2xl" />
             <motion.div
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full flex items-center justify-center z-10"
-              style={{ backgroundColor: "var(--dark)", boxShadow: "0 0 40px rgba(212,175,55,0.35)" }}
-              animate={{ boxShadow: ["0 0 25px rgba(212,175,55,0.25)", "0 0 55px rgba(212,175,55,0.5)", "0 0 25px rgba(212,175,55,0.25)"] }}
-              transition={{ duration: 3, repeat: Infinity }}
+              className="relative w-full h-full rounded-full overflow-hidden border border-[var(--border-subtle)] shadow-[0_30px_80px_rgba(26,26,26,0.18)]"
+              animate={{ y: [0, -12, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
-              <span className="text-white font-bold text-xl tracking-wider">ROM</span>
+              <Image src="/rom-logo.png" alt="Revenue Orbit Marketing logo" fill sizes="460px" className="object-cover" priority />
             </motion.div>
-
-            {orbitItems.map((item, i) => {
-              const angle = (i / orbitItems.length) * 360;
-              const radius = 175;
-              const rad = (angle * Math.PI) / 180;
-              const x = Math.cos(rad) * radius;
-              const y = Math.sin(rad) * radius;
-              return (
-                <div
-                  key={item}
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                  style={{ transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))` }}
-                >
-                  <span
-                    className="inline-block px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap shadow-sm"
-                    style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)", color: "var(--text-secondary)" }}
-                  >
-                    {item}
-                  </span>
-                </div>
-              );
-            })}
           </div>
         </FadeIn>
       </div>

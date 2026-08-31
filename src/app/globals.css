@@ -51,9 +51,10 @@
   --border-subtle: #E5E0D6;
 }
 
+/* Box-sizing (Tailwind v4 preflight already resets margins/padding inside its
+   cascade layers — a bare `* { margin: 0 }` here would override utilities like
+   `mx-auto` because unlayered rules beat layered ones. Do NOT re-add margins. */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 

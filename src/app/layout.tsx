@@ -21,6 +21,10 @@ export const metadata: Metadata = {
   title: "Revenue Orbit Marketing | Growth & Technology Partner",
   description:
     "Revenue Orbit Marketing helps businesses generate customers, accelerate revenue, streamline operations and scale through marketing, sales, outsourcing, AI and automation.",
+  icons: {
+    icon: "/rom-logo.png",
+    apple: "/rom-logo.png",
+  },
   keywords: [
     "customer acquisition",
     "BPO",

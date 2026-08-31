@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -49,18 +50,15 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <a href="#" className="flex items-center gap-3 group">
-              <div className="relative w-10 h-10 lg:w-12 lg:h-12 shrink-0">
-                {/* Outer orbit ring */}
-                <div className="absolute inset-0 rounded-full border-2 border-[var(--accent)] opacity-50 group-hover:opacity-90 transition-opacity" />
-                {/* Dynamic loop satellite */}
-                <div
-                  className="absolute -inset-0.5 rounded-full border border-[var(--accent-light)]/60"
-                  style={{ animation: "orbit 8s linear infinite" }}
+              <div className="relative w-10 h-10 lg:w-12 lg:h-12 shrink-0 rounded-full overflow-hidden border border-[var(--border-subtle)]">
+                <Image
+                  src="/rom-logo.png"
+                  alt="Revenue Orbit Marketing"
+                  fill
+                  sizes="48px"
+                  className="object-cover"
+                  priority
                 />
-                {/* Core */}
-                <div className="absolute inset-[22%] rounded-full bg-[var(--dark)] flex items-center justify-center">
-                  <span className="text-white font-bold text-[0.65rem] tracking-wider">ROM</span>
-                </div>
               </div>
               <div className="hidden sm:block leading-tight">
                 <p className="text-sm font-bold tracking-wider text-[var(--dark)]">
