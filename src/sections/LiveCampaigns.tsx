@@ -16,8 +16,8 @@ const campaigns = [
 
 export default function LiveCampaigns() {
   return (
-    <section id="solutions" className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto">
-      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 text-center">
+    <section id="solutions" className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto">
+      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 text-center">
         <SectionHeading
           badge="Active Solutions"
           title="Engineered Solutions for Real-World"
@@ -25,7 +25,7 @@ export default function LiveCampaigns() {
           subtitle="Battle-tested operational programs actively delivering results across target U.S. verticals today."
         />
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-full max-w-6xl mx-auto justify-center items-stretch">
           {campaigns.map((c) => (
             <StaggerItem key={c.title}>
               <div className="group p-8 lg:p-10 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full flex flex-col gap-5 text-center items-center justify-between">

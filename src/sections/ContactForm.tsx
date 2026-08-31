@@ -60,13 +60,13 @@ export default function ContactForm() {
   const labelClass = "text-base font-medium text-[var(--text-secondary)] text-left block mb-2";
 
   return (
-    <section id="contact-form" className="py-16 md:py-24 pb-24 md:pb-28 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
-      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 text-center">
+    <section id="contact-form" className="py-20 md:py-32 pb-24 md:pb-28 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
+      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 text-center">
         <FadeIn>
           <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             Start The Conversation
           </span>
-          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-6">
+          <h2 className="text-center mx-auto max-w-4xl text-4xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-6">
             Schedule Your Executive Growth{" "}
             <span className="gradient-text">Consultation</span>
           </h2>

@@ -33,8 +33,8 @@ export default function Testimonials() {
   const [current, setCurrent] = useState(0);
 
   return (
-    <section className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto">
-      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 text-center">
+    <section className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto">
+      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 text-center">
         <SectionHeading
           badge="Client Endorsements"
           title="What Our Business Partners"

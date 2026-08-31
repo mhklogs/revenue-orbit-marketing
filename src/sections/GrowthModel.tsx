@@ -15,14 +15,14 @@ const pipeline = ["MARKETING", "LEADS", "SALES", "CUSTOMERS", "REVENUE", "GROWTH
 
 export default function GrowthModel() {
   return (
-    <section className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto overflow-hidden">
-      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 text-center">
+    <section className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto overflow-hidden">
+      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 text-center">
         {/* Inline Section Heading */}
         <FadeIn>
           <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             Growth Framework
           </span>
-          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
+          <h2 className="text-center mx-auto max-w-4xl text-4xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
             ATTRACT. ENGAGE. CONVERT.{" "}
             <span className="gradient-text">SCALE.</span>
           </h2>
@@ -32,7 +32,7 @@ export default function GrowthModel() {
         </FadeIn>
 
         {/* 4 Stages */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl mx-auto justify-center items-stretch">
           {stages.map((s, i) => (
             <FadeIn key={s.title} delay={i * 0.15}>
               <div className="relative p-8 lg:p-10 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-between gap-5 h-full group hover-lift">

@@ -22,8 +22,8 @@ const nodes = [
 
 export default function TechEcosystem() {
   return (
-    <section className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
-      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 text-center">
+    <section className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
+      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 text-center">
         <SectionHeading
           badge="Tech &amp; AI Infrastructure"
           title="Technology Infrastructure Behind"

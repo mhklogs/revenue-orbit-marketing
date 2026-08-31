@@ -20,14 +20,14 @@ export default function WhatWeDo() {
   return (
     <section id="services" className="relative w-full flex flex-col items-center justify-center mx-auto">
       {/* Header Container */}
-      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 py-20 text-center">
+      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-20 text-center">
         <FadeIn>
           <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             What We Do
           </span>
 
           {/* Main Title */}
-          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
+          <h2 className="text-center mx-auto max-w-4xl text-4xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
             Multiple Solutions. One Growth <span className="gradient-text">Ecosystem.</span>
           </h2>
 
@@ -38,7 +38,7 @@ export default function WhatWeDo() {
         </FadeIn>
 
         {/* Grid Layout */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl mx-auto justify-center items-stretch">
           {services.map((s) => (
             <StaggerItem key={s.title}>
               {/* Card Container */}

@@ -24,7 +24,7 @@ export default function WhoWeAre() {
           </span>
 
           {/* Main Title */}
-          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
+          <h2 className="text-center mx-auto max-w-4xl text-4xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
             A Growth Partner Built Around <span className="gradient-text">Your Business</span>
           </h2>
 

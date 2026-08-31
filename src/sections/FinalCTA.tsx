@@ -5,7 +5,7 @@ import { ArrowRight, Calendar, Phone, Mail } from "lucide-react";
 
 export default function FinalCTA() {
   return (
-    <section id="contact" className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto overflow-hidden mb-16 md:mb-20" style={{ backgroundColor: "var(--bg-primary)" }}>
+    <section id="contact" className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto overflow-hidden mb-16 md:mb-20" style={{ backgroundColor: "var(--bg-primary)" }}>
       {/* Background Glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--accent)]/10 rounded-full blur-[100px]" />

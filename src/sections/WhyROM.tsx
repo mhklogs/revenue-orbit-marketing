@@ -14,8 +14,8 @@ const reasons = [
 
 export default function WhyROM() {
   return (
-    <section id="why-rom" className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto">
-      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 text-center">
+    <section id="why-rom" className="py-20 md:py-32 relative w-full flex flex-col items-center justify-center mx-auto">
+      <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 text-center">
         <SectionHeading
           badge="Why ROM"
           title="Why Businesses Choose"
@@ -23,7 +23,7 @@ export default function WhyROM() {
           subtitle="Six core reasons industry leaders trust ROM as their primary growth engine."
         />
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mx-auto justify-center items-stretch">
           {reasons.map((r) => (
             <StaggerItem key={r.title}>
               <div className="group p-8 lg:p-10 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full relative overflow-hidden flex flex-col gap-5 text-center items-center justify-between">
