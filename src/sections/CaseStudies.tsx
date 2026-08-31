@@ -1,5 +1,6 @@
 "use client";
 
+import TiltCard from "@/components/TiltCard";
 import { StaggerContainer, StaggerItem, FadeIn } from "@/components/Animations";
 import { ArrowUpRight } from "lucide-react";
 
@@ -44,10 +45,11 @@ export default function CaseStudies() {
           </p>
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
           {caseStudies.map((c) => (
             <StaggerItem key={c.client}>
-              <div className="p-6 lg:p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-between gap-6 h-full hover-lift">
+<TiltCard className="h-full rounded-2xl">
+              <div className="p-6 lg:p-9 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-between gap-6 h-full hover-lift">
                 <div className="w-full flex flex-col items-center gap-5">
                   {/* Client Title */}
                   <h3 className="text-xl font-bold leading-[1.3] min-h-[2.6em] text-[var(--text-primary)]">{c.client}</h3>
@@ -80,6 +82,7 @@ export default function CaseStudies() {
                   View Case Study Breakdown <ArrowUpRight className="w-5 h-5" />
                 </a>
               </div>
+</TiltCard>
             </StaggerItem>
           ))}
         </StaggerContainer>

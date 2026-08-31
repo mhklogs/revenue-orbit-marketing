@@ -76,7 +76,7 @@ export default function ContactForm() {
         </FadeIn>
 
         <FadeIn>
-          <div className="max-w-3xl mx-auto w-full p-6 md:p-8 rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center shadow-2xl mt-10">
+          <div className="max-w-3xl mx-auto w-full p-6 md:p-9 rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center shadow-2xl mt-10">
             <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-3">
               Request a Scoped Blueprint
             </h3>

@@ -32,10 +32,10 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <h1 className="mx-auto max-w-4xl font-black tracking-tight leading-[1.06] text-[var(--dark)] mb-6">
-            YOU BRING THE <span className="gradient-text">VISION.</span>
+          <h1 className="mx-auto max-w-4xl font-black tracking-tight leading-[1.08] text-[var(--dark)] mb-6">
+            YOU BRING THE <span className="animated-gradient">VISION.</span>
             <br />
-            WE MAKE IT <span className="gradient-text">HAPPEN.</span>
+            WE MAKE IT <span className="animated-gradient">HAPPEN.</span>
           </h1>
         </FadeIn>
 
@@ -68,8 +68,8 @@ export default function Hero() {
 
             <motion.div
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full flex items-center justify-center z-10"
-              style={{ backgroundColor: "var(--dark)", boxShadow: "0 0 40px rgba(37,99,235,0.35)" }}
-              animate={{ boxShadow: ["0 0 25px rgba(37,99,235,0.25)", "0 0 55px rgba(37,99,235,0.5)", "0 0 25px rgba(37,99,235,0.25)"] }}
+              style={{ backgroundColor: "var(--dark)", boxShadow: "0 0 40px rgba(212,175,55,0.35)" }}
+              animate={{ boxShadow: ["0 0 25px rgba(212,175,55,0.25)", "0 0 55px rgba(212,175,55,0.5)", "0 0 25px rgba(212,175,55,0.25)"] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
               <span className="text-white font-bold text-xl tracking-wider">ROM</span>

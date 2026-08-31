@@ -1,12 +1,13 @@
 "use client";
 
+import TiltCard from "@/components/TiltCard";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/Animations";
 import { Megaphone, MessageSquare, Handshake, TrendingUp, ArrowRight } from "lucide-react";
 
 const stages = [
-  { icon: Megaphone, title: "ATTRACT", desc: "Generate targeted attention and high-intent buyer demand across paid & organic channels.", color: "#2563eb" },
-  { icon: MessageSquare, title: "ENGAGE", desc: "Respond within seconds via automated omnichannel AI, voice, and speed-to-lead agents.", color: "#3b82f6" },
+  { icon: Megaphone, title: "ATTRACT", desc: "Generate targeted attention and high-intent buyer demand across paid & organic channels.", color: "#D4AF37" },
+  { icon: MessageSquare, title: "ENGAGE", desc: "Respond within seconds via automated omnichannel AI, voice, and speed-to-lead agents.", color: "#E3C668" },
   { icon: Handshake, title: "CONVERT", desc: "Qualify prospects, nurture pipelines, book live appointments, and close retainers.", color: "#60a5fa" },
   { icon: TrendingUp, title: "SCALE", desc: "Automate operational workflows, optimize unit economics, and multiply campaign volume.", color: "#0f172a" },
 ];
@@ -32,10 +33,11 @@ export default function GrowthModel() {
         </FadeIn>
 
         {/* 4 Stages */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
           {stages.map((s, i) => (
             <FadeIn key={s.title} delay={i * 0.15}>
-              <div className="relative p-6 lg:p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-between gap-5 h-full group hover-lift">
+<TiltCard className="h-full rounded-2xl">
+              <div className="relative p-6 lg:p-9 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-between gap-5 h-full group hover-lift">
                 <div className="w-full flex flex-col gap-4 text-center items-center">
                   <div className="w-14 h-14 rounded-lg bg-[var(--accent)]/15 border border-[var(--accent)]/20 flex items-center justify-center group-hover:scale-110 transition-all">
                     <s.icon className="w-7 h-7 text-[var(--accent)]" />
@@ -47,13 +49,14 @@ export default function GrowthModel() {
                   <ArrowRight className="hidden lg:block absolute top-1/2 -right-4 w-5 h-5 text-[var(--accent)]/40 -translate-y-1/2" />
                 )}
               </div>
+</TiltCard>
             </FadeIn>
           ))}
         </div>
 
         {/* Pipeline Bar */}
         <FadeIn>
-          <div className="p-6 lg:p-8 rounded-xl glass border border-[var(--border-subtle)] mt-16 w-full mx-auto max-w-5xl">
+          <div className="p-6 lg:p-9 rounded-xl glass border border-[var(--border-subtle)] mt-16 w-full mx-auto max-w-5xl">
             <p className="text-center text-base font-semibold tracking-wider uppercase mb-6 text-[var(--text-muted)]">
               Unified End-To-End Execution Lifecycle
             </p>

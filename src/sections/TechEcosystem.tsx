@@ -32,7 +32,7 @@ export default function TechEcosystem() {
         />
 
         <FadeIn>
-          <div className="relative p-6 lg:p-8 rounded-2xl glass border border-[var(--border-subtle)]">
+          <div className="relative p-6 lg:p-9 rounded-2xl glass border border-[var(--border-subtle)]">
             {/* Flow Grid — single horizontal pipeline with arrow connectors, scrollable when tight */}
             <div className="flex items-stretch justify-start lg:justify-between gap-2 overflow-x-auto pb-4 w-full">
               {nodes.map((node, i) => (

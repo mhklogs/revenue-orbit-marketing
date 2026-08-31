@@ -58,7 +58,7 @@ export default function Industries() {
 
         {/* Display Panel */}
         <FadeIn delay={0.2}>
-          <div className="max-w-3xl mx-auto w-full p-6 md:p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-6">
+          <div className="max-w-3xl mx-auto w-full p-6 md:p-9 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-6">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}

@@ -1,6 +1,7 @@
 "use client";
 
 import { StaggerContainer, StaggerItem, FadeIn } from "@/components/Animations";
+import TiltCard from "@/components/TiltCard";
 import {
   Users, Settings, Phone, Megaphone, Building2, Bot, Headphones, BarChart3, ArrowRight,
 } from "lucide-react";
@@ -38,11 +39,12 @@ export default function WhatWeDo() {
         </FadeIn>
 
         {/* Grid Layout */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
           {services.map((s) => (
             <StaggerItem key={s.title}>
               {/* Card Container */}
-              <div className="p-6 lg:p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-between h-full hover:border-[var(--accent)]/50 transition-all hover-lift">
+              <TiltCard className="h-full rounded-2xl">
+                <div className="p-6 lg:p-9 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-between h-full hover:border-[var(--accent)]/50 transition-all hover-lift">
                 <div className="flex flex-col items-center w-full gap-5">
                   {/* Badge / Number */}
                   <span className="mx-auto text-sm sm:text-base font-semibold tracking-wider font-mono text-[var(--accent)] px-3 py-1 bg-[var(--accent)]/10 rounded-lg inline-block">
@@ -67,6 +69,7 @@ export default function WhatWeDo() {
                   Explore Solution <ArrowRight className="w-5 h-5" />
                 </a>
               </div>
+              </TiltCard>
             </StaggerItem>
           ))}
         </StaggerContainer>

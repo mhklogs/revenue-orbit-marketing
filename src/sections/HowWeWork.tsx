@@ -1,5 +1,6 @@
 "use client";
 
+import TiltCard from "@/components/TiltCard";
 import { FadeIn, SectionHeading } from "@/components/Animations";
 import { Search, Compass, Hammer, Rocket, BarChart3, RefreshCw } from "lucide-react";
 
@@ -23,10 +24,11 @@ export default function HowWeWork() {
           subtitle="Six structured execution stages, with clear deliverables and milestones signed off at each step."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
           {steps.map((step, i) => (
             <FadeIn key={step.title} delay={i * 0.08}>
-              <div className="relative p-6 lg:p-8 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full flex flex-col gap-4 text-center items-center justify-between">
+<TiltCard className="h-full rounded-2xl">
+              <div className="relative p-6 lg:p-9 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full flex flex-col gap-4 text-center items-center justify-between">
                 <div className="w-full flex flex-col gap-4 text-center items-center">
                   <div className="w-12 h-12 rounded-lg bg-[var(--accent)]/15 border border-[var(--accent)]/20 flex items-center justify-center">
                     <step.icon className="w-6 h-6 text-[var(--accent-light)]" />
@@ -38,6 +40,7 @@ export default function HowWeWork() {
                   <p className="card-body">{step.desc}</p>
                 </div>
               </div>
+</TiltCard>
             </FadeIn>
           ))}
         </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import TiltCard from "@/components/TiltCard";
 import { StaggerContainer, StaggerItem, SectionHeading } from "@/components/Animations";
 import { Target, Puzzle, Cpu, TrendingUp, Layers, Users } from "lucide-react";
 
@@ -23,10 +24,11 @@ export default function WhyROM() {
           subtitle="Six core reasons industry leaders trust ROM as their primary growth engine."
         />
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
           {reasons.map((r) => (
             <StaggerItem key={r.title}>
-              <div className="group p-6 lg:p-8 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full relative overflow-hidden flex flex-col gap-4 text-center items-center justify-between">
+<TiltCard className="h-full rounded-2xl">
+              <div className="group p-6 lg:p-9 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full relative overflow-hidden flex flex-col gap-4 text-center items-center justify-between">
                 <div className="absolute top-4 right-4 text-5xl font-extrabold opacity-10 group-hover:opacity-20 transition-opacity z-0 pointer-events-none select-none" style={{ color: "var(--accent)" }}>
                   {r.num}
                 </div>
@@ -38,6 +40,7 @@ export default function WhyROM() {
                   <p className="card-body">{r.desc}</p>
                 </div>
               </div>
+</TiltCard>
             </StaggerItem>
           ))}
         </StaggerContainer>

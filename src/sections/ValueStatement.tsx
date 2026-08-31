@@ -1,5 +1,6 @@
 "use client";
 
+import TiltCard from "@/components/TiltCard";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/Animations";
 import {
   Users, Megaphone, TrendingUp, Bot, Settings, Building2, BarChart3, Headset,
@@ -34,7 +35,8 @@ export default function ValueStatement() {
         <StaggerContainer className="grid grid-cols-1 lg:grid-cols-4 gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
           {engines.map((e) => (
             <StaggerItem key={e.title}>
-              <div className="p-6 lg:p-8 rounded-2xl glass border border-[var(--border-subtle)] hover-lift group h-full flex flex-col gap-5 text-center items-center justify-between">
+<TiltCard className="h-full rounded-2xl">
+              <div className="p-6 lg:p-9 rounded-2xl glass border border-[var(--border-subtle)] hover-lift group h-full flex flex-col gap-5 text-center items-center justify-between">
                 <div className="w-full flex flex-col gap-4 text-center items-center">
                   <div className="w-14 h-14 rounded-xl bg-[var(--accent)]/15 border border-[var(--accent)]/20 flex items-center justify-center mb-2 group-hover:bg-[var(--accent)]/25 transition-all">
                     <e.icon className="w-7 h-7 text-[var(--accent-light)]" />
@@ -47,6 +49,7 @@ export default function ValueStatement() {
                   </p>
                 </div>
               </div>
+</TiltCard>
             </StaggerItem>
           ))}
         </StaggerContainer>

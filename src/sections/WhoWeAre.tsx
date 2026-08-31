@@ -55,10 +55,10 @@ export default function WhoWeAre() {
         </FadeIn>
 
         {/* Mission & Vision Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 max-w-5xl mx-auto w-full">
           {/* Mission Card */}
           <FadeIn delay={0.2}>
-            <div className="p-6 lg:p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-4 hover-lift h-full">
+            <div className="p-6 lg:p-9 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-4 hover-lift h-full">
               <div className="w-14 h-14 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center">
                 <Target className="w-7 h-7 text-[var(--accent)]" />
               </div>
@@ -71,7 +71,7 @@ export default function WhoWeAre() {
 
           {/* Vision Card */}
           <FadeIn delay={0.3}>
-            <div className="p-6 lg:p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-4 hover-lift h-full">
+            <div className="p-6 lg:p-9 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-4 hover-lift h-full">
               <div className="w-14 h-14 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center">
                 <Eye className="w-7 h-7 text-[var(--accent)]" />
               </div>

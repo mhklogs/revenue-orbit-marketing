@@ -1,5 +1,6 @@
 "use client";
 
+import TiltCard from "@/components/TiltCard";
 import { StaggerContainer, StaggerItem, SectionHeading } from "@/components/Animations";
 import { Building2, Shield, Stethoscope, Wrench, CalendarCheck, Bot, Headphones, BarChart3, ArrowRight } from "lucide-react";
 
@@ -25,10 +26,11 @@ export default function LiveCampaigns() {
           subtitle="Battle-tested operational programs actively delivering results across target U.S. verticals today."
         />
 
-        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-4 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
           {campaigns.map((c) => (
             <StaggerItem key={c.title}>
-              <div className="group p-6 lg:p-8 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full flex flex-col gap-5 text-center items-center justify-between">
+<TiltCard className="h-full rounded-2xl">
+              <div className="group p-6 lg:p-9 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full flex flex-col gap-5 text-center items-center justify-between">
                 <div className="w-full flex flex-col gap-4 text-center items-center">
                   <div className="w-14 h-14 rounded-lg bg-[var(--accent)]/15 border border-[var(--accent)]/20 flex items-center justify-center mb-1 group-hover:bg-[var(--accent)]/25 transition-all">
                     <c.icon className="w-7 h-7 text-[var(--accent-light)]" />
@@ -47,6 +49,7 @@ export default function LiveCampaigns() {
                   </a>
                 </div>
               </div>
+</TiltCard>
             </StaggerItem>
           ))}
         </StaggerContainer>

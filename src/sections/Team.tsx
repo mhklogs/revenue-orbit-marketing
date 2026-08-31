@@ -1,5 +1,6 @@
 "use client";
 
+import TiltCard from "@/components/TiltCard";
 import { FadeIn, StaggerContainer, StaggerItem, SectionHeading } from "@/components/Animations";
 
 const roles = [
@@ -41,10 +42,11 @@ export default function Team() {
         </FadeIn>
 
         {/* Leader Grid */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
           {leaders.map((leader) => (
             <StaggerItem key={leader.title}>
-              <div className="p-6 lg:p-8 rounded-2xl glass border border-[var(--border-subtle)] text-center hover-lift h-full flex flex-col justify-between gap-5 items-center">
+<TiltCard className="h-full rounded-2xl">
+              <div className="p-6 lg:p-9 rounded-2xl glass border border-[var(--border-subtle)] text-center hover-lift h-full flex flex-col justify-between gap-5 items-center">
                 <div className="w-full flex flex-col items-center gap-4">
                   <div className="w-20 h-20 rounded-full bg-[var(--accent)]/15 border border-[var(--accent)]/30 mx-auto flex items-center justify-center">
                     <span className="text-2xl font-bold text-[var(--accent-light)]">{leader.title}</span>
@@ -54,6 +56,7 @@ export default function Team() {
                   <p className="card-body text-center">{leader.desc}</p>
                 </div>
               </div>
+</TiltCard>
             </StaggerItem>
           ))}
         </StaggerContainer>

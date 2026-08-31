@@ -65,10 +65,10 @@ export default function Metrics() {
         </div>
 
         {/* Key Performance Stat Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full max-w-7xl mx-auto justify-center items-stretch mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch mb-4">
           {primaryMetrics.map((m) => (
             <FadeIn key={m.label}>
-              <div className="p-6 lg:p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-3 hover-lift h-full">
+              <div className="p-6 lg:p-9 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-3 hover-lift h-full">
                 <p className="font-black text-[var(--accent)] mb-2 leading-[1.1]" style={{ fontSize: "clamp(2rem, 4.5vw, 3.25rem)" }}>
                   <Counter target={m.target} suffix={m.suffix} />
                 </p>
@@ -81,7 +81,7 @@ export default function Metrics() {
         </div>
 
         {/* Secondary Metrics Grid — same card framing as primary for a clean 3x2 matrix */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto w-full justify-center items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-8 max-w-7xl mx-auto w-full justify-center items-stretch">
           {secondaryMetrics.map((sm) => (
             <FadeIn key={sm}>
               <div className="p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-3 hover-lift h-full">

@@ -44,7 +44,7 @@ export default function Testimonials() {
 
         <FadeIn>
           <div className="relative max-w-4xl mx-auto">
-            <div className="p-6 lg:p-8 rounded-2xl glass text-center border border-[var(--border-subtle)]">
+            <div className="p-6 lg:p-9 rounded-2xl glass text-center border border-[var(--border-subtle)]">
               <div className="flex justify-center gap-1 mb-6 text-amber-400">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 fill-amber-400" />
