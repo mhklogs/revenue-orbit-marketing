@@ -25,14 +25,14 @@ export default function Industries() {
     <section id="industries" className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
       <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-20 text-center">
         <FadeIn>
-          <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-4 py-1.5 rounded-full mb-6">
+          <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             Industries
           </span>
-          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-white mb-8">
+          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
             Built for High-Growth{" "}
             <span className="gradient-text">U.S. Verticals</span>
           </h2>
-          <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl text-neutral-200 mb-16 leading-relaxed">
+          <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl text-[var(--text-secondary)] mb-16 leading-relaxed">
             Deep domain expertise across ten core industries, with active acquisition &amp; BPO programs deployed in each.
           </p>
         </FadeIn>
@@ -46,8 +46,8 @@ export default function Industries() {
                 onClick={() => setActive(i)}
                 className={`px-5 py-3 rounded-xl text-base sm:text-lg font-semibold transition-all border ${
                   active === i
-                    ? "bg-emerald-500 text-black border-emerald-500 font-bold"
-                    : "border-neutral-800 bg-neutral-900/50 text-neutral-400 hover:text-white hover:bg-neutral-800/50"
+                    ? "bg-[var(--accent)] text-white border-[var(--accent)] font-bold"
+                    : "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-elevated)]"
                 }`}
               >
                 {ind.title}
@@ -58,7 +58,7 @@ export default function Industries() {
 
         {/* Display Panel */}
         <FadeIn delay={0.2}>
-          <div className="max-w-3xl mx-auto w-full p-8 sm:p-10 rounded-2xl border border-neutral-800 bg-neutral-900/80 text-center flex flex-col items-center justify-center gap-6">
+          <div className="max-w-3xl mx-auto w-full p-8 sm:p-10 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-6">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
@@ -69,11 +69,11 @@ export default function Industries() {
                 className="flex flex-col items-center gap-6 w-full"
               >
                 {/* Panel Title */}
-                <h3 className="text-2xl sm:text-3xl font-bold leading-snug text-white flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+                <h3 className="text-2xl sm:text-3xl font-bold leading-snug text-[var(--text-primary)] flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center">
                     {(() => {
                       const Icon = industries[active].icon;
-                      return <Icon className="w-5 h-5 text-emerald-400" />;
+                      return <Icon className="w-5 h-5 text-[var(--accent)]" />;
                     })()}
                   </div>
                   {industries[active].title} Solutions
@@ -82,7 +82,7 @@ export default function Industries() {
                 {/* Workflows Container */}
                 <div className="flex flex-wrap justify-center gap-3 my-4">
                   {industries[active].items.map((item) => (
-                    <div key={item} className="px-4 py-2 rounded-lg bg-neutral-950 border border-neutral-800 text-base font-medium text-neutral-200">
+                    <div key={item} className="px-4 py-2 rounded-lg bg-[var(--bg-card)] border border-[var(--border-subtle)] text-base font-medium text-[var(--text-secondary)]">
                       {item}
                     </div>
                   ))}
@@ -91,7 +91,7 @@ export default function Industries() {
                 {/* Action CTA */}
                 <a
                   href="#contact-form"
-                  className="inline-flex items-center gap-2 h-13 px-6 rounded-xl text-base font-bold bg-emerald-500 text-black mt-2 hover:bg-emerald-400 transition-colors"
+                  className="inline-flex items-center gap-2 h-13 px-6 rounded-xl text-base font-bold bg-[var(--accent)] text-white mt-2 hover:bg-[var(--accent-light)] transition-colors"
                 >
                   Explore {industries[active].title} Solutions <ChevronRight className="w-4 h-4" />
                 </a>

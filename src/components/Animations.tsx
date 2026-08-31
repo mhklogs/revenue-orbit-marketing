@@ -32,7 +32,7 @@ export function StaggerContainer({ children, className = "" }: { children: React
 }
 
 export function StaggerItem({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`w-full ${className}`}>{children}</div>;
+  return <div className={`w-full h-full ${className}`}>{children}</div>;
 }
 
 export function SectionHeading({ badge, title, highlight, subtitle }: {
@@ -44,16 +44,16 @@ export function SectionHeading({ badge, title, highlight, subtitle }: {
   return (
     <div className="text-center mx-auto w-full max-w-4xl mb-16">
       {badge && (
-        <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-4 py-1.5 rounded-full mb-6">
+        <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
           {badge}
         </span>
       )}
-      <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug mb-8 text-white">
+      <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug mb-8 text-[var(--text-primary)]">
         {title}{" "}
         {highlight && <span className="gradient-text">{highlight}</span>}
       </h2>
       {subtitle && (
-        <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl leading-relaxed text-neutral-200 mb-14">
+        <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl leading-relaxed text-[var(--text-secondary)] mb-14">
           {subtitle}
         </p>
       )}

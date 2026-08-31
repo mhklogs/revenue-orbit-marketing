@@ -23,14 +23,14 @@ export default function FAQ() {
     <section id="faq" className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto" style={{ backgroundColor: "var(--bg-secondary)" }}>
       <div className="w-full max-w-4xl mx-auto px-6 lg:px-12 py-16 text-center">
         <FadeIn>
-          <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-4 py-1.5 rounded-full mb-6">
+          <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             Frequently Asked Questions
           </span>
-          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-white mb-8">
+          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
             Clear Answers to Common{" "}
             <span className="gradient-text">Questions</span>
           </h2>
-          <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl text-neutral-200 mb-16 leading-relaxed font-normal">
+          <p className="text-center mx-auto max-w-2xl text-lg lg:text-xl text-[var(--text-secondary)] mb-16 leading-relaxed font-normal">
             Everything you need to know about our acquisition models, BPO operations, AI tech stack, and onboarding timeline.
           </p>
         </FadeIn>
@@ -38,14 +38,14 @@ export default function FAQ() {
         <div className="max-w-3xl mx-auto w-full space-y-5 text-left mb-20">
           {faqs.map((faq, i) => (
             <FadeIn key={i} delay={i * 0.05}>
-              <div className="border border-neutral-800 rounded-xl bg-neutral-900/50 overflow-hidden transition-all">
+              <div className="border border-[var(--border-subtle)] rounded-xl bg-[var(--bg-card)] overflow-hidden transition-all">
                 <button
                   onClick={() => setOpen(open === i ? null : i)}
-                  className="w-full px-6 py-6 flex items-center justify-between text-left text-lg lg:text-xl font-semibold leading-relaxed text-white hover:bg-neutral-800/40 transition-colors"
+                  className="w-full px-6 py-6 flex items-center justify-between text-left text-lg lg:text-xl font-semibold leading-relaxed text-[var(--text-primary)] hover:bg-[var(--bg-elevated)] transition-colors"
                 >
                   <span className="pr-4">{faq.q}</span>
                   <ChevronDown
-                    className={`w-5 h-5 shrink-0 text-emerald-400 transition-transform ${open === i ? "rotate-180" : ""}`}
+                    className={`w-5 h-5 shrink-0 text-[var(--accent)] transition-transform ${open === i ? "rotate-180" : ""}`}
                   />
                 </button>
                 <AnimatePresence>
@@ -56,7 +56,7 @@ export default function FAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <div className="px-6 pb-6 text-base sm:text-lg leading-relaxed text-neutral-300 border-t border-neutral-800/50 pt-4">
+                      <div className="px-6 pb-6 text-base sm:text-lg leading-relaxed text-[var(--text-secondary)] border-t border-[var(--border-subtle)] pt-4">
                         {faq.a}
                       </div>
                     </motion.div>

@@ -33,8 +33,8 @@ export default function LiveCampaigns() {
                   <div className="w-14 h-14 rounded-lg bg-[var(--accent)]/15 border border-[var(--accent)]/20 flex items-center justify-center mb-2 group-hover:bg-[var(--accent)]/25 transition-all">
                     <c.icon className="w-7 h-7 text-[var(--accent-light)]" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold leading-snug text-white">{c.title}</h3>
-                  <p className="text-base sm:text-lg leading-relaxed text-neutral-300">{c.desc}</p>
+                  <h3 className="text-xl sm:text-2xl font-bold leading-snug text-[var(--text-primary)]">{c.title}</h3>
+                  <p className="text-base sm:text-lg leading-relaxed text-[var(--text-secondary)]">{c.desc}</p>
                 </div>
                 <div className="w-full mt-auto pt-6 border-t border-[var(--border-subtle)] flex flex-col items-center gap-4">
                   <div>

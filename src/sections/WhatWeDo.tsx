@@ -22,17 +22,17 @@ export default function WhatWeDo() {
       {/* Header Container */}
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 py-20 text-center">
         <FadeIn>
-          <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-4 py-1.5 rounded-full mb-6">
+          <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             What We Do
           </span>
 
           {/* Main Title */}
-          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-white mb-8">
+          <h2 className="text-center mx-auto max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-snug text-[var(--text-primary)] mb-8">
             Multiple Solutions. One Growth <span className="gradient-text">Ecosystem.</span>
           </h2>
 
           {/* Subtitle */}
-          <p className="text-center mx-auto max-w-3xl text-lg lg:text-xl text-neutral-200 leading-relaxed mb-16 font-normal">
+          <p className="text-center mx-auto max-w-3xl text-lg lg:text-xl text-[var(--text-secondary)] leading-relaxed mb-16 font-normal">
             Eight dedicated service lines, each custom-engineered around your target metrics — never generic packages.
           </p>
         </FadeIn>
@@ -42,26 +42,26 @@ export default function WhatWeDo() {
           {services.map((s) => (
             <StaggerItem key={s.title}>
               {/* Card Container */}
-              <div className="p-8 lg:p-10 rounded-2xl border border-neutral-800 bg-neutral-900/70 text-center flex flex-col items-center justify-between h-full hover:border-emerald-500/50 transition-all hover-lift">
+              <div className="p-8 lg:p-10 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-between h-full hover:border-[var(--accent)]/50 transition-all hover-lift">
                 <div className="flex flex-col items-center w-full gap-5">
                   {/* Badge / Number */}
-                  <span className="mx-auto text-sm sm:text-base font-semibold tracking-wider font-mono text-emerald-400 px-3 py-1 bg-emerald-500/10 rounded-lg inline-block">
+                  <span className="mx-auto text-sm sm:text-base font-semibold tracking-wider font-mono text-[var(--accent)] px-3 py-1 bg-[var(--accent)]/10 rounded-lg inline-block">
                     SOLUTION {s.num}
                   </span>
 
-                  <div className="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
-                    <s.icon className="w-7 h-7 text-emerald-400" />
+                  <div className="w-14 h-14 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center">
+                    <s.icon className="w-7 h-7 text-[var(--accent)]" />
                   </div>
 
                   {/* Card Heading */}
-                  <h3 className="text-xl sm:text-2xl font-bold leading-snug text-white">{s.title}</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold leading-snug text-[var(--text-primary)]">{s.title}</h3>
 
                   {/* Card Body Text */}
-                  <p className="text-base sm:text-lg text-neutral-300 leading-relaxed flex-grow font-normal">{s.desc}</p>
+                  <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed flex-grow font-normal">{s.desc}</p>
                 </div>
 
                 {/* Action Link */}
-                <a href="#contact-form" className="mt-auto pt-6 text-base font-bold text-emerald-400 flex items-center justify-center gap-2 hover:underline">
+                <a href="#contact-form" className="mt-auto pt-6 text-base font-bold text-[var(--accent)] flex items-center justify-center gap-2 hover:underline">
                   Explore Solution <ArrowRight className="w-5 h-5" />
                 </a>
               </div>

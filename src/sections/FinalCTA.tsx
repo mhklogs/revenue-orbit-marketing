@@ -5,7 +5,7 @@ import { ArrowRight, Calendar, Phone, Mail } from "lucide-react";
 
 export default function FinalCTA() {
   return (
-    <section id="contact" className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto overflow-hidden">
+    <section id="contact" className="py-16 md:py-24 relative w-full flex flex-col items-center justify-center mx-auto overflow-hidden mb-16 md:mb-20" style={{ backgroundColor: "var(--bg-primary)" }}>
       {/* Background Glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--accent)]/10 rounded-full blur-[100px]" />
@@ -13,16 +13,16 @@ export default function FinalCTA() {
 
       <div className="relative w-full max-w-4xl mx-auto px-6 lg:px-12 text-center">
         <FadeIn>
-          <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-4 py-1.5 rounded-full mb-6">
+          <span className="mx-auto inline-block text-sm sm:text-base font-semibold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 px-4 py-1.5 rounded-full mb-6">
             Revenue Orbit Marketing
           </span>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.2] max-w-4xl mx-auto mb-8 text-center text-white">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.2] max-w-4xl mx-auto mb-8 text-center text-[var(--text-primary)]">
             YOU BRING THE <span className="gradient-text">VISION.</span> WE MAKE IT <span className="gradient-text">HAPPEN.</span>
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="text-center text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto mb-8 text-neutral-200">
+          <p className="text-center text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto mb-8 text-[var(--text-secondary)]">
             Tell us what you&apos;re trying to build, grow or automate. We&apos;ll partner with you to turn your strategic vision into a high-performing, scalable growth machine.
           </p>
         </FadeIn>
@@ -45,7 +45,7 @@ export default function FinalCTA() {
         </FadeIn>
 
         <FadeIn delay={0.3}>
-          <div className="pt-8 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-center gap-6 text-base font-medium text-neutral-300">
+          <div className="pt-8 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-center gap-6 text-base font-medium text-[var(--text-secondary)]">
             <a href="tel:+13233068266" className="flex items-center gap-2 hover:text-[var(--accent-light)] transition-colors">
               <Phone className="w-5 h-5 text-[var(--accent-light)]" /> +1 (323) 306-8266
             </a>

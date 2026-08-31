@@ -32,36 +32,42 @@ export default function TechEcosystem() {
         />
 
         <FadeIn>
-          <div className="relative p-8 lg:p-10 rounded-2xl glass border border-[var(--border-subtle)] gap-5">
-            {/* Flow Grid */}
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+          <div className="relative p-8 lg:p-10 rounded-2xl glass border border-[var(--border-subtle)]">
+            {/* Flow Grid — single horizontal pipeline with arrow connectors, scrollable when tight */}
+            <div className="flex items-stretch justify-start lg:justify-between gap-2 overflow-x-auto pb-4 w-full">
               {nodes.map((node, i) => (
-                <div key={node.label} className="flex items-center gap-3 sm:gap-4">
+                <div key={node.label} className="flex items-center shrink-0 gap-2">
                   <motion.div
-                    className="flex flex-col items-center justify-center gap-3 p-5 rounded-xl bg-[var(--bg-elevated)] border border-[var(--border-subtle)] min-w-[120px] hover-lift"
+                    className="flex flex-col items-center justify-center gap-3 p-5 rounded-xl bg-[var(--bg-elevated)] border border-[var(--border-subtle)] min-w-[118px] hover-lift"
                     whileHover={{ scale: 1.05, borderColor: "var(--accent)" }}
                     transition={{ duration: 0.2 }}
                   >
                     <div className="w-12 h-12 rounded-lg bg-[var(--accent)]/15 border border-[var(--accent)]/20 flex items-center justify-center">
                       <node.icon className="w-6 h-6 text-[var(--accent-light)]" />
                     </div>
-                    <span className="text-sm sm:text-base font-semibold text-center text-white">{node.label}</span>
+                    <span className="text-sm sm:text-base font-semibold text-center text-[var(--text-primary)]">{node.label}</span>
                   </motion.div>
                   {i < nodes.length - 1 && (
-                    <motion.div
-                      className="w-6 sm:w-8 h-0.5 bg-[var(--accent)]/40 hidden sm:block rounded-full"
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.08, duration: 0.3 }}
-                    />
+                    <svg
+                      className="w-6 h-6 shrink-0 text-[var(--accent)]/60"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <line x1="3" y1="12" x2="21" y2="12" />
+                      <polyline points="15 6 21 12 15 18" />
+                    </svg>
                   )}
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 text-center pt-6 border-t border-[var(--border-subtle)]">
-              <p className="text-base sm:text-lg font-semibold tracking-wide leading-relaxed" style={{ color: "var(--accent-light)" }}>
+            <div className="mt-10 text-center pt-6 border-t" style={{ borderColor: "rgba(15, 118, 110, 0.3)" }}>
+              <p className="text-base sm:text-lg font-semibold tracking-wide leading-relaxed" style={{ color: "var(--accent)" }}>
                 Every data point connected. Every conversion tracked in real time.
               </p>
             </div>

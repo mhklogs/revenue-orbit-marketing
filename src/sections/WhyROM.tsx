@@ -27,15 +27,15 @@ export default function WhyROM() {
           {reasons.map((r) => (
             <StaggerItem key={r.title}>
               <div className="group p-8 lg:p-10 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full relative overflow-hidden flex flex-col gap-5 text-center items-center justify-between">
-                <div className="absolute top-4 right-4 text-5xl font-extrabold opacity-5 group-hover:opacity-15 transition-opacity" style={{ color: "var(--accent)" }}>
+                <div className="absolute top-4 right-4 text-5xl font-extrabold opacity-10 group-hover:opacity-20 transition-opacity z-0 pointer-events-none select-none" style={{ color: "var(--accent)" }}>
                   {r.num}
                 </div>
-                <div className="w-full flex flex-col gap-4 text-center items-center">
+                <div className="relative z-10 w-full flex flex-col gap-4 text-center items-center">
                   <div className="w-14 h-14 rounded-lg bg-[var(--accent)]/15 border border-[var(--accent)]/20 flex items-center justify-center mb-2 group-hover:bg-[var(--accent)]/25 transition-colors">
                     <r.icon className="w-7 h-7 text-[var(--accent-light)]" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold leading-snug mb-2 text-white">{r.title}</h3>
-                  <p className="text-base sm:text-lg leading-relaxed text-neutral-300">{r.desc}</p>
+                  <h3 className="text-xl sm:text-2xl font-bold leading-snug mb-2 text-[var(--text-primary)]">{r.title}</h3>
+                  <p className="text-base sm:text-lg leading-relaxed text-[var(--text-secondary)]">{r.desc}</p>
                 </div>
               </div>
             </StaggerItem>

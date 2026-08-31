@@ -23,39 +23,23 @@ export default function HowWeWork() {
           subtitle="Six structured execution stages, with clear deliverables and milestones signed off at each step."
         />
 
-        <div className="relative">
-          {/* Central Timeline Line */}
-          <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[var(--accent)] via-[var(--accent)]/40 to-transparent" />
-
-          <div className="space-y-8 lg:space-y-12">
-            {steps.map((step, i) => (
-              <FadeIn key={step.title} delay={i * 0.1} direction={i % 2 === 0 ? "left" : "right"}>
-                <div className={`relative flex items-center gap-6 ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
-                  {/* Timeline Dot */}
-                  <div className="absolute left-4 lg:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--accent-light)] border-4 border-[var(--bg-secondary)] z-10" />
-
-                  {/* Content Card */}
-                  <div className={`flex-1 ml-12 lg:ml-0 ${i % 2 === 0 ? "lg:pr-12 lg:text-right" : "lg:pl-12"}`}>
-                    <div className={`inline-block p-8 lg:p-10 rounded-2xl glass border border-[var(--border-subtle)] hover-lift max-w-lg text-left ${i % 2 === 0 ? "lg:ml-auto" : ""}`}>
-                      <div className="flex items-center justify-between mb-4 gap-4">
-                        <div className="w-12 h-12 rounded-lg bg-[var(--accent)]/15 border border-[var(--accent)]/20 flex items-center justify-center">
-                          <step.icon className="w-6 h-6 text-[var(--accent-light)]" />
-                        </div>
-                        <span className="text-sm sm:text-base font-semibold tracking-wider text-[var(--accent-light)] bg-[var(--bg-elevated)] px-3 py-1 rounded-full border border-[var(--border-subtle)]">
-                          STAGE {step.num}
-                        </span>
-                      </div>
-                      <h3 className="text-xl sm:text-2xl font-bold leading-snug mb-3 text-white">{step.title}</h3>
-                      <p className="text-base sm:text-lg leading-relaxed text-neutral-300">{step.desc}</p>
-                    </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
+          {steps.map((step, i) => (
+            <FadeIn key={step.title} delay={i * 0.08}>
+              <div className="relative p-8 lg:p-10 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full flex flex-col gap-5 text-center items-center justify-between">
+                <div className="w-full flex flex-col gap-4 text-center items-center">
+                  <div className="w-12 h-12 rounded-lg bg-[var(--accent)]/15 border border-[var(--accent)]/20 flex items-center justify-center">
+                    <step.icon className="w-6 h-6 text-[var(--accent-light)]" />
                   </div>
-
-                  {/* Spacer for Desktop */}
-                  <div className="hidden lg:block flex-1" />
+                  <span className="text-sm sm:text-base font-semibold tracking-wider text-[var(--accent-light)] bg-[var(--bg-elevated)] px-3 py-1 rounded-full border border-[var(--border-subtle)]">
+                    STAGE {step.num}
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-bold leading-snug text-[var(--text-primary)]">{step.title}</h3>
+                  <p className="text-base sm:text-lg leading-relaxed text-[var(--text-secondary)]">{step.desc}</p>
                 </div>
-              </FadeIn>
-            ))}
-          </div>
+              </div>
+            </FadeIn>
+          ))}
         </div>
       </div>
     </section>

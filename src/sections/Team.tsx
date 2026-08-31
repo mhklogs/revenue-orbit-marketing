@@ -27,11 +27,11 @@ export default function Team() {
 
         {/* Role Tags */}
         <FadeIn>
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-x-3 gap-y-3 max-w-3xl mx-auto mb-14">
             {roles.map((role) => (
               <span
                 key={role}
-                className="px-4 py-2 rounded-full text-sm sm:text-base font-semibold glass border border-[var(--accent)]/30 hover:border-[var(--accent)] transition-all cursor-default"
+                className="px-4 py-2 rounded-full text-sm font-semibold leading-none glass border border-[var(--accent)]/30 hover:border-[var(--accent)] transition-all cursor-default"
                 style={{ color: "var(--text-secondary)" }}
               >
                 {role}
@@ -49,9 +49,9 @@ export default function Team() {
                   <div className="w-20 h-20 rounded-full bg-[var(--accent)]/15 border border-[var(--accent)]/30 mx-auto flex items-center justify-center">
                     <span className="text-2xl font-bold text-[var(--accent-light)]">{leader.title}</span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold leading-snug text-white">{leader.role}</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold leading-snug text-[var(--text-primary)]">{leader.role}</h3>
                   <p className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-1 text-[var(--accent-light)]">Revenue Orbit Marketing</p>
-                  <p className="text-base sm:text-lg leading-relaxed text-neutral-300">{leader.desc}</p>
+                  <p className="text-base sm:text-lg leading-relaxed text-[var(--text-secondary)]">{leader.desc}</p>
                 </div>
               </div>
             </StaggerItem>

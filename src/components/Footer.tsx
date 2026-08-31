@@ -159,7 +159,7 @@ export default function Footer() {
         className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all hover:scale-105"
         aria-label="Chat on WhatsApp"
       >
-        <MessageCircle className="w-6 h-6 text-white" />
+        <MessageCircle className="w-6 h-6 text-[var(--text-primary)]" />
       </a>
     </footer>
   );

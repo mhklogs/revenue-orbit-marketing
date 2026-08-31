@@ -43,8 +43,8 @@ export default function Testimonials() {
         />
 
         <FadeIn>
-          <div className="relative max-w-3xl mx-auto">
-            <div className="p-8 lg:p-10 rounded-2xl glass text-center border border-[var(--border-subtle)] gap-5">
+          <div className="relative max-w-4xl mx-auto">
+            <div className="p-8 lg:p-12 rounded-2xl glass text-center border border-[var(--border-subtle)]">
               <div className="flex justify-center gap-1 mb-6 text-amber-400">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 fill-amber-400" />
@@ -61,12 +61,12 @@ export default function Testimonials() {
                   exit={{ opacity: 0, y: -15 }}
                   transition={{ duration: 0.25 }}
                 >
-                  <p className="text-lg lg:text-xl leading-relaxed italic mb-8 text-neutral-200">
+                  <p className="text-lg lg:text-xl leading-relaxed italic mb-8 text-[var(--text-secondary)]">
                     &ldquo;{testimonials[current].text}&rdquo;
                   </p>
-                  <h3 className="text-xl sm:text-2xl font-bold leading-snug text-white">{testimonials[current].name}</h3>
-                  <p className="text-base sm:text-lg font-medium text-emerald-400 mt-1">{testimonials[current].position}, {testimonials[current].company}</p>
-                  <span className="inline-block mt-4 px-4 py-1.5 rounded-full text-sm sm:text-base font-semibold tracking-wider uppercase bg-[var(--bg-elevated)] border border-[var(--border-subtle)] text-neutral-300">
+                  <h3 className="text-xl sm:text-2xl font-bold leading-snug text-[var(--text-primary)]">{testimonials[current].name}</h3>
+                  <p className="text-base sm:text-lg font-medium text-[var(--accent)] mt-1">{testimonials[current].position}, {testimonials[current].company}</p>
+                  <span className="inline-block mt-4 px-4 py-1.5 rounded-full text-sm sm:text-base font-semibold tracking-wider uppercase bg-[var(--bg-elevated)] border border-[var(--border-subtle)] text-[var(--text-secondary)]">
                     {testimonials[current].industry}
                   </span>
                 </motion.div>
@@ -80,7 +80,7 @@ export default function Testimonials() {
                 className="p-3 rounded-lg glass border border-[var(--border-subtle)] hover:bg-[var(--accent)]/15 transition-all"
                 aria-label="Previous Testimonial"
               >
-                <ChevronLeft className="w-6 h-6 text-white" />
+                <ChevronLeft className="w-6 h-6 text-[var(--text-primary)]" />
               </button>
               <div className="flex items-center gap-2">
                 {testimonials.map((_, i) => (
@@ -97,7 +97,7 @@ export default function Testimonials() {
                 className="p-3 rounded-lg glass border border-[var(--border-subtle)] hover:bg-[var(--accent)]/15 transition-all"
                 aria-label="Next Testimonial"
               >
-                <ChevronRight className="w-6 h-6 text-white" />
+                <ChevronRight className="w-6 h-6 text-[var(--text-primary)]" />
               </button>
             </div>
           </div>
