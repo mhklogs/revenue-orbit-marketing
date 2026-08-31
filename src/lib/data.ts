@@ -78,14 +78,103 @@ export type Industry = {
   tagline: string;
   compliance?: string;
   items: string[];
+  overview: string;
+  outcomes: string[];
+  workflows: string[];
 };
 
 export const industries: Industry[] = [
-  { slug: "legal", title: "Legal", tagline: "Case intake, claimant qualification, and signed retainers", compliance: "TCPA / ethical advertising", items: ["Personal Injury Intake", "MVA Claimants", "Mass Tort Litigation", "Legal Lead Intake", "Claimant Qualification", "Law Firm Appointment Setting"] },
-  { slug: "insurance", title: "Insurance", tagline: "Medicare, final expense, auto, and life campaigns", compliance: "TCPA / HIPAA", items: ["Medicare Advantage", "Final Expense", "Life Insurance", "Auto Insurance", "Compliant Transfer Gen", "Live Agent Transfers"] },
-  { slug: "healthcare", title: "Healthcare", tagline: "Patient scheduling, eligibility checks, and intake", compliance: "HIPAA", items: ["Patient Scheduling", "BPO Admin Support", "Telehealth Onboarding", "Medical Billing Care", "Eligibility Checks", "Intake"] },
-  { slug: "financial-services", title: "Financial Services", tagline: "Lending, debt relief, and advisory pipelines", compliance: "TCPA / TRID", items: ["Commercial Lending", "Debt Relief & Settlement", "Wealth Management", "Fintech Customer Acquisition", "Advisory Pipelines"] },
-  { slug: "home-services", title: "Home Services", tagline: "Roofing, solar, HVAC, and remodeling demand", compliance: "TCPA", items: ["Roofing Contractors", "Solar Installers", "HVAC Specialists", "Remodeling & Additions", "Plumbing Teams", "Home Improvement Demand"] },
-  { slug: "technology-saas", title: "Technology & SaaS", tagline: "Tiered technical support, onboarding, and B2B", items: ["B2B SaaS Growth", "Tech Customer Support", "User Onboarding", "Product Lead Qualification", "Tiered Support"] },
-  { slug: "professional-services", title: "Professional Services", tagline: "Consultancies, agencies, and B2B firms", items: ["B2B Enterprise Growth", "Management Consulting", "Corporate Agencies", "Executive Search Solutions"] },
+  {
+    slug: "legal",
+    title: "Legal",
+    tagline: "Case intake, claimant qualification, and signed retainers",
+    compliance: "TCPA / ethical advertising",
+    items: ["Personal Injury Intake", "MVA Claimants", "Mass Tort Litigation", "Legal Lead Intake", "Claimant Qualification", "Law Firm Appointment Setting"],
+    overview: "Law firms win or lose on speed and qualification. ROM runs intake teams, claimant qualification, and retainer-setting pipelines for personal injury, mass tort, and MVA practices — so every call is answered fast, every claimant is qualified against your retainer criteria, and no case thing slips through the cracks.",
+    outcomes: ["Faster speed-to-answer", "Qualified, signed retainers", "Ethical & TCPA-compliant outreach", "Mass tort claimant volume"],
+    workflows: ["Intake & triage setup", "Claimant qualification", "Retainer-focused appointment setting", "Compliance & ethical screening", "Continuous optimization"],
+  },
+  {
+    slug: "insurance",
+    title: "Insurance",
+    tagline: "Medicare, final expense, auto, and life campaigns",
+    compliance: "TCPA / HIPAA",
+    items: ["Medicare Advantage", "Final Expense", "Life Insurance", "Auto Insurance", "Compliant Transfer Gen", "Live Agent Transfers"],
+    overview: "Insurance success is a compliance game played at scale. ROM builds verified, compliant campaigns across Medicare, final expense, auto, and life — qualifying interest first, then transferring only warm, confirmed leads to your licensed agents within their compliance windows.",
+    outcomes: ["Verified, compliant transfers", "Warm live-agent transfers", "Medicare & AEP enrolment volume", "Higher transfer hold rates"],
+    workflows: ["Compliance-first campaign design", "Lead verification & conditioning", "Live-agent transfer routing", "HIPAA & TCPA monitoring", "Performance optimization"],
+  },
+  {
+    slug: "healthcare",
+    title: "Healthcare",
+    tagline: "Patient scheduling, eligibility checks, and intake",
+    compliance: "HIPAA",
+    items: ["Patient Scheduling", "BPO Admin Support", "Telehealth Onboarding", "Medical Billing Care", "Eligibility Checks", "Intake"],
+    overview: "Patient-facing operations need care, speed, and absolute confidentiality. ROM provides scheduling, eligibility checks, telehealth onboarding, and BPO admin support handled by HIPAA-trained teams that feel like an extension of your practice.",
+    outcomes: ["Filled appointment calendars", "Reduced admin burden", "HIPAA-compliant handling", "Telehealth onboarding at scale"],
+    workflows: ["Patient scheduling & reminders", "Eligibility & benefits checks", "Telehealth onboarding", "BPO admin & documentation", "HIPAA-compliant workflows"],
+  },
+  {
+    slug: "financial-services",
+    title: "Financial Services",
+    tagline: "Lending, debt relief, and advisory pipelines",
+    compliance: "TCPA / TRID",
+    items: ["Commercial Lending", "Debt Relief & Settlement", "Wealth Management", "Fintech Customer Acquisition", "Advisory Pipelines"],
+    overview: "Financial services run on qualified inbound and disciplined compliance. ROM builds lending, debt-relief, and advisory pipelines that qualify prospects on affordability and intent before your advisers spend a single minute.",
+    outcomes: ["Qualified advisory pipelines", "Compliant, intent-scored leads", "Lending & debt-relief volume", "Lower cost per qualified lead"],
+    workflows: ["Affordability & intent scoring", "Compliant lead qualification", "Adviser appointment setting", "TRID & TCPA adherence", "Attribution reporting"],
+  },
+  {
+    slug: "home-services",
+    title: "Home Services",
+    tagline: "Roofing, solar, HVAC, and remodeling demand",
+    compliance: "TCPA",
+    items: ["Roofing Contractors", "Solar Installers", "HVAC Specialists", "Remodeling & Additions", "Plumbing Teams", "Home Improvement Demand"],
+    overview: "Home services live and die by booked jobs that actually show up. ROM generates homeowner-verified demand for roofing, solar, HVAC, remodeling, and plumbing — qualified and booked straight into your installers' diaries.",
+    outcomes: ["Homeowner-verified appointments", "Booked installs that hold", "Lower no-show rates", "Predictable job pipeline"],
+    workflows: ["Demand generation", "Homeowner qualification & verification", "Appointment booking", "Job-diary integration", "No-show & follow-up recovery"],
+  },
+  {
+    slug: "technology-saas",
+    title: "Technology & SaaS",
+    tagline: "Tiered technical support, onboarding, and B2B",
+    items: ["B2B SaaS Growth", "Tech Customer Support", "User Onboarding", "Product Lead Qualification", "Tiered Support"],
+    overview: "Product teams would rather build than man queues. ROM covers B2B SaaS growth, tiered technical support, onboarding, and product-lead qualification so your team only talks to users who matter — and every user gets helped fast.",
+    outcomes: ["Product-led growth pipeline", "Faster tier-1 resolution", "Higher activation & onboarding", "Qualified B2B conversations"],
+    workflows: ["B2B outbound & qualification", "Tiered technical support", "User onboarding flows", "Product-lead scoring", "Escalation routing"],
+  },
+  {
+    slug: "professional-services",
+    title: "Professional Services",
+    tagline: "Consultancies, agencies, and B2B firms",
+    items: ["B2B Enterprise Growth", "Management Consulting", "Corporate Agencies", "Executive Search Solutions"],
+    overview: "Consultancies and agencies thrive on senior relationships — not lead spam. ROM runs outbound prospecting, scheduling, and client administration for professional-services firms, handing back only the conversations worth your principals' time.",
+    outcomes: ["Senior B2B conversations", "Executive meeting pipeline", "Lower admin overhead", "Client administration at scale"],
+    workflows: ["Senior-target outbound", "Executive scheduling", "Client & account admin", "B2B qualification", "Relationship-tracking CRM"],
+  },
+];
+
+export type FrameworkStage = {
+  num: string;
+  title: string;
+  desc: string;
+  icon: string;
+};
+
+export const growthFramework: FrameworkStage[] = [
+  { num: "01", title: "Connect", desc: "Capture and route every inbound — calls, chats, forms, and referrals — with speed-to-lead discipline so no opportunity goes cold.", icon: "connect" },
+  { num: "02", title: "Gauge", desc: "Qualify each prospect against your exact criteria — intent, budget, fit, and timing — before a human minute is spent.", icon: "gauge" },
+  { num: "03", title: "Convert", desc: "Turn qualified conversations into booked appointments and signed customers with trained closers, scripts, and SLAs.", icon: "convert" },
+  { num: "04", title: "Scale", desc: "Systematize what works, add headcount on demand, and pour more volume into a predictable, compounding revenue engine.", icon: "scale" },
+];
+
+export type Faq = { q: string; a: string };
+
+export const faqs: Faq[] = [
+  { q: "What industries do you serve?", a: "We work across legal, insurance, healthcare, financial services, home services, technology & SaaS, and professional services — with our deepest benches in legal intake and insurance." },
+  { q: "Do you customise every solution?", a: "Yes. There are no rigid packages. Every programme is scoped around your funnel, your qualification criteria, your systems, and the numbers you are measured on." },
+  { q: "Can you integrate with our CRM?", a: "We integrate with Salesforce, HubSpot, Zoho, GoHighLevel, and most platforms with a REST API. Where no direct integration exists we build the middleware and hand it over documented." },
+  { q: "Do we get a dedicated team?", a: "Dedicated agents work your account only, on your systems, with a named team lead and a QA analyst assigned. You interview and approve every placement." },
+  { q: "How quickly can a programme launch?", a: "A standard campaign runs roughly two to three weeks from kickoff to live volume — scripting, recruitment, training, and a calibration pilot before we scale." },
+  { q: "What is the minimum engagement size?", a: "Programmes typically start at five dedicated seats — the point at which supervision and quality assurance can be properly resourced." },
 ];

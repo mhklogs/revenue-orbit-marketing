@@ -198,7 +198,7 @@ export default function Navbar() {
                         <p className="text-xs font-semibold uppercase tracking-widest mb-3 px-2" style={{ color: "var(--text-muted)" }}>Industries</p>
                         <div className="grid grid-cols-2 gap-1">
                           {industries.map((ind: Industry) => (
-                            <Link key={ind.slug} href={`/industries#${ind.slug}`} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[var(--accent)]/5 transition-colors">
+                            <Link key={ind.slug} href={`/industries/${ind.slug}`} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[var(--accent)]/5 transition-colors">
                               <div>
                                 <p className="text-sm font-bold" style={{ color: "var(--text-primary)" }}>{ind.title}</p>
                                 <p className="text-xs mt-0.5 leading-snug" style={{ color: "var(--text-muted)" }}>{ind.tagline}</p>
@@ -304,7 +304,7 @@ export default function Navbar() {
                             )}
                             {m === "industries" &&
                               industries.map((ind) => (
-                                <Link key={ind.slug} href={`/industries#${ind.slug}`} onClick={() => setIsOpen(false)} className="block py-2.5 px-2 rounded-lg">
+                                <Link key={ind.slug} href={`/industries/${ind.slug}`} onClick={() => setIsOpen(false)} className="block py-2.5 px-2 rounded-lg">
                                   <p className="text-sm font-semibold" style={{ color: "var(--text-primary)" }}>{ind.title}</p>
                                   <p className="text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>{ind.tagline}</p>
                                 </Link>

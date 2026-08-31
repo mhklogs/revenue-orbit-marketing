@@ -33,7 +33,7 @@ export default function IndustriesPage() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {industries.map((ind) => (
               <StaggerItem key={ind.slug}>
-                <div id={ind.slug} className="p-7 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full flex flex-col scroll-mt-32">
+                <div className="p-7 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full flex flex-col scroll-mt-32">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-xl font-bold leading-[1.3]" style={{ color: "var(--text-primary)" }}>{ind.title}</h3>
                     {ind.compliance && (
@@ -50,7 +50,7 @@ export default function IndustriesPage() {
                       </span>
                     ))}
                   </div>
-                  <Link href="/contact" className="mt-auto inline-flex items-center gap-2 text-sm font-bold text-[var(--accent)] hover:gap-3 transition-all">
+                  <Link href={`/industries/${ind.slug}`} className="mt-auto inline-flex items-center gap-2 text-sm font-bold text-[var(--accent)] hover:gap-3 transition-all">
                     Explore {ind.title} Solutions <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>

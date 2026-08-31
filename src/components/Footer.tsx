@@ -113,7 +113,7 @@ export default function Footer() {
             <h3 className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "var(--text-primary)" }}>Industries</h3>
             <ul className="space-y-3">
               {industries.map((ind) => (
-                <li key={ind.slug}><Link href={`/industries#${ind.slug}`} className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-secondary)" }}>{ind.title}</Link></li>
+                <li key={ind.slug}><Link href={`/industries/${ind.slug}`} className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-secondary)" }}>{ind.title}</Link></li>
               ))}
             </ul>
           </div>
