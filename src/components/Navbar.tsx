@@ -45,7 +45,7 @@ export default function Navbar() {
         className={`transition-all duration-300 ${
           scrolled
             ? "glass shadow-md shadow-black/5"
-            : "bg-white/80 backdrop-blur-md border-b border-[var(--border-subtle)]"
+            : "bg-[var(--bg-header)]/80 backdrop-blur-md border-b border-[var(--border-subtle)]"
         }`}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,7 +63,7 @@ export default function Navbar() {
                 />
               </div>
               <div className="hidden sm:block leading-tight">
-                <p className="text-sm font-bold tracking-wider text-[var(--dark)]">
+                <p className="text-sm font-bold tracking-wider text-[var(--text-primary)]">
                   REVENUE ORBIT
                 </p>
                 <p className="text-xs font-semibold tracking-widest text-[var(--accent)]">
