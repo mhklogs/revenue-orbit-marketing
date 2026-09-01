@@ -31,22 +31,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Giant faded ROM watermark in the background */}
-      <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none select-none overflow-hidden">
-        <span
-          aria-hidden="true"
-          className="font-[family-name:var(--font-display)] font-black tracking-[0.08em] leading-none whitespace-nowrap"
-          style={{
-            fontSize: "clamp(16rem, 40vw, 38rem)",
-            color: "var(--accent)",
-            opacity: 0.06,
-            lineHeight: 1,
-          }}
-        >
-          ROM
-        </span>
-      </div>
-
       {/* Centered hero content */}
       <div className="relative z-[2] w-full max-w-7xl mx-auto px-6 lg:px-8 pt-40 lg:pt-44 pb-20 text-center">
         <FadeIn>

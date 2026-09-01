@@ -153,9 +153,9 @@ export default function Footer() {
             © 2026 Revenue Orbit Marketing LLC. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <Link href="#" className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-muted)" }}>Terms &amp; Conditions</Link>
-            <Link href="#" className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-muted)" }}>Privacy Policy</Link>
-            <Link href="#" className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-muted)" }}>Cookie Policy</Link>
+            <Link href="/terms" className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-muted)" }}>Terms &amp; Conditions</Link>
+            <Link href="/privacy" className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-muted)" }}>Privacy Policy</Link>
+            <Link href="/cookies" className="text-sm leading-normal hover:text-[var(--accent-light)] transition-colors" style={{ color: "var(--text-muted)" }}>Cookie Policy</Link>
           </div>
         </div>
       </div>

@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import { Cinzel, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import ChatWidget from "@/components/ChatWidget";
-import BackHome from "@/components/BackHome";
+import SiteShell from "@/components/SiteShell";
 
 const display = Cinzel({
   variable: "--font-display",
@@ -96,11 +93,7 @@ export default function RootLayout({
           }}
         />
         <ThemeProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <ChatWidget />
-          <BackHome />
+          <SiteShell>{children}</SiteShell>
         </ThemeProvider>
       </body>
     </html>
