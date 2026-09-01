@@ -42,16 +42,18 @@ export default function IndustriesPage() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {industries.map((ind) => (
               <StaggerItem key={ind.slug}>
-                <div className="p-7 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full flex flex-col scroll-mt-32">
-                  <div className="flex items-center justify-between mb-4">
+                <Link href={`/industries/${ind.slug}`} className="block group">
+                  <div className="p-7 rounded-2xl glass border border-[var(--border-subtle)] hover-lift hover:border-[var(--accent)]/40 transition-all h-full flex flex-col scroll-mt-32">
+                  <div className="flex items-center justify-between mb-4 gap-3">
                     <h3 className="text-xl font-bold leading-[1.3]" style={{ color: "var(--text-primary)" }}>{ind.title}</h3>
                     {ind.compliance && (
-                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 shrink-0">
                         <ShieldCheck className="w-3.5 h-3.5" /> {ind.compliance}
                       </span>
                     )}
                   </div>
-                  <p className="text-sm font-semibold text-[var(--accent)] mb-5">{ind.tagline}</p>
+                  <p className="text-sm font-semibold text-[var(--accent)] mb-4">{ind.tagline}</p>
+                  <p className="card-body mb-5 text-sm" style={{ color: "var(--text-secondary)" }}>{ind.overview}</p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {ind.items.map((item) => (
                       <span key={item} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--bg-elevated)] border border-[var(--border-subtle)] text-xs font-medium" style={{ color: "var(--text-secondary)" }}>
@@ -59,10 +61,11 @@ export default function IndustriesPage() {
                       </span>
                     ))}
                   </div>
-                  <Link href={`/industries/${ind.slug}`} className="mt-auto inline-flex items-center gap-2 text-sm font-bold text-[var(--accent)] hover:gap-3 transition-all">
+                  <span className="mt-auto inline-flex items-center gap-2 text-sm font-bold text-[var(--accent)] group-hover:gap-3 transition-all">
                     Explore {ind.title} Solutions <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
+                  </span>
+                  </div>
+                </Link>
               </StaggerItem>
             ))}
           </StaggerContainer>

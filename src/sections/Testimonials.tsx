@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeIn, SectionHeading } from "@/components/Animations";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
+import MobileExpand from "@/components/MobileExpand";
 
 const testimonials = [
   {
@@ -154,31 +155,38 @@ export default function Testimonials() {
           </div>
         </FadeIn>
 
-        {/* Review grid — recent verified results across industries */}
-        <div className="relative max-w-7xl mx-auto mt-16 grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+        {/* Review grid — one wide column on phones (main text + arrow to unhide), 2–3 across on desktop */}
+        <div className="relative max-w-7xl mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {reviewGrid.map((r) => (
             <FadeIn key={r.name} className="text-left">
               <div className="h-full p-4 sm:p-7 rounded-2xl glass border border-[var(--border-subtle)] hover-lift flex flex-col">
-                <div className="flex gap-1 mb-3 sm:mb-4 text-amber-400">
-                  {[...Array(r.stars)].map((_, i) => (
-                    <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-amber-400" />
-                  ))}
-                </div>
-                <p className="card-body flex-grow mb-4 sm:mb-6 text-[var(--text-secondary)] text-xs sm:text-base">
-                  &ldquo;{r.text}&rdquo;
-                </p>
-                <div className="flex items-center gap-3 pt-5 border-t border-[var(--border-subtle)]">
-                  <span className="w-11 h-11 shrink-0 rounded-full bg-[var(--accent)]/15 border border-[var(--accent)]/25 flex items-center justify-center font-bold text-[var(--accent)]">
-                    {r.name.split(" ").map((n) => n[0]).join("")}
-                  </span>
-                  <div>
-                    <p className="font-bold leading-tight" style={{ color: "var(--text-primary)" }}>{r.name}</p>
-                    <p className="text-sm text-[var(--text-muted)]">{r.position}, {r.company}</p>
-                    <span className="inline-block mt-1 text-xs font-semibold uppercase tracking-wider text-[var(--accent)]">
-                      {r.industry}
-                    </span>
-                  </div>
-                </div>
+                <MobileExpand
+                  preview={
+                    <>
+                      <div className="flex gap-1 mb-3 sm:mb-4 text-amber-400">
+                        {[...Array(r.stars)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-amber-400" />
+                        ))}
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="w-11 h-11 shrink-0 rounded-full bg-[var(--accent)]/15 border border-[var(--accent)]/25 flex items-center justify-center font-bold text-[var(--accent)]">
+                          {r.name.split(" ").map((n) => n[0]).join("")}
+                        </span>
+                        <div>
+                          <p className="font-bold leading-tight" style={{ color: "var(--text-primary)" }}>{r.name}</p>
+                          <p className="text-sm text-[var(--text-muted)]">{r.position}, {r.company}</p>
+                          <span className="inline-block mt-1 text-xs font-semibold uppercase tracking-wider text-[var(--accent)]">
+                            {r.industry}
+                          </span>
+                        </div>
+                      </div>
+                    </>
+                  }
+                >
+                  <p className="card-body pt-4 text-[var(--text-secondary)] text-xs sm:text-base">
+                    &ldquo;{r.text}&rdquo;
+                  </p>
+                </MobileExpand>
               </div>
             </FadeIn>
           ))}

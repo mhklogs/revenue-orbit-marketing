@@ -5,6 +5,7 @@ import TiltCard from "@/components/TiltCard";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/data";
 import DetailReveal from "@/components/DetailReveal";
+import MobileExpand from "@/components/MobileExpand";
 
 export default function WhatWeDo() {
   return (
@@ -29,7 +30,7 @@ export default function WhatWeDo() {
 
         {/* Grid Layout with detail reveal */}
         <DetailReveal collapsedHeight={720} label="Unhide all solutions">
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
             {services.map((s) => (
               <StaggerItem key={s.title}>
                 {/* Card Container */}
@@ -43,17 +44,20 @@ export default function WhatWeDo() {
 
                     {/* Card Heading */}
                     <h3 className="text-sm sm:text-xl font-bold leading-[1.3] min-h-[2.4em] text-[var(--text-primary)]">{s.title}</h3>
-
-                    {/* Card Body Text */}
-                    <p className="card-body text-center flex-grow text-xs sm:text-base">
-                      {s.desc}
-                    </p>
                   </div>
 
-                  {/* Action Link */}
-                  <a href={`/services/${s.slug}`} className="mt-auto pt-4 sm:pt-6 text-xs sm:text-base font-bold text-[var(--accent)] flex items-center justify-center gap-2 hover:underline">
-                    Explore <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </a>
+                  {/* Main text + arrow to unhide the body on phones */}
+                  <MobileExpand
+                    buttonLabel="Unhide solution"
+                    preview={<></>}
+                  >
+                    <p className="card-body text-center text-xs sm:text-base mb-3 sm:mb-4">
+                      {s.desc}
+                    </p>
+                    <a href={`/services/${s.slug}`} className="inline-flex items-center justify-center gap-2 text-xs sm:text-base font-bold text-[var(--accent)] hover:underline">
+                      Explore <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </a>
+                  </MobileExpand>
                 </div>
                 </TiltCard>
               </StaggerItem>

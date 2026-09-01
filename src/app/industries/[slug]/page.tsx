@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { industries } from "@/lib/data";
 import { FadeIn, StaggerContainer, StaggerItem, SectionHeading } from "@/components/Animations";
-import { CheckCircle, ArrowRight, Calendar, ShieldCheck, Zap, ChartNoAxesColumn } from "lucide-react";
+import { CheckCircle, ArrowRight, Calendar, ShieldCheck, Zap, ChartNoAxesColumn, AlertTriangle, Layers } from "lucide-react";
 
 export const dynamicParams = false;
 
@@ -55,6 +55,61 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
               <Link href="/contact" className="btn-outline"><Calendar className="w-5 h-5 text-[var(--accent)]" /> SCHEDULE A CONSULTATION</Link>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Deep Dive — industry landscape */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <SectionHeading badge="The Industry" title={`${industry.title} Landscape`} subtitle="What is actually happening in this vertical — and where the growth really comes from." />
+          <div className="space-y-6">
+            {industry.context.map((para, i) => (
+              <FadeIn key={i} delay={i * 0.05}>
+                <p className="card-body text-lg lg:text-xl leading-relaxed" style={{ color: "var(--text-secondary)" }}>{para}</p>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Challenges we solve */}
+      <section className="py-16 md:py-24" style={{ backgroundColor: "var(--bg-secondary)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <SectionHeading badge="The Problems" title={`What Slows ${industry.title} Growth`} subtitle="The specific revenue leaks our programmes are built to close." />
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
+            {industry.challenges.map((c, i) => (
+              <StaggerItem key={i}>
+                <div className="flex items-start gap-4 p-5 rounded-2xl glass border border-[var(--border-subtle)] h-full">
+                  <span className="w-10 h-10 shrink-0 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                    <AlertTriangle className="w-5 h-5 text-red-400" />
+                  </span>
+                  <p className="font-semibold leading-snug" style={{ color: "var(--text-primary)" }}>{c}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Dedicated services */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <SectionHeading badge="ROM Services" title={`How We Run ${industry.title}`} subtitle="Dedicated programmes, custom-built for how this vertical actually converts." />
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {industry.services.map((s) => (
+              <StaggerItem key={s.title}>
+                <div className="p-7 rounded-2xl glass border border-[var(--border-subtle)] hover-lift hover:border-[var(--accent)]/40 transition-all h-full">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="w-11 h-11 shrink-0 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/25 flex items-center justify-center">
+                      <Layers className="w-5 h-5 text-[var(--accent)]" />
+                    </span>
+                    <h3 className="text-lg font-bold leading-snug" style={{ color: "var(--text-primary)" }}>{s.title}</h3>
+                  </div>
+                  <p className="card-body leading-relaxed" style={{ color: "var(--text-secondary)" }}>{s.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
