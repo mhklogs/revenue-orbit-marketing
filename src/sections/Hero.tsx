@@ -3,7 +3,7 @@
 import { ArrowRight, Calendar } from "lucide-react";
 import { FadeIn } from "@/components/Animations";
 import Aurora from "@/components/reactbits/Aurora";
-import OrbitVisual from "@/components/OrbitVisual";
+import BrandLogo from "@/components/BrandLogo";
 
 const ticker = [
   "Performance Marketing", "Lead Generation", "Contact Center Solutions",
@@ -14,15 +14,6 @@ const ticker = [
 export default function Hero() {
   return (
     <section className="relative w-full flex flex-col items-center overflow-hidden bg-[var(--bg-primary)]">
-      {/* Photographic backdrop (real imagery, heavily toned) */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/images/hero-architecture.jpg"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover opacity-[0.14] saturate-[0.8] contrast-[1.05]"
-        draggable={false}
-      />
       {/* ReactBits Aurora cinematic background */}
       <Aurora
         colorStops={["#0F6B63", "#2EC4B0", "#0E3F3A"]}
@@ -33,23 +24,11 @@ export default function Hero() {
       {/* Soft glow overlay for depth */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--bg-primary)_78%)] z-[1]" />
 
-      {/* Revenue Orbit : orbiting brand system (reinforces "ORBIT") */}
-      <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none select-none">
-        <div className="orbit-visual-wrap">
-          <OrbitVisual size={740} />
-        </div>
-      </div>
-
-      {/* Faded brand logo watermark behind hero copy */}
+      {/* Single bg-less brand logo with orbiting line (subtle, theme-aware) */}
       <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none select-none overflow-hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/rom-logo-cutout.png"
-          alt=""
-          aria-hidden="true"
-          className="w-[min(80vw,880px)] opacity-[0.08] saturate-150"
-          draggable={false}
-        />
+        <div className="hero-logo-mark">
+          <BrandLogo variant="auto" size={340} className="opacity-[0.16]" />
+        </div>
       </div>
 
       {/* Centered hero content */}

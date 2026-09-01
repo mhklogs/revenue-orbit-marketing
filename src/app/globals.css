@@ -235,6 +235,24 @@ ul li::marker, ol li::marker {
   from { transform: translate(-50%, -50%) rotate(360deg); }
   to { transform: translate(-50%, -50%) rotate(0deg); }
 }
+@keyframes orbitRingSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.orbit-ring-spin {
+  animation: orbitRingSpin 9s linear infinite;
+}
+
+/* Hero bg-less brand logo mark — responsive, subtle, theme-aware */
+.hero-logo-mark {
+  transform: scale(0.55);
+}
+@media (min-width: 640px) {
+  .hero-logo-mark { transform: scale(0.75); }
+}
+@media (min-width: 900px) {
+  .hero-logo-mark { transform: scale(1); }
+}
 
 /* ------------- Revenue Orbit : orbiting hero system ------------- */
 .orbit-container {

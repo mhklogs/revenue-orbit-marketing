@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X, ArrowRight, ChevronDown, Sun, Moon, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/context/ThemeContext";
+import BrandLogo from "@/components/BrandLogo";
 import { services, industries } from "@/lib/data";
 import type { Service, Industry } from "@/lib/data";
 
@@ -102,9 +102,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="relative w-10 h-10 lg:w-12 lg:h-12 shrink-0">
-                <Image src="/rom-logo-cutout.png" alt="Revenue Orbit Marketing" fill sizes="48px" className="object-contain" priority />
-              </div>
+              <BrandLogo variant="auto" size={44} />
               <div className="hidden sm:block leading-tight">
                 <p className="text-sm font-bold tracking-wider text-[var(--text-primary)]">REVENUE ORBIT</p>
                 <p className="text-xs font-semibold tracking-widest text-[var(--accent)]">MARKETING</p>
