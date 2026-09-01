@@ -9,8 +9,9 @@ import BackHome from "@/components/BackHome";
 export default function SiteShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAdmin = pathname.startsWith("/admin");
+  const isCertificate = pathname.startsWith("/certificates");
 
-  if (isAdmin) {
+  if (isAdmin || isCertificate) {
     return <main className="min-h-screen">{children}</main>;
   }
 

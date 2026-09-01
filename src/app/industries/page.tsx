@@ -30,6 +30,15 @@ export default function IndustriesPage() {
 
       <section className="py-16 md:py-24" style={{ backgroundColor: "var(--bg-secondary)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="relative overflow-hidden rounded-3xl border border-[var(--border-subtle)] mb-10">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/industries-briefing.jpg"
+              alt="ROM briefing session mapping acquisition strategy for a targeted U.S. vertical"
+              className="w-full max-h-[380px] object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-secondary)]/90 via-transparent to-[var(--bg-secondary)]/10 pointer-events-none" />
+          </div>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {industries.map((ind) => (
               <StaggerItem key={ind.slug}>

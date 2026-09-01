@@ -47,12 +47,14 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Revenue Orbit Marketing",
     url: "https://rom-website.vercel.app",
+    images: [{ url: "/images/hero-architecture.jpg", width: 1600, height: 1068, alt: "Revenue Orbit Marketing" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Revenue Orbit Marketing | Growth & Technology Partner",
     description:
       "Growth and technology partner helping businesses generate customers, accelerate revenue, streamline operations and scale.",
+    images: ["/images/hero-architecture.jpg"],
   },
 };
 

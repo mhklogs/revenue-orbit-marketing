@@ -1,5 +1,4 @@
-import { promises as fs } from "fs";
-import { join } from "path";
+import { readCollection, writeCollection, newId } from "./store";
 
 export type Lead = {
   id: string;
@@ -11,46 +10,31 @@ export type Lead = {
   message: string;
   source: string;
   status: "new" | "contacted" | "qualified" | "closed";
+  consent: boolean;
   createdAt: string;
 };
 
-const DATA_DIR = join(process.cwd(), "data");
-const LEADS_FILE = join(DATA_DIR, "leads.json");
-
-async function ensureStore(): Promise<void> {
-  await fs.mkdir(DATA_DIR, { recursive: true });
-  try {
-    await fs.access(LEADS_FILE);
-  } catch {
-    await fs.writeFile(LEADS_FILE, JSON.stringify([]), "utf-8");
-  }
-}
+const LEADS_FILE = "leads.json";
 
 export async function readLeads(): Promise<Lead[]> {
-  await ensureStore();
-  try {
-    const raw = await fs.readFile(LEADS_FILE, "utf-8");
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
+  return readCollection<Lead>(LEADS_FILE);
 }
 
 export async function writeLeads(leads: Lead[]): Promise<void> {
-  await ensureStore();
-  await fs.writeFile(LEADS_FILE, JSON.stringify(leads, null, 2), "utf-8");
+  await writeCollection(LEADS_FILE, leads);
 }
 
-export async function addLead(input: Omit<Lead, "id" | "createdAt" | "status">): Promise<Lead> {
+export async function addLead(
+  input: Omit<Lead, "id" | "createdAt" | "status">
+): Promise<Lead> {
   const leads = await readLeads();
   const lead: Lead = {
     ...input,
-    id: crypto.randomUUID(),
+    consent: input.consent ?? false,
+    id: newId(),
     status: "new",
     createdAt: new Date().toISOString(),
   };
-  leads.unshift(lead);
-  await writeLeads(leads);
+  await writeCollection(LEADS_FILE, [lead, ...leads]);
   return lead;
 }

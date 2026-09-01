@@ -68,6 +68,15 @@ export default function AboutPage() {
       {/* Key Operational Variables */}
       <section className="py-16 md:py-24" style={{ backgroundColor: "var(--bg-secondary)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+          <div className="relative overflow-hidden rounded-3xl border border-[var(--border-subtle)] mb-14">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/about-team.jpg"
+              alt="The Revenue Orbit Marketing delivery team collaborating on a client growth program"
+              className="w-full max-h-[420px] object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)]/80 via-transparent to-[var(--bg-primary)]/10 pointer-events-none" />
+          </div>
           <SectionHeading badge="How We Work" title="Key Operational" highlight="Variables" subtitle="Every business operates around distinct structural variables. We build around yours." />
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {variables.map((v) => (

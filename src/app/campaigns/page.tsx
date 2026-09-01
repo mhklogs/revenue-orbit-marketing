@@ -9,17 +9,17 @@ export const metadata: Metadata = {
 };
 
 const metrics = [
-  { value: "500K+", label: "QUALIFIED OPPORTUNITIES PROCESSED" },
-  { value: "120K+", label: "APPOINTMENTS BOOKED" },
-  { value: "42%", label: "AVERAGE CONVERSION BOOST" },
-  { value: "3.8x", label: "AVERAGE CLIENT CAMPAIGN ROI" },
+  { value: "50K+", label: "QUALIFIED OPPORTUNITIES PROCESSED" },
+  { value: "10K+", label: "APPOINTMENTS BOOKED" },
+  { value: "32%", label: "AVERAGE CONVERSION BOOST" },
+  { value: "2.5x", label: "AVERAGE CLIENT CAMPAIGN ROI" },
 ];
 
 const campaigns = [
   { icon: Building2, title: "Real Estate Lead Generation", desc: "Motivated seller and buyer leads pre-verified and qualified directly for real estate professionals.", outcome: "Qualified Appointments" },
   { icon: Shield, title: "MVA & Personal Injury Intake", desc: "Time-critical intake for law firm partners — verified claimants ready for retainer execution.", outcome: "Signed Retainers" },
   { icon: Stethoscope, title: "Insurance Acquisition", desc: "Medicare Advantage, final expense, auto, and life campaigns — compliant TCPA live agent transfers.", outcome: "Verified Transfers" },
-  { icon: Wrench, title: "Home Services Growth", desc: "Roofing, solar, HVAC, and remodeling demand — pre-booked straight into your sales rep diaries.", outcome: "Held Appointments" },
+  { icon: Wrench, title: "HVAC, Solar & Trades Growth", desc: "Roofing, solar, HVAC, and remodeling demand — pre-booked straight into your sales rep diaries.", outcome: "Held Appointments" },
 ];
 
 const caseStudies = [
@@ -88,6 +88,15 @@ export default function CampaignsPage() {
       {/* Case Studies */}
       <section className="py-16 md:py-24" style={{ backgroundColor: "var(--bg-secondary)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="relative overflow-hidden rounded-3xl border border-[var(--border-subtle)] mb-10">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/campaigns-analytics.jpg"
+              alt="Campaign analytics dashboard tracking qualified opportunities and booked appointments"
+              className="w-full max-h-[380px] object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-secondary)]/90 via-transparent to-[var(--bg-secondary)]/10 pointer-events-none" />
+          </div>
           <SectionHeading badge="Case Studies" title="Growth Partner Results You Can" highlight="Measure" />
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {caseStudies.map((c) => (

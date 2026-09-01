@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+import { industries } from "@/lib/data";
+import { getBlogs } from "@/lib/content";
 
 const BASE = "https://rom-website.vercel.app";
 
@@ -12,13 +14,10 @@ const serviceSlugs = [
   "contact-center-solutions", "remote-workforce-solutions", "crm-business-automation",
 ];
 
-const industrySlugs = [
-  "legal", "insurance", "healthcare", "financial-services",
-  "home-services", "real-estate", "technology-saas", "professional-services",
-];
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const blogPosts = await getBlogs();
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
+  return [
     ...staticRoutes.map((r) => ({
       url: `${BASE}${r}`,
       lastModified: new Date(),
@@ -31,12 +30,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
-    ...industrySlugs.map((i) => ({
-      url: `${BASE}/industries/${i}`,
+    ...industries.map((i) => ({
+      url: `${BASE}/industries/${i.slug}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
+    ...blogPosts.map((p) => ({
+      url: `${BASE}/blog/${p.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
   ];
-  return routes;
 }

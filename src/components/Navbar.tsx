@@ -102,8 +102,8 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="relative w-10 h-10 lg:w-12 lg:h-12 shrink-0 rounded-full overflow-hidden border border-[var(--border-subtle)]">
-                <Image src="/rom-logo.png" alt="Revenue Orbit Marketing" fill sizes="48px" className="object-cover" priority />
+              <div className="relative w-10 h-10 lg:w-12 lg:h-12 shrink-0">
+                <Image src="/rom-logo-cutout.png" alt="Revenue Orbit Marketing" fill sizes="48px" className="object-contain" priority />
               </div>
               <div className="hidden sm:block leading-tight">
                 <p className="text-sm font-bold tracking-wider text-[var(--text-primary)]">REVENUE ORBIT</p>

@@ -149,6 +149,39 @@ ul li::marker, ol li::marker {
   color: var(--text-secondary);
 }
 
+/* Blog article body */
+.blog-body {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+.blog-body h2 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin: 2.2rem 0 0.9rem;
+  line-height: 1.2;
+}
+.blog-body h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 1.8rem 0 0.7rem;
+  line-height: 1.25;
+}
+.blog-body p {
+  margin: 0 0 1.15rem;
+}
+.blog-body ul {
+  margin: 0 0 1.4rem;
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  list-style: disc;
+}
+
 /* Reading-length constraint for body paragraphs */
 .prose-copy {
   max-width: 65ch;

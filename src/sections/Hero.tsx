@@ -14,6 +14,15 @@ const ticker = [
 export default function Hero() {
   return (
     <section className="relative w-full flex flex-col items-center overflow-hidden bg-[var(--bg-primary)]">
+      {/* Photographic backdrop (real imagery, heavily toned) */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/hero-architecture.jpg"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.14] saturate-[0.8] contrast-[1.05]"
+        draggable={false}
+      />
       {/* ReactBits Aurora cinematic background */}
       <Aurora
         colorStops={["#0F6B63", "#2EC4B0", "#0E3F3A"]}
@@ -29,6 +38,18 @@ export default function Hero() {
         <div className="orbit-visual-wrap">
           <OrbitVisual size={740} />
         </div>
+      </div>
+
+      {/* Faded brand logo watermark behind hero copy */}
+      <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none select-none overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/rom-logo-cutout.png"
+          alt=""
+          aria-hidden="true"
+          className="w-[min(80vw,880px)] opacity-[0.08] saturate-150"
+          draggable={false}
+        />
       </div>
 
       {/* Centered hero content */}

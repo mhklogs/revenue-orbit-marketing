@@ -126,13 +126,23 @@ export const industries: Industry[] = [
   },
   {
     slug: "home-services",
-    title: "Home Services",
+    title: "HVAC, Solar & Trades",
     tagline: "Roofing, solar, HVAC, and remodeling demand",
     compliance: "TCPA",
     items: ["Roofing Contractors", "Solar Installers", "HVAC Specialists", "Remodeling & Additions", "Plumbing Teams", "Home Improvement Demand"],
     overview: "Home services live and die by booked jobs that actually show up. ROM generates homeowner-verified demand for roofing, solar, HVAC, remodeling, and plumbing — qualified and booked straight into your installers' diaries.",
     outcomes: ["Homeowner-verified appointments", "Booked installs that hold", "Lower no-show rates", "Predictable job pipeline"],
     workflows: ["Demand generation", "Homeowner qualification & verification", "Appointment booking", "Job-diary integration", "No-show & follow-up recovery"],
+  },
+  {
+    slug: "home-integrity",
+    title: "Home Integrity (HI)",
+    tagline: "Certification, property inspections, and home-integrity givebacks",
+    compliance: "TCPA",
+    items: ["Home Integrity Certification", "Property Condition Reports", "System Audits (Roof, HVAC, Plumbing, Electrical)", "Pre-Inspection Qualification", "Certification Appointments", "Giveback & Buyback Campaigns"],
+    overview: "Home Integrity (HI) pairs property condition certification with qualification-driven campaigns. ROM runs inspection, certification, and giveback programs that verify a home's condition, qualify homeowners for seller-funded upgrades, and route verified appointments to licensed inspectors — so certification volume connects directly to service revenue.",
+    outcomes: ["Verified certification appointments", "Complete condition reports", "Seller-funded upgrade pipeline", "Higher close rates on repairs"],
+    workflows: ["Condition intake & qualification", "Inspection scheduling", "Certification appointment setting", "Upgrade & giveback routing", "Quality & compliance monitoring"],
   },
   {
     slug: "real-estate",
@@ -181,7 +191,7 @@ export const growthFramework: FrameworkStage[] = [
 export type Faq = { q: string; a: string };
 
 export const faqs: Faq[] = [
-  { q: "What industries do you serve?", a: "We work across legal, insurance, healthcare, financial services, home services, technology & SaaS, and professional services — with our deepest benches in legal intake and insurance." },
+  { q: "What industries do you serve?", a: "We work across legal, insurance, healthcare, financial services, home services, technology & SaaS, and professional services — with our deepest benches in legal intake and insurance. Home Integrity (HI) certification is handled as its own dedicated vertical." },
   { q: "Do you customise every solution?", a: "Yes. There are no rigid packages. Every programme is scoped around your funnel, your qualification criteria, your systems, and the numbers you are measured on." },
   { q: "Can you integrate with our CRM?", a: "We integrate with Salesforce, HubSpot, Zoho, GoHighLevel, and most platforms with a REST API. Where no direct integration exists we build the middleware and hand it over documented." },
   { q: "Do we get a dedicated team?", a: "Dedicated agents work your account only, on your systems, with a named team lead and a QA analyst assigned. You interview and approve every placement." },

@@ -5,15 +5,15 @@ import { useInView } from "framer-motion";
 import { FadeIn } from "@/components/Animations";
 
 const primaryMetrics = [
-  { label: "QUALIFIED OPPORTUNITIES PROCESSED", target: 500000, suffix: "+" },
-  { label: "APPOINTMENTS BOOKED", target: 120000, suffix: "+" },
-  { label: "AVERAGE CONVERSION BOOST", target: 42, suffix: "%" },
+  { label: "QUALIFIED OPPORTUNITIES PROCESSED", target: 50000, suffix: "+" },
+  { label: "APPOINTMENTS BOOKED", target: 10000, suffix: "+" },
+  { label: "AVERAGE CONVERSION BOOST", target: 32, suffix: "%" },
 ];
 
 const secondaryMetrics = [
-  "3.8x AVERAGE CLIENT CAMPAIGN ROI",
-  "99% SLA COMPLIANCE RATE",
-  "96% CLIENT RETENTION RATE",
+  "2.5x AVERAGE CLIENT CAMPAIGN ROI",
+  "97% SLA COMPLIANCE RATE",
+  "93% CLIENT RETENTION RATE",
 ];
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {

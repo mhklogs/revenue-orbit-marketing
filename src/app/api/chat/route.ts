@@ -30,9 +30,9 @@ Scalable Infrastructure (10 to 10,000 requests); Single Unified Growth Ecosystem
 INDUSTRIES (10 verticals):
 Legal (personal injury, mass tort, claimant qualification); Insurance (Medicare Advantage, final expense,
 life, auto, compliant transfers); Real Estate (realtors, wholesale, motivated sellers, buyer lead systems);
-Home Services (roofing, solar, HVAC, remodeling, plumbing); Automotive; Financial Services (commercial lending,
-debt relief, wealth); Tax Services; Healthcare (patient scheduling, BPO admin, telehealth); Technology & SaaS;
-Professional Services.
+HVAC, Solar & Trades (roofing, solar, HVAC, remodeling, plumbing); Home Integrity (HI - property condition
+certification & givebacks); Automotive; Financial Services (commercial lending, debt relief, wealth);
+Tax Services; Healthcare (patient scheduling, BPO admin, telehealth); Technology & SaaS; Professional Services.
 
 HOW WE WORK (6 stages):
 01 Discover & Audit; 02 Strategize & Model; 03 Build & Integrate; 04 Deploy & Launch; 05 Measure & Analyze;
@@ -47,8 +47,8 @@ Workforce roles: Sales Engineers, Marketing Strategists, Software Developers, AI
 Appointment Setters, Account Executives, Operations Leads, Quality Assurance.
 
 METRICS / TRACK RECORD:
-500,000+ qualified opportunities processed; 120,000+ appointments booked; 42% average conversion boost;
-3.8x average client campaign ROI; 99% SLA compliance; 96% client retention.
+50,000+ qualified opportunities processed; 10,000+ appointments booked; 32% average conversion boost;
+2.5x average client campaign ROI; 97% SLA compliance; 93% client retention.
 
 MISSION: Empower enterprise and scaling businesses through measurable customer acquisition, intelligent
 technology, high-performing BPO outsourcing, and reliable revenue engines.

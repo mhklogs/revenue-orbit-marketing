@@ -8,6 +8,7 @@ type Tab = "leads" | "blogs" | "team" | "settings";
 type Lead = {
   id: string; name: string; email: string; company: string;
   phone: string; service: string; message: string;
+  consent: boolean; source: string;
   status: "new" | "contacted" | "qualified" | "closed"; createdAt: string;
 };
 type Blog = { id: string; slug: string; title: string; category: string; readTime: string; excerpt: string; body: string; createdAt: string };
@@ -86,6 +87,24 @@ export default function Dashboard() {
     await fetch("/api/admin/logout", { method: "POST" });
     router.replace("/admin/login");
     router.refresh();
+  }
+
+  async function openCertificate(leadId: string) {
+    try {
+      const res = await fetch("/api/admin/certificates", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ leadId }),
+      });
+      const data = await res.json();
+      if (res.ok && data.certificate?.id) {
+        window.open(`/certificates/${data.certificate.id}`, "_blank");
+      } else {
+        notify("err", data.error || "Failed to issue certificate");
+      }
+    } catch {
+      notify("err", "Failed to issue certificate");
+    }
   }
 
   /* ----- Leads ----- */
@@ -224,7 +243,7 @@ export default function Dashboard() {
             <div className="card" style={{ overflowX: "auto" }}>
               <table>
                 <thead>
-                  <tr><th>Name</th><th>Contact</th><th>Service</th><th>Message</th><th>Status</th><th>When</th><th></th></tr>
+                  <tr><th>Name</th><th>Contact</th><th>Service</th><th>Message</th><th>Consent</th><th>Status</th><th>When</th><th></th></tr>
                 </thead>
                 <tbody>
                   {leads.map((l) => (
@@ -233,6 +252,7 @@ export default function Dashboard() {
                       <td>{l.email}<div className="muted" style={{ fontSize: 12 }}>{l.phone || "—"}</div></td>
                       <td>{l.service}</td>
                       <td style={{ maxWidth: 260 }}><span className="muted">{l.message}</span></td>
+                      <td>{l.consent ? <span style={{ color: "var(--admin-ok, #2EC4B0)", fontWeight: 700 }}>✓</span> : <span className="muted">—</span>}</td>
                       <td>
                         <select value={l.status} onChange={(e) => setLeadStatus(l.id, e.target.value as Lead["status"])} style={{ background: "var(--admin-bg2)", border: "1px solid var(--admin-border)", color: "var(--admin-text)", borderRadius: 8, padding: "5px 8px", fontSize: 12 }}>
                           <option value="new">New</option>
@@ -242,7 +262,12 @@ export default function Dashboard() {
                         </select>
                       </td>
                       <td className="muted" style={{ fontSize: 12 }}>{new Date(l.createdAt).toLocaleString()}</td>
-                      <td><button className="btn btn-ghost btn-danger" onClick={() => deleteLead(l.id)}>Delete</button></td>
+                      <td>
+                        <div style={{ display: "flex", gap: 6 }}>
+                          <button className="btn" onClick={() => openCertificate(l.id)}>Cert</button>
+                          <button className="btn btn-ghost btn-danger" onClick={() => deleteLead(l.id)}>Delete</button>
+                        </div>
+                      </td>
                     </tr>
                   ))}
                 </tbody>

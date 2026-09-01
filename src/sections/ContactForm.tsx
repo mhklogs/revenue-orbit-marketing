@@ -25,11 +25,18 @@ export default function ContactForm() {
     service: "General Consultation",
     message: "",
   });
+  const [consent, setConsent] = useState(false);
+  const [consentError, setConsentError] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!consent) {
+      setConsentError("Please accept the Terms & Conditions and Privacy Policy to continue.");
+      return;
+    }
+    setConsentError("");
     setStatus("submitting");
     setError("");
 
@@ -37,13 +44,14 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, consent }),
       });
 
       const data = await res.json();
       if (res.ok) {
         setStatus("success");
         setForm({ name: "", email: "", company: "", phone: "", service: "General Consultation", message: "" });
+        setConsent(false);
       } else {
         setStatus("error");
         setError(data.error || "Something went wrong.");
@@ -170,6 +178,28 @@ export default function ContactForm() {
                 {error && (
                   <div className="col-span-1 sm:col-span-2 p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-sm font-semibold">
                     {error}
+                  </div>
+                )}
+
+                <div className="col-span-1 sm:col-span-2 flex items-start gap-3 text-left">
+                  <input
+                    id="consent"
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                    className="mt-1 w-5 h-5 rounded accent-[var(--accent)] shrink-0"
+                  />
+                  <label htmlFor="consent" className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
+                    I agree to the{" "}
+                    <a href="/terms" className="text-[var(--accent)] hover:underline font-semibold" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>,{" "}
+                    <a href="/privacy" className="text-[var(--accent)] hover:underline font-semibold" target="_blank" rel="noopener noreferrer">Privacy Policy</a>, and{" "}
+                    <a href="/cookies" className="text-[var(--accent)] hover:underline font-semibold" target="_blank" rel="noopener noreferrer">Cookie Policy</a>{" "}
+                    and consent to Revenue Orbit Marketing contacting me about my inquiry. *
+                  </label>
+                </div>
+                {consentError && (
+                  <div className="col-span-1 sm:col-span-2 p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-sm font-semibold">
+                    {consentError}
                   </div>
                 )}
 

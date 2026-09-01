@@ -4,11 +4,18 @@ import { addLead } from "@/lib/leads";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, company, phone, service, message } = body;
+    const { name, email, company, phone, service, message, consent } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Name, email and message are required." },
+        { status: 400 }
+      );
+    }
+
+    if (consent !== true) {
+      return NextResponse.json(
+        { error: "Please accept the Terms & Conditions and Privacy Policy before submitting." },
         { status: 400 }
       );
     }
@@ -29,6 +36,7 @@ export async function POST(request: NextRequest) {
       phone: String(phone || ""),
       service: String(service || "General"),
       message: String(message),
+      consent: consent === true,
       source: "website-contact-form",
     });
 
