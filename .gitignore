@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# admin lead store (local JSON persistence)
+/data
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

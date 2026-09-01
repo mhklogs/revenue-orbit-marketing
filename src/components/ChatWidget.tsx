@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Bot } from "lucide-react";
+import Markdown from "./Markdown";
 
 type Msg = { role: "user" | "assistant"; text: string };
 
@@ -108,7 +109,7 @@ export default function ChatWidget() {
                         : { backgroundColor: "var(--bg-card)", color: "var(--text-primary)", border: "1px solid var(--border-subtle)" }
                     }
                   >
-                    {m.text}
+                    {m.role === "assistant" ? <Markdown text={m.text} /> : m.text}
                   </div>
                 </div>
               ))}

@@ -3,6 +3,7 @@
 import { ArrowRight, Calendar } from "lucide-react";
 import { FadeIn } from "@/components/Animations";
 import Aurora from "@/components/reactbits/Aurora";
+import OrbitVisual from "@/components/OrbitVisual";
 
 const ticker = [
   "Performance Marketing", "Lead Generation", "Contact Center Solutions",
@@ -22,6 +23,13 @@ export default function Hero() {
       />
       {/* Soft glow overlay for depth */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--bg-primary)_78%)] z-[1]" />
+
+      {/* Revenue Orbit : orbiting brand system (reinforces "ORBIT") */}
+      <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none select-none">
+        <div className="orbit-visual-wrap">
+          <OrbitVisual size={740} />
+        </div>
+      </div>
 
       {/* Giant faded ROM watermark in the background */}
       <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none select-none overflow-hidden">

@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight, ChevronDown, Sun, Moon, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/context/ThemeContext";
@@ -18,6 +17,7 @@ const aboutLinks: { label: string; tagline: string; href: string }[] = [
   { label: "Values", tagline: "The standards we hold", href: "/about#values" },
   { label: "Compliance", tagline: "Privacy, security & SLA", href: "/about#compliance" },
   { label: "Our Team", tagline: "The people behind the work", href: "/about#team" },
+  { label: "Careers", tagline: "Openings, benefits & culture", href: "/careers" },
 ];
 
 type MegaMenu = null | "about" | "services" | "industries";
@@ -28,7 +28,6 @@ export default function Navbar() {
   const [openMenu, setOpenMenu] = useState<MegaMenu>(null);
   const [mobileMega, setMobileMega] = useState<MegaMenu>(null);
   const { theme, toggleTheme } = useTheme();
-  const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -37,11 +36,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useEffect(() => {
-    setOpenMenu(null);
-    setIsOpen(false);
-  }, [pathname]);
 
   const openMega = (m: Exclude<MegaMenu, null>) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -129,13 +123,13 @@ export default function Navbar() {
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.15 }}
                       onMouseEnter={() => openMega("about")}
-                      className="absolute top-full left-0 pt-3 w-[360px]"
+                      className="absolute top-full left-0 pt-3 w-[680px]"
                     >
                       <div className="glass p-4 rounded-2xl border border-[var(--border-subtle)]">
                         <p className="text-xs font-semibold uppercase tracking-widest mb-3 px-2" style={{ color: "var(--text-muted)" }}>About</p>
-                        <div className="space-y-1">
+                        <div className="grid grid-cols-4 gap-1">
                           {aboutLinks.map((l) => (
-                            <Link key={l.label} href={l.href} className="flex items-start gap-3 px-3 py-2.5 rounded-xl hover:bg-[var(--accent)]/5 transition-colors">
+                            <Link key={l.label} href={l.href} onClick={() => setOpenMenu(null)} className="flex items-start gap-2 px-3 py-3 rounded-xl hover:bg-[var(--accent)]/5 transition-colors">
                               <div>
                                 <p className="text-sm font-bold" style={{ color: "var(--text-primary)" }}>{l.label}</p>
                                 <p className="text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>{l.tagline}</p>
@@ -165,7 +159,7 @@ export default function Navbar() {
                         <p className="text-xs font-semibold uppercase tracking-widest mb-3 px-2" style={{ color: "var(--text-muted)" }}>Services</p>
                         <div className="grid grid-cols-2 gap-1">
                           {services.map((s: Service) => (
-                            <Link key={s.slug} href={`/services/${s.slug}`} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[var(--accent)]/5 transition-colors">
+                            <Link key={s.slug} href={`/services/${s.slug}`} onClick={() => setOpenMenu(null)} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[var(--accent)]/5 transition-colors">
                               <div>
                                 <p className="text-sm font-bold" style={{ color: "var(--text-primary)" }}>{s.title}</p>
                                 <p className="text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>{s.tagline}</p>
@@ -173,7 +167,7 @@ export default function Navbar() {
                             </Link>
                           ))}
                         </div>
-                        <Link href="/services" className="mt-3 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20 transition-colors">
+                        <Link href="/services" onClick={() => setOpenMenu(null)} className="mt-3 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20 transition-colors">
                           View all 8 service lines <ChevronRight className="w-4 h-4" />
                         </Link>
                       </div>
@@ -198,7 +192,7 @@ export default function Navbar() {
                         <p className="text-xs font-semibold uppercase tracking-widest mb-3 px-2" style={{ color: "var(--text-muted)" }}>Industries</p>
                         <div className="grid grid-cols-2 gap-1">
                           {industries.map((ind: Industry) => (
-                            <Link key={ind.slug} href={`/industries/${ind.slug}`} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[var(--accent)]/5 transition-colors">
+                            <Link key={ind.slug} href={`/industries/${ind.slug}`} onClick={() => setOpenMenu(null)} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[var(--accent)]/5 transition-colors">
                               <div>
                                 <p className="text-sm font-bold" style={{ color: "var(--text-primary)" }}>{ind.title}</p>
                                 <p className="text-xs mt-0.5 leading-snug" style={{ color: "var(--text-muted)" }}>{ind.tagline}</p>
@@ -206,7 +200,7 @@ export default function Navbar() {
                             </Link>
                           ))}
                         </div>
-                        <Link href="/industries" className="mt-3 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20 transition-colors">
+                        <Link href="/industries" onClick={() => setOpenMenu(null)} className="mt-3 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20 transition-colors">
                           See all targeted verticals <ChevronRight className="w-4 h-4" />
                         </Link>
                       </div>

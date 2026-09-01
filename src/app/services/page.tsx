@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { services } from "@/lib/data";
-import { FadeIn, StaggerContainer, StaggerItem, SectionHeading } from "@/components/Animations";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/Animations";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -54,7 +54,7 @@ export default function ServicesPage() {
             <div className="mt-16 p-8 md:p-12 rounded-3xl text-center border border-[var(--accent)]/30 bg-[var(--bg-card)]">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] mb-4">Not sure where to start?</h2>
               <p className="card-body max-w-2xl mx-auto mb-8 text-[var(--text-secondary)]">
-                Every engagement is custom-scoped. Tell us your revenue goal and we'll architect the right mix of service lines to hit it.
+                Every engagement is custom-scoped. Tell us your revenue goal and we&apos;ll architect the right mix of service lines to hit it.
               </p>
               <Link href="/contact" className="btn-primary">Get a Scoped Blueprint <ArrowRight className="w-5 h-5" /></Link>
             </div>

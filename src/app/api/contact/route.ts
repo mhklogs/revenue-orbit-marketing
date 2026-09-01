@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { addLead } from "@/lib/leads";
 
 export async function POST(request: NextRequest) {
   try {
@@ -21,20 +22,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // In production, this would send an email or POST to the CRM.
-    // Store the lead payload in a way that can later be wired to CRM/email/SMS.
-    const lead = {
-      name,
-      email,
-      company: company || "",
-      phone: phone || "",
-      service: service || "General",
-      message,
+    const lead = await addLead({
+      name: String(name),
+      email: String(email),
+      company: String(company || ""),
+      phone: String(phone || ""),
+      service: String(service || "General"),
+      message: String(message),
       source: "website-contact-form",
-      timestamp: new Date().toISOString(),
-    };
-
-    // TODO: wire to CRM (HubSpot/Salesforce/GoHighLevel), email service, and notifications.
+    });
 
     return NextResponse.json(
       {

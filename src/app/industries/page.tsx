@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { industries } from "@/lib/data";
-import { FadeIn, StaggerContainer, StaggerItem, SectionHeading } from "@/components/Animations";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/Animations";
 import { ShieldCheck, ArrowRight, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {

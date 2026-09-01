@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
+import BackHome from "@/components/BackHome";
 
 const display = Cinzel({
   variable: "--font-display",
@@ -99,6 +100,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <ChatWidget />
+          <BackHome />
         </ThemeProvider>
       </body>
     </html>

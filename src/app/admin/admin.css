@@ -1,0 +1,126 @@
+/* Self-contained admin styles, scoped under .rom-admin so they don't clash with the
+   public site's globals. Uses the marine / sea-green brand palette with a light mode. */
+.rom-admin,
+.rom-admin *,
+.rom-admin *::before,
+.rom-admin *::after {
+  box-sizing: border-box;
+}
+
+.rom-admin {
+  --admin-bg: #0b0c10;
+  --admin-bg2: #12141c;
+  --admin-card: #1a1d29;
+  --admin-border: #2a2f3f;
+  --admin-text: #e9edf5;
+  --admin-muted: #93a0b8;
+  --admin-accent: #2ec4b0;
+  --admin-accent-dim: rgba(46, 196, 176, 0.14);
+  --admin-danger: #ef6a6a;
+  --admin-ok: #3ecf7e;
+  min-height: 100vh;
+  background: var(--admin-bg);
+  color: var(--admin-text);
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+.rom-admin a { color: inherit; text-decoration: none; }
+.rom-admin .admin-wrap { max-width: 1100px; margin: 0 auto; padding: 28px 20px 64px; }
+
+.rom-admin .admin-top {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; margin-bottom: 24px; flex-wrap: wrap;
+}
+.rom-admin .admin-logo { font-size: 20px; font-weight: 800; letter-spacing: 0.4px; display: flex; align-items: center; gap: 10px; }
+.rom-admin .admin-logo .dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--admin-accent); box-shadow: 0 0 12px var(--admin-accent);
+}
+.rom-admin .admin-logo small { color: var(--admin-accent); font-weight: 600; }
+.rom-admin .admin-user { display: flex; gap: 10px; align-items: center; }
+
+.rom-admin button, .rom-admin input, .rom-admin textarea, .rom-admin select {
+  font-family: inherit;
+}
+
+.rom-admin .btn {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  border: 1px solid var(--admin-border); background: var(--admin-card);
+  color: var(--admin-text); font-weight: 600; font-size: 13px;
+  padding: 9px 16px; border-radius: 10px; transition: all .15s ease;
+}
+.rom-admin .btn:hover { border-color: var(--admin-accent); }
+.rom-admin .btn-primary { background: var(--admin-accent); color: #06130f; border-color: var(--admin-accent); font-weight: 700; }
+.rom-admin .btn-primary:hover { filter: brightness(1.08); }
+.rom-admin .btn-ghost { background: transparent; border-color: transparent; color: var(--admin-muted); }
+.rom-admin .btn-ghost:hover { color: var(--admin-text); }
+.rom-admin .btn-danger { color: var(--admin-danger); border-color: rgba(239,106,106,.35); }
+.rom-admin .btn-danger:hover { background: rgba(239,106,106,.12); }
+
+.rom-admin .tabs {
+  display: flex; gap: 6px; border-bottom: 1px solid var(--admin-border);
+  margin-bottom: 22px; overflow-x: auto; flex-wrap: wrap;
+}
+.rom-admin .tab {
+  padding: 10px 16px; font-weight: 600; font-size: 14px; cursor: pointer;
+  border: none; background: none; color: var(--admin-muted);
+  border-bottom: 2px solid transparent; white-space: nowrap;
+}
+.rom-admin .tab.active { color: var(--admin-accent); border-bottom-color: var(--admin-accent); }
+
+.rom-admin .card {
+  background: var(--admin-card); border: 1px solid var(--admin-border);
+  border-radius: 14px; padding: 20px; margin-bottom: 16px;
+}
+.rom-admin .card h3 { margin: 0 0 14px; font-size: 15px; font-weight: 700; }
+.rom-admin .muted { color: var(--admin-muted); }
+.rom-admin .row { display: flex; gap: 12px; flex-wrap: wrap; }
+.rom-admin .stat {
+  background: var(--admin-bg2); border: 1px solid var(--admin-border);
+  border-radius: 12px; padding: 16px; min-width: 140px; flex: 1;
+}
+.rom-admin .stat .n { font-size: 26px; font-weight: 800; color: var(--admin-accent); }
+.rom-admin .stat .l { font-size: 12px; color: var(--admin-muted); text-transform: uppercase; letter-spacing: .5px; }
+
+.rom-admin table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.rom-admin th { text-align: left; color: var(--admin-muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; padding: 8px 10px; border-bottom: 1px solid var(--admin-border); }
+.rom-admin td { padding: 10px; border-bottom: 1px solid var(--admin-border); vertical-align: top; }
+.rom-admin tr:hover td { background: var(--admin-bg2); }
+
+.rom-admin .field { margin-bottom: 14px; }
+.rom-admin .field label { display: block; font-size: 12px; font-weight: 600; color: var(--admin-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .4px; }
+.rom-admin .field input, .rom-admin .field textarea, .rom-admin .field select {
+  width: 100%; padding: 10px 12px; border-radius: 10px;
+  border: 1px solid var(--admin-border); background: var(--admin-bg2);
+  color: var(--admin-text); font-size: 14px; outline: none;
+}
+.rom-admin .field input:focus, .rom-admin .field textarea:focus { border-color: var(--admin-accent); }
+.rom-admin .field textarea { min-height: 120px; resize: vertical; }
+.rom-admin .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.rom-admin .badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+.rom-admin .badge.new { background: var(--admin-accent-dim); color: var(--admin-accent); }
+.rom-admin .badge.contacted { background: rgba(240,173,78,.15); color: #f0ad4e; }
+.rom-admin .badge.qualified { background: rgba(94,141,250,.15); color: #5e8dfa; }
+.rom-admin .badge.closed { background: rgba(62,207,126,.15); color: var(--admin-ok); }
+
+.rom-admin .msg { font-size: 13px; margin-top: 10px; }
+.rom-admin .msg.ok { color: var(--admin-ok); }
+.rom-admin .msg.err { color: var(--admin-danger); }
+
+.rom-admin .login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.rom-admin .login-card { width: 100%; max-width: 380px; }
+.rom-admin .login-card .card { padding: 32px; }
+.rom-admin .login-title { font-size: 20px; font-weight: 800; margin: 0 0 4px; }
+.rom-admin .color-input { display: flex; gap: 10px; align-items: center; }
+.rom-admin .color-input input[type="color"] { width: 52px; height: 40px; padding: 0; border-radius: 10px; border: 1px solid var(--admin-border); background: none; cursor: pointer; }
+
+.rom-admin .swatch-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.rom-admin .swatch { width: 44px; height: 44px; border-radius: 10px; border: 2px solid var(--admin-border); cursor: pointer; position: relative; }
+.rom-admin .swatch.active { border-color: #fff; }
+
+@media (max-width: 640px) {
+  .rom-admin .field-row { grid-template-columns: 1fr; }
+  .rom-admin .card { padding: 16px; }
+}

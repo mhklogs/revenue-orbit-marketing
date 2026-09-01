@@ -32,19 +32,19 @@ export default function ValueStatement() {
           </p>
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
+        <StaggerContainer className="grid grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-6 w-full max-w-7xl mx-auto justify-center items-stretch">
           {engines.map((e) => (
             <StaggerItem key={e.title}>
 <TiltCard className="h-full rounded-2xl">
-              <div className="p-6 lg:p-9 rounded-2xl glass border border-[var(--border-subtle)] hover-lift group h-full flex flex-col gap-5 text-center items-center justify-between">
-                <div className="w-full flex flex-col gap-4 text-center items-center">
-                  <div className="w-14 h-14 rounded-xl bg-[var(--accent)]/15 border border-[var(--accent)]/20 flex items-center justify-center mb-2 group-hover:bg-[var(--accent)]/25 transition-all">
-                    <e.icon className="w-7 h-7 text-[var(--accent-light)]" />
+              <div className="p-4 sm:p-6 lg:p-9 rounded-2xl glass border border-[var(--border-subtle)] hover-lift group h-full flex flex-col gap-3 sm:gap-5 text-center items-center justify-between">
+                <div className="w-full flex flex-col gap-3 sm:gap-4 text-center items-center">
+                  <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-[var(--accent)]/15 border border-[var(--accent)]/20 flex items-center justify-center mb-1 sm:mb-2 group-hover:bg-[var(--accent)]/25 transition-all">
+                    <e.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[var(--accent-light)]" />
                   </div>
-                  <h3 className="text-xl font-bold leading-[1.3] min-h-[2.6em] text-[var(--text-primary)]">
+                  <h3 className="text-sm sm:text-xl font-bold leading-[1.3] min-h-[2.4em] text-[var(--text-primary)]">
                     {e.title}
                   </h3>
-                  <p className="card-body text-center">
+                  <p className="card-body text-center text-xs sm:text-base">
                     {e.desc}
                   </p>
                 </div>

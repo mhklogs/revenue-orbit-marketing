@@ -155,16 +155,16 @@ export default function Testimonials() {
         </FadeIn>
 
         {/* Review grid — recent verified results across industries */}
-        <div className="relative max-w-7xl mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="relative max-w-7xl mx-auto mt-16 grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {reviewGrid.map((r) => (
             <FadeIn key={r.name} className="text-left">
-              <div className="h-full p-7 rounded-2xl glass border border-[var(--border-subtle)] hover-lift flex flex-col">
-                <div className="flex gap-1 mb-4 text-amber-400">
+              <div className="h-full p-4 sm:p-7 rounded-2xl glass border border-[var(--border-subtle)] hover-lift flex flex-col">
+                <div className="flex gap-1 mb-3 sm:mb-4 text-amber-400">
                   {[...Array(r.stars)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400" />
+                    <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-amber-400" />
                   ))}
                 </div>
-                <p className="card-body flex-grow mb-6 text-[var(--text-secondary)]">
+                <p className="card-body flex-grow mb-4 sm:mb-6 text-[var(--text-secondary)] text-xs sm:text-base">
                   &ldquo;{r.text}&rdquo;
                 </p>
                 <div className="flex items-center gap-3 pt-5 border-t border-[var(--border-subtle)]">

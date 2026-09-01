@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FadeIn, StaggerContainer, StaggerItem, SectionHeading } from "@/components/Animations";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/Animations";
 import { Phone, Mail, MapPin, ShieldCheck } from "lucide-react";
 import ContactForm from "@/sections/ContactForm";
 

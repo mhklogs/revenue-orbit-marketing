@@ -17,18 +17,32 @@ function getInitialTheme(): Theme {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
-
-  useEffect(() => {
-    const t = getInitialTheme();
-    setTheme(t);
-    document.documentElement.setAttribute("data-theme", t);
-  }, []);
+  const [theme, setTheme] = useState<Theme>(() => getInitialTheme());
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("rom-theme", theme);
   }, [theme]);
+
+  // Apply the admin-set accent color to the site's CSS variables.
+  useEffect(() => {
+    async function applyAccent() {
+      try {
+        const res = await fetch("/api/theme");
+        if (!res.ok) return;
+        const data = await res.json();
+        const t = data.theme;
+        if (!t) return;
+        const root = document.documentElement;
+        if (t.accent) root.style.setProperty("--accent", t.accent);
+        if (t.accentLight) root.style.setProperty("--accent-light", t.accentLight);
+        if (t.accentDark) root.style.setProperty("--accent-dark", t.accentDark);
+      } catch {
+        /* keep defaults */
+      }
+    }
+    applyAccent();
+  }, []);
 
   const toggleTheme = useCallback(() => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));

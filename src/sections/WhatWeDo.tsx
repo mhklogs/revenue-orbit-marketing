@@ -4,6 +4,7 @@ import { StaggerContainer, StaggerItem, FadeIn } from "@/components/Animations";
 import TiltCard from "@/components/TiltCard";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/data";
+import DetailReveal from "@/components/DetailReveal";
 
 export default function WhatWeDo() {
   return (
@@ -26,37 +27,39 @@ export default function WhatWeDo() {
           </p>
         </FadeIn>
 
-        {/* Grid Layout */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
-          {services.map((s) => (
-            <StaggerItem key={s.title}>
-              {/* Card Container */}
-              <TiltCard className="h-full rounded-2xl">
-                <div className="p-6 lg:p-9 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-between h-full hover:border-[var(--accent)]/50 transition-all hover-lift">
-                <div className="flex flex-col items-center w-full gap-5">
-                  {/* Badge / Number */}
-                  <span className="mx-auto text-sm sm:text-base font-semibold tracking-wider font-mono text-[var(--accent)] px-3 py-1 bg-[var(--accent)]/10 rounded-lg inline-block">
-                    SOLUTION {s.num}
-                  </span>
+        {/* Grid Layout with detail reveal */}
+        <DetailReveal collapsedHeight={720} label="Unhide all solutions">
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch">
+            {services.map((s) => (
+              <StaggerItem key={s.title}>
+                {/* Card Container */}
+                <TiltCard className="h-full rounded-2xl">
+                  <div className="p-4 lg:p-9 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-between h-full hover:border-[var(--accent)]/50 transition-all hover-lift">
+                  <div className="flex flex-col items-center w-full gap-3 sm:gap-5">
+                    {/* Badge / Number */}
+                    <span className="mx-auto text-xs sm:text-base font-semibold tracking-wider font-mono text-[var(--accent)] px-3 py-1 bg-[var(--accent)]/10 rounded-lg inline-block">
+                      SOLUTION {s.num}
+                    </span>
 
-                  {/* Card Heading */}
-                  <h3 className="text-xl font-bold leading-[1.3] min-h-[2.6em] text-[var(--text-primary)]">{s.title}</h3>
+                    {/* Card Heading */}
+                    <h3 className="text-sm sm:text-xl font-bold leading-[1.3] min-h-[2.4em] text-[var(--text-primary)]">{s.title}</h3>
 
-                  {/* Card Body Text */}
-                  <p className="card-body text-center flex-grow">
-                    {s.desc}
-                  </p>
+                    {/* Card Body Text */}
+                    <p className="card-body text-center flex-grow text-xs sm:text-base">
+                      {s.desc}
+                    </p>
+                  </div>
+
+                  {/* Action Link */}
+                  <a href={`/services/${s.slug}`} className="mt-auto pt-4 sm:pt-6 text-xs sm:text-base font-bold text-[var(--accent)] flex items-center justify-center gap-2 hover:underline">
+                    Explore <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </a>
                 </div>
-
-                {/* Action Link */}
-                <a href={`/services/${s.slug}`} className="mt-auto pt-6 text-base font-bold text-[var(--accent)] flex items-center justify-center gap-2 hover:underline">
-                  Explore Solution <ArrowRight className="w-5 h-5" />
-                </a>
-              </div>
-              </TiltCard>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+                </TiltCard>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </DetailReveal>
       </div>
     </section>
   );

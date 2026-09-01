@@ -135,6 +135,16 @@ export const industries: Industry[] = [
     workflows: ["Demand generation", "Homeowner qualification & verification", "Appointment booking", "Job-diary integration", "No-show & follow-up recovery"],
   },
   {
+    slug: "real-estate",
+    title: "Real Estate",
+    tagline: "Realtor, wholesale, and motivated-seller lead systems",
+    compliance: "TCPA",
+    items: ["Realtor Lead Systems", "Motivated Seller Qualification", "Buyer Lead Generation", "Wholesale Deals", "Investor CRM Workflows", "Appointment Setting"],
+    overview: "Real estate is won by whoever reaches the motivated seller first. ROM builds buyer and seller lead systems, qualifies motivated sellers, and runs investor CRM workflows — so your agents and wholesalers close more deals with less chasing.",
+    outcomes: ["Motivated seller lists", "Qualified buyer pipeline", "More closed wholesale deals", "Investor CRM at scale"],
+    workflows: ["Seller & buyer lead generation", "Motivated-seller qualification", "Investor CRM workflows", "Appointment scheduling", "Follow-up & deal tracking"],
+  },
+  {
     slug: "technology-saas",
     title: "Technology & SaaS",
     tagline: "Tiered technical support, onboarding, and B2B",

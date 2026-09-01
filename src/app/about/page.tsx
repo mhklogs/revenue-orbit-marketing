@@ -127,7 +127,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading badge="Why Choose Us" title="Six Reasons Clients" highlight="Stay" subtitle="The standards we hold and the value we protect." />
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reasons.map((r, i) => (
+            {reasons.map((r) => (
               <StaggerItem key={r}>
                 <div className="p-6 rounded-2xl glass border border-[var(--border-subtle)] hover-lift h-full flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 shrink-0 mt-1 text-[var(--accent)]" />
