@@ -65,14 +65,14 @@ export default function Metrics() {
         </div>
 
         {/* Key Performance Stat Cards Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 w-full max-w-7xl mx-auto justify-center items-stretch mb-4">
           {primaryMetrics.map((m) => (
             <FadeIn key={m.label}>
-              <div className="p-4 lg:p-9 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-2 sm:gap-3 hover-lift h-full">
-                <p className="font-black text-[var(--accent)] mb-1 sm:mb-2 leading-[1.1]" style={{ fontSize: "clamp(1.6rem, 4.5vw, 3.25rem)" }}>
+              <div className="p-4 lg:p-9 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-2 sm:gap-3 hover-lift h-full min-w-0">
+                <p className="font-black text-[var(--accent)] mb-1 sm:mb-2 leading-[1.1] min-w-0 break-words" style={{ fontSize: "clamp(1.6rem, 4.5vw, 3.25rem)" }}>
                   <Counter target={m.target} suffix={m.suffix} />
                 </p>
-                <p className="text-xs sm:text-lg font-bold tracking-wide leading-relaxed text-[var(--text-secondary)] uppercase">
+                <p className="text-xs sm:text-lg font-bold tracking-wide leading-relaxed text-[var(--text-secondary)] uppercase min-w-0 break-words">
                   {m.label}
                 </p>
               </div>
@@ -81,14 +81,14 @@ export default function Metrics() {
         </div>
 
         {/* Secondary Metrics Grid — same card framing as primary for a clean 3x2 matrix */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 max-w-7xl mx-auto w-full justify-center items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 max-w-7xl mx-auto w-full justify-center items-stretch">
           {secondaryMetrics.map((sm) => (
             <FadeIn key={sm}>
-              <div className="p-5 lg:p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-2 sm:gap-3 hover-lift h-full">
-                <p className="font-black text-[var(--accent)] leading-[1.1]" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.5rem)" }}>
+              <div className="p-5 lg:p-8 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] text-center flex flex-col items-center justify-center gap-2 sm:gap-3 hover-lift h-full min-w-0">
+                <p className="font-black text-[var(--accent)] leading-[1.1] min-w-0 break-words" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.5rem)" }}>
                   {sm.split(" ")[0]}
                 </p>
-                <p className="text-xs sm:text-base font-bold tracking-wide leading-relaxed text-[var(--text-secondary)] uppercase">
+                <p className="text-xs sm:text-base font-bold tracking-wide leading-relaxed text-[var(--text-secondary)] uppercase min-w-0 break-words">
                   {sm.split(" ").slice(1).join(" ")}
                 </p>
               </div>
