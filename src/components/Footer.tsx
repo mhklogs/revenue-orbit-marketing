@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { MessageCircle, Phone, Mail, MapPin, ArrowRight, Calendar } from "lucide-react";
 import { services, industries } from "@/lib/data";
 
@@ -41,6 +42,24 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="relative" style={{ backgroundColor: "var(--bg-secondary)" }}>
+      {/* Finalized brand logo band (before the footer) */}
+      <div className="border-t border-[var(--border-subtle)]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10 md:py-12 flex flex-col items-center justify-center gap-3 text-center">
+          <div className="relative nav-logo-glow">
+            <Image
+              src="/rom-logo-final.png"
+              alt="Revenue Orbit Marketing"
+              width={440}
+              height={240}
+              className="h-16 md:h-24 w-auto object-contain"
+            />
+          </div>
+          <p className="text-sm font-bold tracking-[0.2em] uppercase text-[var(--text-muted)]">
+            You Bring the Vision. We Make It Happen.
+          </p>
+        </div>
+      </div>
+
       {/* Top CTA Banner */}
       <div className="relative overflow-hidden border-t border-[var(--border-subtle)]">
         <div className="h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" />
@@ -64,11 +83,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-3">
-              <div className="relative w-10 h-10">
-                <div className="absolute inset-0 rounded-full border-2 border-[var(--accent)] opacity-40" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[var(--accent-light)] font-bold text-sm tracking-wider">ROM</span>
-                </div>
+              <div className="relative w-11 h-11">
+                <Image
+                  src="/rom-logo-final.png"
+                  alt="Revenue Orbit Marketing"
+                  width={176}
+                  height={96}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <p className="text-sm font-bold tracking-wider" style={{ color: "var(--text-primary)" }}>REVENUE ORBIT</p>

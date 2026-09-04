@@ -32,6 +32,9 @@
   --accent-soft: rgba(31, 158, 143, 0.12);
   --dark: #1A1A1A;
   --border-subtle: #E5E0D6;
+  /* Navbar over the transparent hero video — light by default so it reads on
+     the dark/green cinematic background. Override anywhere to adjust. */
+  --nav-link: #F3F6F5;
 }
 
 [data-theme="light"] {
@@ -634,3 +637,18 @@ img, svg, video, canvas, table { max-width: 100%; }
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ------------- Transparent-blur navbar over the hero video ------------- */
+.nav-bar-blur {
+  background: linear-gradient(180deg, rgba(11,12,16,0.55), rgba(11,12,16,0.25));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(46,196,176,0.16);
+}
+/* White glow behind the ROM logo text so it stays visible on dark/green bg */
+.nav-logo-glow {
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.95))
+          drop-shadow(0 0 14px rgba(255,255,255,0.7))
+          drop-shadow(0 0 26px rgba(46,196,176,0.55));
+}
+.nav-logo-glow img { max-width: none; }

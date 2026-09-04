@@ -15,7 +15,7 @@ const VIDEO_URL =
 
 export default function Hero() {
   return (
-    <section id="hero-section" className="relative w-full flex flex-col items-center overflow-hidden bg-[#0B0C10]">
+    <section id="hero-section" className="relative w-full min-h-screen flex flex-col items-center overflow-hidden bg-[#0B0C10]">
       {/* Cinematic video background (recolored to ROM sea-green) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -23,7 +23,7 @@ export default function Hero() {
           muted
           loop
           playsInline
-          poster="/rom-logo-cutout.png"
+          poster="/rom-logo-final.png"
           className="absolute inset-0 w-full h-full object-cover scale-[1.02]"
           aria-hidden="true"
         >
@@ -50,7 +50,7 @@ export default function Hero() {
       </div>
 
       {/* Centered hero content */}
-      <div className="relative z-[2] w-full max-w-7xl mx-auto px-6 lg:px-8 pt-40 lg:pt-44 pb-20 text-center">
+      <div className="relative z-[2] w-full flex-1 flex flex-col items-center justify-center px-6 lg:px-8 py-12 text-center">
         <FadeIn>
           <span className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold uppercase tracking-wider text-[#A9F0E6] bg-[#2EC4B0]/10 border border-[#2EC4B0]/30 px-4 py-1.5 rounded-full mb-8">
             Growth &amp; Technology Partner

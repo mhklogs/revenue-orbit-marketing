@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { Menu, X, ArrowRight, ChevronDown, Sun, Moon, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/context/ThemeContext";
-import BrandLogo from "@/components/BrandLogo";
+import Image from "next/image";
 import { services, industries } from "@/lib/data";
 import type { Service, Industry } from "@/lib/data";
 
@@ -24,18 +24,11 @@ type MegaMenu = null | "about" | "services" | "industries";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState<MegaMenu>(null);
   const [mobileMega, setMobileMega] = useState<MegaMenu>(null);
   const { theme, toggleTheme } = useTheme();
   const headerRef = useRef<HTMLElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 30);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const openMega = (m: Exclude<MegaMenu, null>) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -53,7 +46,7 @@ export default function Navbar() {
         onMouseLeave={scheduleClose}
         onClick={() => setOpenMenu(openMenu === menu ? null : menu)}
         className="inline-flex items-center gap-1 text-sm font-medium tracking-wide hover:text-[var(--accent)] transition-colors relative group py-2"
-        style={{ color: openMenu === menu ? "var(--accent)" : "var(--text-secondary)" }}
+        style={{ color: openMenu === menu ? "var(--accent)" : "var(--nav-link)" }}
       >
         {label} <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openMenu === menu ? "rotate-180" : ""}`} />
         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--accent)] group-hover:w-full transition-all duration-300" />
@@ -62,7 +55,7 @@ export default function Navbar() {
       <Link
         href={menuHref(label)}
         className="inline-flex items-center gap-1 text-sm font-medium tracking-wide hover:text-[var(--accent)] transition-colors relative group py-2"
-        style={{ color: "var(--text-secondary)" }}
+        style={{ color: "var(--nav-link)" }}
       >
         {label}
         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--accent)] group-hover:w-full transition-all duration-300" />
@@ -81,7 +74,7 @@ export default function Navbar() {
   return (
     <header ref={headerRef} className="fixed top-0 left-0 right-0 z-[100]" onMouseLeave={scheduleClose}>
       {/* Banner Notice Bar */}
-      <div className="banner-bar" style={{ backgroundColor: "var(--dark)" }}>
+      <div className="banner-bar nav-bar-blur">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-center">
           <p className="text-[13px] sm:text-sm text-center text-white/70">
             Revenue Orbit Marketing is now accepting new enterprise partners.{" "}
@@ -92,20 +85,21 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Main Header */}
-      <div
-        className={`transition-all duration-300 ${
-          scrolled ? "glass shadow-md shadow-black/5" : "bg-[var(--bg-header)]/80 backdrop-blur-md border-b border-[var(--border-subtle)]"
-        }`}
-      >
+      {/* Main Header — always transparent blur so it sits over the hero video */}
+      <div className="transition-all duration-300 nav-bar-blur">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <BrandLogo variant="auto" size={44} />
-              <div className="hidden sm:block leading-tight">
-                <p className="text-sm font-bold tracking-wider text-[var(--text-primary)]">REVENUE ORBIT</p>
-                <p className="text-xs font-semibold tracking-widest text-[var(--accent)]">MARKETING</p>
+              <div className="relative nav-logo-glow shrink-0">
+                <Image
+                  src="/rom-logo-final.png"
+                  alt="Revenue Orbit Marketing"
+                  width={176}
+                  height={96}
+                  priority
+                  className="h-12 lg:h-14 w-auto object-contain"
+                />
               </div>
             </Link>
 
@@ -216,7 +210,7 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               <button
                 onClick={toggleTheme}
-                className="p-2.5 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-secondary)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all"
+                className="p-2.5 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elevated)]/40 text-[var(--nav-link)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all"
                 aria-label="Toggle theme"
                 title={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
               >
@@ -239,9 +233,9 @@ export default function Navbar() {
                 aria-label="Toggle menu"
               >
                 {isOpen ? (
-                  <X className="w-6 h-6" style={{ color: "var(--text-primary)" }} />
+                  <X className="w-6 h-6" style={{ color: "var(--nav-link)" }} />
                 ) : (
-                  <Menu className="w-6 h-6" style={{ color: "var(--text-primary)" }} />
+                  <Menu className="w-6 h-6" style={{ color: "var(--nav-link)" }} />
                 )}
               </button>
             </div>

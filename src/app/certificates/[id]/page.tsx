@@ -25,7 +25,7 @@ export default async function CertificatePage({ params }: { params: Promise<{ id
 
       <div className="cert-sheet">
         <div className="cert-inner">
-          <img src="/rom-logo-dark.png" alt="Revenue Orbit Marketing" className="cert-logo" />
+          <img src="/rom-logo-final.png" alt="Revenue Orbit Marketing" className="cert-logo" />
 
           <div className="cert-band">OFFICIAL PARTNERSHIP CERTIFICATE</div>
 
@@ -61,7 +61,7 @@ export default async function CertificatePage({ params }: { params: Promise<{ id
             <div className="cert-sign-role">Growth &amp; Technology Partner</div>
           </div>
 
-          <img src="/rom-logo-dark.png" alt="" aria-hidden className="cert-watermark" />
+          <img src="/rom-logo-final.png" alt="" aria-hidden className="cert-watermark" />
         </div>
       </div>
     </div>
