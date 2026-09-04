@@ -612,3 +612,25 @@ img, svg, video, canvas, table { max-width: 100%; }
 }
 
 
+
+/* ------------- Hero video background (cinematic ROM sea-green) ------------- */
+#hero-section .hero-video { position: absolute; inset: 0; z-index: 0; }
+#hero-section h1, #hero-section .hero-text { color: #FFFFFF; }
+#hero-section .btn-outline {
+  border-color: rgba(255,255,255,0.55);
+  background: rgba(11,12,16,0.3);
+  color: #FFFFFF;
+  backdrop-filter: blur(8px);
+}
+#hero-section .btn-outline:hover {
+  border-color: #A9F0E6;
+  background: rgba(46,196,176,0.18);
+  color: #FFFFFF;
+}
+#hero-section .animated-gradient {
+  background: linear-gradient(110deg, #2EC4B0, #A9F0E6, #2EC4B0);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
