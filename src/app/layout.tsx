@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "RKrCmBMJo86w-2OlEITZJxHnkXKAN0rAsCG-NI1uPVk",
+  },
   icons: {
     icon: [
       { url: "/rom-icon.svg", type: "image/svg+xml" },
