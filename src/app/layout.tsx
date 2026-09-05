@@ -3,6 +3,7 @@ import { Cinzel, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 import SiteShell from "@/components/SiteShell";
+import { Analytics } from "@vercel/analytics/react";
 
 const display = Cinzel({
   variable: "--font-display",
@@ -17,9 +18,13 @@ const body = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://revenueorbitmarketing.com"),
   title: "Revenue Orbit Marketing (ROM) | Growth & Technology Partner",
   description:
     "Revenue Orbit Marketing helps businesses generate customers, accelerate revenue, streamline operations and scale through marketing, sales, outsourcing, AI and automation. You bring the vision. We make it happen.",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       { url: "/rom-icon.svg", type: "image/svg+xml" },
@@ -46,7 +51,7 @@ export const metadata: Metadata = {
       "Growth and technology partner helping businesses generate customers, accelerate revenue, streamline operations and scale.",
     type: "website",
     siteName: "Revenue Orbit Marketing",
-    url: "https://rom-website.vercel.app",
+    url: "https://revenueorbitmarketing.com",
     images: [{ url: "/images/hero-architecture.jpg", width: 1600, height: 1068, alt: "Revenue Orbit Marketing" }],
   },
   twitter: {
@@ -76,7 +81,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Revenue Orbit Marketing",
               alternateName: "ROM",
-              url: "https://rom-website.vercel.app",
+url: "https://revenueorbitmarketing.com",
               slogan: "You Bring the Vision. We Make It Happen.",
               description:
                 "Customer acquisition, marketing, outsourcing, sales and technology partner helping U.S. enterprises move from opportunity to predictable revenue.",
@@ -97,6 +102,7 @@ export default function RootLayout({
         <ThemeProvider>
           <SiteShell>{children}</SiteShell>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

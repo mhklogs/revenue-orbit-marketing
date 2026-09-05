@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { industries } from "@/lib/data";
 import { getBlogs } from "@/lib/content";
 
-const BASE = "https://rom-website.vercel.app";
+const BASE = "https://revenueorbitmarketing.com";
 
 const staticRoutes = [
   "", "/about", "/services", "/industries", "/blog", "/campaigns",
